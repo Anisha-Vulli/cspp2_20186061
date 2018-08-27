@@ -4,15 +4,17 @@
     * Date: 27th Aug
 
 */
-import java.util.*;
-
-public final class swap {
-
+import java.util.Scanner;
+/**
+  * Swapping two numbers.
+*/
+public final class Swap {
     /*Public class*/
     /**
        * Constructor.
     */
-    private swap() {
+
+    private Swap() {
     // Empty constructor
     }
 
@@ -22,7 +24,7 @@ public final class swap {
     */
     public static void main(final String[] args) {
         /*Main function*/
-        int a,b,temp;
+        int a, b, temp;
         System.out.println("Enter numbers");
         Scanner j = new Scanner(System.in);
         a = j.nextInt();
