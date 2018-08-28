@@ -37,7 +37,7 @@ public final class Solution {
      * @param      args  The arguments
      */
     public static void main(final String[] args) {
-        Scanner s=new Scanner(System.in);
+        Scanner s = new Scanner(System.in);
         final int base = s.nextInt();
         final int exponent = s.nextInt();
         Solution obj = new Solution();
