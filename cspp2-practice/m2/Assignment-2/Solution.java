@@ -10,7 +10,8 @@ import java.lang.Math;
  */
 
 public class Solution {
-    static double rootsOfQuadraticEquation(final int a, final int b, final int c) {
+    static double rootsOfQuadraticEquation(
+           final int a, final int b, final int c) {
         final double r1, r2;
         final int mul = 4;
         r1 = (-b + (Math.sqrt((b * b) - (mul * a * c)))) / (2 * a);
