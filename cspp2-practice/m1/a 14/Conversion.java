@@ -24,11 +24,13 @@ public final class Conversion {
     */
     public static void main(final String[] args) {
         /*Main function*/
-        double c, f;
+        final double c, f;
+        final double a = 1.8;
+        final int b = 32;
         System.out.println("Enter celcius temperature");
         Scanner j = new Scanner(System.in);
         c = j.nextInt();
-        f = (1.8 * c) + 32;
-        System.out.println("Farenheit" + f);
+        f = (a * c) + b;
+        System.out.println("Farenheit = " + f);
     }
 }
