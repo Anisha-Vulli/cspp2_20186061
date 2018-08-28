@@ -19,6 +19,12 @@ public final class Solution {
      *
      * @return     returns null
      */
+    /**
+     * Constructs the object.
+     */
+    private Solution() {
+    // Empty constructor
+    }
     static double rootsOfQuadraticEquation(
            final int a, final int b, final int c) {
         final double r1, r2;
