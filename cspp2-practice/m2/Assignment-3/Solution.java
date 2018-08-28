@@ -8,7 +8,7 @@ import java.util.Scanner;
  * Class for solution.
  */
 
-public class Solution {
+public final class Solution {
     /**
      * Power calculation function
      *
@@ -19,7 +19,7 @@ public class Solution {
      */
 
     static long power(final int base, final int exponent) {
-        if (exponent==0) {
+        if (exponent == 0) {
             return 1;
         } else {
             return base * power(base, exponent - 1);
