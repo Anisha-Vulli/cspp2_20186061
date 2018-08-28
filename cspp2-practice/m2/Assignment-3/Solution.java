@@ -10,7 +10,7 @@ import java.util.Scanner;
 
 public final class Solution {
     /**
-     * Power calculation function
+     * Power calculation function.
      *
      * @param      base      The base
      * @param      exponent  The exponent
@@ -28,7 +28,7 @@ public final class Solution {
     /**
      * Constructs the object.
      */
-    private Solution(){
+    private Solution() {
         //Empty constructor
     }
     /**
@@ -41,7 +41,7 @@ public final class Solution {
         final int base = s.nextInt();
         final int exponent = s.nextInt();
         Solution obj = new Solution();
-        long result = obj.power(base,exponent);
+        long result = obj.power(base, exponent);
         System.out.println(result);
     }
 }
