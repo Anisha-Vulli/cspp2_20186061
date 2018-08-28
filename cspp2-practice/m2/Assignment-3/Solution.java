@@ -32,7 +32,7 @@ public final class Solution {
         //Empty constructor
     }
     /**
-     * Main function
+     * Main function.
      *
      * @param      args  The arguments
      */
