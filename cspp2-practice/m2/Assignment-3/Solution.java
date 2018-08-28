@@ -2,7 +2,7 @@ import java.util.Scanner;
 
 public class Solution {
 
-    static int power(int base, int exponent) {
+    static long power(int base, int exponent) {
         if (exponent == 0) {
             return 1;
         }
@@ -16,7 +16,7 @@ public class Solution {
         int base = s.nextInt();
         int exponent = s.nextInt();
         Solution obj = new Solution();
-        int result = obj.power(base,exponent);
+        long result = obj.power(base,exponent);
         System.out.println(result);
     }
     /*
