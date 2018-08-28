@@ -9,7 +9,7 @@ import java.lang.Math;
  * Class for solution.
  */
 
-public class Solution {
+public final class Solution {
     /**
      * Roots calculation.
      *
