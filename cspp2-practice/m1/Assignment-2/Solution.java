@@ -34,8 +34,15 @@ public final class Solution {
         System.out.println(tri.areaOfTriangle(base, height));
     }
 
+    /**
+        * Main function.
+    */
+    /**
+        * @param base of type int.
+        * @param height of type int.
+        * @return of type return.
+    */
     public double areaOfTriangle(final int base, final int height) {
-        // Area of triangle function
         final double a = 0.5;
         double area = a * base * height;
         return area;
