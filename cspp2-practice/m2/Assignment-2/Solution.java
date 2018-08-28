@@ -19,7 +19,7 @@ public class Solution {
         System.out.println(r1 + " " + r2);
         return 0;
     }
-    
+
     public static void main(String[] args) {
         Scanner scan = new Scanner(System.in);
         int a = scan.nextInt();
@@ -28,5 +28,5 @@ public class Solution {
         Solution obj = new Solution();
         obj.rootsOfQuadraticEquation(a, b, c);
     }
-    
+
 }
