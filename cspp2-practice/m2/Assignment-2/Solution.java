@@ -10,6 +10,15 @@ import java.lang.Math;
  */
 
 public class Solution {
+    /**
+     * Roots calculation.
+     *
+     * @param      a     a value
+     * @param      b     b value
+     * @param      c     c value
+     *
+     * @return     returns null
+     */
     static double rootsOfQuadraticEquation(
            final int a, final int b, final int c) {
         final double r1, r2;
@@ -19,6 +28,11 @@ public class Solution {
         System.out.println(r1 + " " + r2);
         return 0;
     }
+    /**
+     * Main function
+     *
+     * @param      args  The arguments
+     */
 
     public static void main(String[] args) {
         Scanner scan = new Scanner(System.in);
