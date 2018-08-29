@@ -48,3 +48,4 @@ public final class Solution {
         System.out.println(obj.gcd(n1, n2));
     }
 }
+
