@@ -6,14 +6,19 @@ import java.util.Scanner;
 /**
  * Class for solution.
  */
-public class Solution {
+final public class Solution {
+    /**
+     * Constructs the object.
+     */
+    private Solution() {
+        //Empty constructor
+    }
     /**
      * Main Function.
      *
      * @param      args  The arguments
      */
     public static void main(final String[] args) {
-        
         Scanner s = new Scanner(System.in);
         int n = s.nextInt();
         int count = 0;
@@ -31,7 +36,5 @@ public class Solution {
             }
         }
         System.out.println(count);
-       
-        
     }
 }
