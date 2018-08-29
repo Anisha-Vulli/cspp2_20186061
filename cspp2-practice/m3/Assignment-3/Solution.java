@@ -18,7 +18,7 @@ public final class Solution {
     static int gcd(final int n1, final int n2) {
         int min = Math.min(n1, n2);
         int minval = min + 1;
-        for (int i = minval; i >= 1; i-- ){
+        for (int i = minval; i >= 1; i--) {
             if ((n1 % i == 0) && (n2 % i == 0)) {
                 return (i);
             }
