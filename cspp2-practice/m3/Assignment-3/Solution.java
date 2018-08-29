@@ -7,8 +7,15 @@ import java.util.Scanner;
  * Class for solution.
  */
 public class Solution {
-
-    static int gcd(int n1, int n2) {
+    /**
+     * GCD calculation function.
+     *
+     * @param      n1    The n 1
+     * @param      n2    The n 2
+     *
+     * @return     { description_of_the_return_value }
+     */
+    static int gcd(final int n1, final int n2) {
         int min = Math.min(n1, n2);
         int minval = min + 1;
         for (int i = minval; i >= 1; i-- ) {
@@ -26,9 +33,9 @@ public class Solution {
      * @param      args  The arguments
      */
 
-    public static void main(String[] args) {
+    public static void main(final String[] args) {
 
-        Scanner s=new Scanner(System.in);      
+        Scanner s = new Scanner(System.in);      
         int n1 = s.nextInt();
         int n2 = s.nextInt();
         Solution obj = new Solution();
