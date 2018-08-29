@@ -8,6 +8,12 @@ import java.util.Scanner;
  */
 public final class Solution {
     /**
+     * Constructs the object.
+     */
+    private Solution() {
+        //Empty constructor.
+    }
+    /**
      * GCD calculation function.
      *
      * @param      n1    The n 1
