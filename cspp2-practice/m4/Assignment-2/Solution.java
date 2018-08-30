@@ -23,8 +23,8 @@ public final class Solution {
         int rows1 = sc.nextInt();
         int coloumn1 = sc.nextInt();
         int[][] mat1 = new int[rows1][coloumn1];
-        for(int i = 0; i < rows1; i++) {
-         for(int j = 0; j < coloumn1; j++ ) {
+        for (int i = 0; i < rows1; i++) {
+         for (int j = 0; j < coloumn1; j++) {
               mat1[i][j] = sc.nextInt();
             }
         }
