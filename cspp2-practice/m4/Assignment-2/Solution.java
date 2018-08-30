@@ -41,7 +41,8 @@ public class Solution {
 		
 		for (int i = 0; i < rows1; i++) {
         	for (int j = 0; j < coloumn1; j++) {
-        		System.out.print(result[i][j] + " ");
+        		System.out.print(result[i][j]);
+        		
         	}
         	System.out.println();
         }
