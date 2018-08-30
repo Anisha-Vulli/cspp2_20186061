@@ -28,7 +28,7 @@ public final class Solution {
         }
         int maxval = 0;
         for (int j = 0; j < n; j++) {
-           if (maxval > arr[j]) {
+           if (maxval < arr[j]) {
              maxval = arr[j];
            }
         }
