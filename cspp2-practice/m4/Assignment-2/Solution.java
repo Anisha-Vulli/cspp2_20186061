@@ -42,7 +42,7 @@ public class Solution {
 		for (int i = 0; i < rows1; i++) {
         	for (int j = 0; j < coloumn1; j++) {
         		System.out.print(result[i][j]);
-        		if (j < coloumn1) {
+        		if (j < (coloumn1 - 1)) {
         			System.out.print(" ");
         		}
         	}
