@@ -6,7 +6,7 @@ import java.util.Scanner;
 /**
  * Class for sixpresent.
  */
-public class Sixpresent {
+public final class Sixpresent {
     /**
      * Constructs the object.
      */
@@ -22,11 +22,11 @@ public class Sixpresent {
         Scanner in = new Scanner(System.in);
         int n = in.nextInt();
         int[] arr = new int[n];
-        for(int i = 0; i < n; i++) {
+        for (int i = 0; i < n; i++) {
             arr[i] = in.nextInt();
         }
-
-        if((arr[0] == 6) && (arr[n - 1] == 6)) {
+        final int comp = 6;
+        if ((arr[0] == comp) || (arr[n - 1] == comp)) {
             System.out.println("True");
         } else {
             System.out.println("False");
