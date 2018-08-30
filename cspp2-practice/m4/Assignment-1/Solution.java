@@ -14,7 +14,7 @@ public class Solution
             arr[i] = sc.nextInt();
         }
         int maxval = 0;
-        for (int j = 0; j <= n; j++) {
+        for (int j = 0; j < n + 1; j++) {
            if (arr[j] > arr[j + 1]) {
              maxval = arr[j];
            }
