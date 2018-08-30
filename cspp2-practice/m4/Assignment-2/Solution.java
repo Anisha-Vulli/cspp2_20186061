@@ -14,8 +14,8 @@ public class Solution {
 	 */
 	public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);
-        int rows1 = sc. nextInt();
-        int coloumn1 = sc. nextInt();
+        int rows1 = sc.nextInt();
+        int coloumn1 = sc.nextInt();
         int[][] mat1 = new int[rows1][coloumn1];
         for (int i = 0; i < rows1; i++) {
        	 for (int j = 0; j < coloumn1; j++ ) {
@@ -23,8 +23,8 @@ public class Solution {
        	    }
         }
        
-        int rows2 = sc. nextInt();
-        int coloumn2 = sc. nextInt();
+        int rows2 = sc.nextInt();
+        int coloumn2 = sc.nextInt();
         int[][] mat2 = new int[rows2][coloumn2];
         for (int i = 0; i < rows2; i++) {
        	    for (int j = 0; j < coloumn2; j++ ) {
