@@ -19,13 +19,12 @@ public final class Solution {
      *
      * @param      args  The arguments
      */
-    public static void main(String[] args)
-    {
+    public static void main(final String[] args) {
         Scanner sc = new Scanner(System.in);
         String s = sc.nextLine();
-        String reverse = reverseString(s);    
+        String reverse = reverseString(s);
         System.out.println(reverse);
-        
+
     }
     /**
      * Reverse of a string function.
@@ -34,7 +33,7 @@ public final class Solution {
      *
      * @return     { A string }
      */
-    public static String reverseString(String s) {
+    public static String reverseString(final String s) {
         int len = s.length();
         String temp = "";
         for (int i = len - 1; i >= 0; i--) {
