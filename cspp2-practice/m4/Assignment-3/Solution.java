@@ -37,9 +37,10 @@ public class Solution {
 
     public static long binaryToDecimal(String s) {
         int len = s.length();
+        //System.out.println(len);
         int sumval = 0;
         int j = 0;
-        for (int i = len - 1; i > 0; i--) {
+        for (int i = len - 1; i >= 0; i--) {
             sumval += Character.getNumericValue(s.charAt(i)) * (Math.pow(2, j));
             j++;
         }
