@@ -4,8 +4,10 @@
  */
 
 import java.util.Scanner;
-
-public class Solution {
+/**
+ * Class for converting BCD to decimal.
+ */
+public final class Solution {
     /**
      * Constructs the object.
      */
@@ -17,13 +19,12 @@ public class Solution {
      *
      * @param      args  The arguments
      */
-    public static void main(String[] args)
-    {
+    public static void main(final String[] args) {
         Scanner sc = new Scanner(System.in);
         int n = Integer.parseInt(sc.nextLine());
-        for(int i = 0; i < n; i++) {
+        for (int i = 0; i < n; i++) {
             String s = sc.nextLine();
-            long res = binaryToDecimal(s);//Write binaryToDecimal function
+            long res = binaryToDecimal(s); //Write binaryToDecimal function
             System.out.println(res);
         }
     }
@@ -35,7 +36,7 @@ public class Solution {
      * @return     { returns decimal value }.
      */
 
-    public static long binaryToDecimal(String s) {
+    public static long binaryToDecimal(final String s) {
         int len = s.length();
         //System.out.println(len);
         int sumval = 0;
