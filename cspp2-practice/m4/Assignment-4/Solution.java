@@ -19,7 +19,7 @@ public class Solution
     public static String reverseString(String s) {
         int len = s.length();
         String temp = "";
-        for (int i = len; i >= 0; i--) {
+        for (int i = len; i > 0; i--) {
             temp = temp + s.charAt(i);
         }
 
