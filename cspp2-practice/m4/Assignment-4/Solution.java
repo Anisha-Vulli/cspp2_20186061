@@ -1,25 +1,43 @@
-
-// Given an String, Write a java method that returns the decimal value for the given binary string.
-
+/**
+ * Author : Anisha Vulli.
+ * Date: 31st Aug 2018.
+ */
 
 import java.util.Scanner;
-public class Solution
-{/*
-    Do not modify the main function 
-    */
+/**
+ * Class for solution.
+ */
+public final class Solution {
+    /**
+     * Constructs the object.
+     */
+    private Solution() {
+        //Empty constructor.
+    }
+    /**
+     * Main function.
+     *
+     * @param      args  The arguments
+     */
     public static void main(String[] args)
     {
-        Scanner sc=new Scanner(System.in);
-        String s=sc.nextLine();
-        String reverse=reverseString(s);    
+        Scanner sc = new Scanner(System.in);
+        String s = sc.nextLine();
+        String reverse = reverseString(s);    
         System.out.println(reverse);
         
     }
-    
+    /**
+     * Reverse of a string function.
+     *
+     * @param      s     { String }
+     *
+     * @return     { A string }
+     */
     public static String reverseString(String s) {
         int len = s.length();
         String temp = "";
-        for (int i = len; i > 0; i--) {
+        for (int i = len - 1; i >= 0; i--) {
             temp = temp + s.charAt(i);
         }
 
