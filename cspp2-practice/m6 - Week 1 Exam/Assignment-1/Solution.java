@@ -20,7 +20,6 @@ public final class Solution {
      */
     static void oddComposites(final int n) {
         //System.out.println(n);
-        
         for(int i = 2; i < n; i++) {
             //System.out.println(i);
             int c = 0;
