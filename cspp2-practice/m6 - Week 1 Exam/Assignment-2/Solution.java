@@ -31,9 +31,7 @@ final class Solution {
             for (int j = 0; j < columns; j++) {
                 if (a[i][j] > fifty) {
                     a[i][j] = hundred;
-                }
-
-                else {
+                } else {
 
                     a[i][j] = 0;
                 }
