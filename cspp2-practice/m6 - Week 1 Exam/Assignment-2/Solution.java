@@ -29,11 +29,24 @@ final class Solution {
         final int hundred = 100;
         for (int i = 0; i < rows; i++) {
             for (int j = 0; j < columns; j++) {
-                if (a[i][j] > fifty) {
-                    a[i][j] = hundred;
-                } else {
-
+                if (a[i][j] < fifty) {
                     a[i][j] = 0;
+                } 
+
+                else if ((a[i][j] > 50) && (a[i][j] < 200)) {
+                    a[i][j] = hundred;
+                }
+
+                else if ((a[i][j] > 200) && (a[i][j] < 300)) {
+                    a[i][j] = 200;
+                }
+
+                else if ((a[i][j] > 300) && (a[i][j] < 400)) {
+                    a[i][j] = 400;
+                }
+
+                else {
+                    a[i][j] = 500;
                 }
             }
         }
