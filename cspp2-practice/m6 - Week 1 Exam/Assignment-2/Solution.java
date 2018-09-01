@@ -33,15 +33,19 @@ final class Solution {
                     a[i][j] = 0;
                 } 
 
-                else if ((a[i][j] > 50) && (a[i][j] < 200)) {
+                else if ((a[i][j] > 50) && (a[i][j] < 150)) {
                     a[i][j] = hundred;
                 }
 
-                else if ((a[i][j] > 200) && (a[i][j] < 300)) {
+                else if ((a[i][j] > 150) && (a[i][j] < 250)) {
                     a[i][j] = 200;
                 }
 
-                else if ((a[i][j] > 300) && (a[i][j] < 400)) {
+                else if ((a[i][j] > 250) && (a[i][j] < 350)) {
+                    a[i][j] = 300;
+                }
+
+                else if ((a[i][j] > 350) && (a[i][j] < 450)) {
                     a[i][j] = 400;
                 }
 
