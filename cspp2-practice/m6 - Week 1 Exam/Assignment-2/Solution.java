@@ -27,30 +27,28 @@ final class Solution {
         final int rows, final int columns) {
         final int fifty = 50;
         final int hundred = 100;
+        final int onefifty = 150;
+        final int twohund = 200;
+        final int twofifty = 250;
+        final int threehun = 300;
+        final int threefifty = 350;
+        final int fourhun = 400;
+        final int fourfifty = 450;
+        final int fivehun = 500;
         for (int i = 0; i < rows; i++) {
             for (int j = 0; j < columns; j++) {
                 if (a[i][j] < fifty) {
                     a[i][j] = 0;
-                } 
-
-                else if ((a[i][j] > 50) && (a[i][j] < 150)) {
+                } else if ((a[i][j] > fifty) && (a[i][j] < onefifty)) {
                     a[i][j] = hundred;
-                }
-
-                else if ((a[i][j] > 150) && (a[i][j] < 250)) {
-                    a[i][j] = 200;
-                }
-
-                else if ((a[i][j] > 250) && (a[i][j] < 350)) {
-                    a[i][j] = 300;
-                }
-
-                else if ((a[i][j] > 350) && (a[i][j] < 450)) {
-                    a[i][j] = 400;
-                }
-
-                else {
-                    a[i][j] = 500;
+                } else if ((a[i][j] > onefifty) && (a[i][j] < twofifty)) {
+                    a[i][j] = twohund;
+                } else if ((a[i][j] > twofifty) && (a[i][j] < threefifty)) {
+                    a[i][j] = threehun;
+                } else if ((a[i][j] > threefifty) && (a[i][j] < fourfifty)) {
+                    a[i][j] = fourhun;
+                } else {
+                    a[i][j] = fivehun;
                 }
             }
         }
