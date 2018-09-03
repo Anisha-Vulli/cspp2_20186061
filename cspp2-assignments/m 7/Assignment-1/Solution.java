@@ -29,14 +29,14 @@ class InputValidator {
         int len = s.length();
         final int six = 6;
         return (len >= six);
-           
+
     }
 }
 
 /**
  * Class for solution.
  */
-public class Solution {
+public final class Solution {
     /**
      * Constructs the object.
      */
