@@ -28,11 +28,8 @@ class InputValidator {
     boolean validateData() {
         int len = s.length();
         final int six = 6;
-        if (len >= six) {
-            return true;
-        } else {
-            return false;
-        }
+        return (len >= six);
+           
     }
 }
 
