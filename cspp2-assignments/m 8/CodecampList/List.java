@@ -50,8 +50,8 @@ public class List {
         /**
          * Array declaration.
          */
-
-        arr = new int[10];
+        final int ten = 10;
+        arr = new int[ten];
         size = 0;
     }
 
@@ -60,7 +60,7 @@ public class List {
      *
      * @param      item  The item
      */
-    public void add(int item) {
+    public void add(final int item) {
         //Inserts the specified element at the end of the list.
 
         arr[size] = item;
@@ -82,10 +82,10 @@ public class List {
      *
      * @param      index  The index
      */
-    public void remove(int index) {
+    public void remove(final int index) {
         // write the logic for remove here.
         // Think about what to do to the size variable.
-        
+        final int nine = 9;
         if (index <= 9) {
             int[] temparr = new int[10];
             for (int i = 0, j = 0; i < 10; i++, j++) {
@@ -112,9 +112,9 @@ public class List {
      *
      * @return     { description_of_the_return_value }
      */
-    public int get(int index) {
+    public int get(final int index) {
         // Replace the code below to write the code for get
-        if(arr[index] != 0) {
+        if (arr[index] != 0) {
             System.out.println(arr[index]);
         }
         return -1;
@@ -139,9 +139,10 @@ public class List {
      *
      * @return     { description_of_the_return_value }
      */
-    public boolean contains(int item) {
+    public boolean contains(final int item) {
         // Replace the code below
-        for (int i = 0; i < 10; i++) {
+        final int ten = 10;
+        for (int i = 0; i < ten; i++) {
             if (arr[i] == item) {
                 return true;
             }
@@ -157,9 +158,10 @@ public class List {
      *
      * @return     { description_of_the_return_value }
      */
-    public int indexOf(int item) {
+    public int indexOf(final int item) {
         // Replace the code below
-        for (int i = 0; i < 10; i++) {
+        final int ten = 10;
+        for (int i = 0; i < ten; i++) {
             if (arr[i] == item) {
                 return i;
             }
@@ -169,12 +171,12 @@ public class List {
     }
 
     /**
-     * { function_description }
+     * Main function.
      *
      * @param      args  The arguments
      */
 
-    public static void main(String[] args) {
+    public static void main(final String[] args) {
         // create an object of the list to invoke methods on it
         List l = new List();
 
