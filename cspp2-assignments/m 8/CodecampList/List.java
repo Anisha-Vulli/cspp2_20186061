@@ -86,9 +86,10 @@ public class List {
         // write the logic for remove here.
         // Think about what to do to the size variable.
         final int nine = 9;
-        if (index <= 9) {
-            int[] temparr = new int[10];
-            for (int i = 0, j = 0; i < 10; i++, j++) {
+        final int ten = 10;
+        if (index <= nine) {
+            int[] temparr = new int[ten];
+            for (int i = 0, j = 0; i < ten; i++, j++) {
                     if (i == index - 1) {
                         temparr[j] = arr[i];
                         i += 1;
@@ -223,3 +224,4 @@ public class List {
         }
     }
 }
+
