@@ -3,17 +3,25 @@
  * Date: 04th Sept 2018.
  */
 
+/**
+ * Buffered input stream method.
+ */
 import java.io.BufferedInputStream;
+/**
+ * Scanner method from util class.
+ */
 import java.util.Scanner;
+/**
+ * Array method.
+ */
 import java.util.Arrays;
 
 /**
  * List of .
  */
 public class List {
-    
+
     //Implement all the methods mentioned to build a ListADT
-    
 
     /**
      * Array declaration.
