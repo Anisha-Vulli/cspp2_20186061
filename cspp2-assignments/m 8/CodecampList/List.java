@@ -130,10 +130,12 @@ public class List {
         return false;
     }
 
-    /*
-     * Returns the index of the first occurrence 
-     * of the specified element in this list,
-     * or -1 if this list does not contain the element.
+    /**
+     * Searches for the first match.
+     *
+     * @param      item  The item
+     *
+     * @return     { description_of_the_return_value }
      */
     public int indexOf(int item) {
         // Replace the code below
@@ -145,6 +147,12 @@ public class List {
 
         return -1;
     }
+
+    /**
+     * { function_description }
+     *
+     * @param      args  The arguments
+     */
 
     public static void main(String[] args) {
         // create an object of the list to invoke methods on it
@@ -187,6 +195,8 @@ public class List {
                 case "contains":
                 System.out.println(l.contains(Integer.parseInt(tokens[1])));
                 break;
+
+                default:
             }
         }
     }
