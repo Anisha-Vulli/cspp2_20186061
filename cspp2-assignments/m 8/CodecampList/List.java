@@ -72,7 +72,7 @@ public class List {
         // In the case of the list, it should be empty but
         // it should be initialized with an array size like 10
         
-        arr = new int[10];
+        int[] arr = new int[10];
         size = 0;
 
         // Think about the initial value for size.
