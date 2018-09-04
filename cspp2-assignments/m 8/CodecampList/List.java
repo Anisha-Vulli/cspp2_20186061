@@ -138,15 +138,13 @@ public class List {
         
         if (index <= 9) {
             int[] temparr = new int[10];
-            for (int i = 0; i < 10; i++) {
-                for (int j = 0; j < 10; j++) {
+            for (int i = 0, j = 0; i < 10; i++, j++) {
                     if (i == index - 1) {
                         temparr[j] = arr[i];
                         i += 1;
                     } else {
                         temparr[j] = arr[i];
                     }
-                }
             }
 
             arr = temparr.clone();
