@@ -141,8 +141,8 @@ public class List {
             for (int i = 0; i < 10; i++) {
                 for (int j = 0; j < 0; j++) {
                     if (i == index - 1) {
-                        i += 1;
                         temparr[j] = arr[i];
+                        i += 1;
                     } else {
                         temparr[j] = arr[i];
                     }
@@ -170,6 +170,9 @@ public class List {
      */
     public int get(int index) {
         // Replace the code below to write the code for get
+        if(arr[index] != 0) {
+            System.out.println(arr[index]);
+        }
         return -1;
     }
 
