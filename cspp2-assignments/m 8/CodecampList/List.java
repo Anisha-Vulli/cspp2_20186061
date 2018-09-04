@@ -151,7 +151,7 @@ public class List {
             size -= 1;
 
         } else {
-            System.out.println("Index invalid");
+            System.out.println("Invalid Position Exception");
         }
     }
 
@@ -196,7 +196,7 @@ public class List {
      */
     public String toString() {
         // Replace the code below
-        int[] emptyarr = new int[10];
+        int[] emptyarr = new int[size];
         System.arraycopy(arr, 0, emptyarr, 0, size);
         return (Arrays.toString(emptyarr)).replace(" ", "");
     } 
