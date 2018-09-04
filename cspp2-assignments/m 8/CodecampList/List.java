@@ -42,7 +42,7 @@ public class List {
     // declare a private int size
     // again, don't initialize it here
     // variable initialization should be done in the constructor
-    
+
     /**
      * Constructs the object.
      */
@@ -50,11 +50,11 @@ public class List {
         /**
          * Array declaration.
          */
-        
+
         arr = new int[10];
         size = 0;
     }
-    
+
     /**
      * Add function described.
      *
@@ -130,8 +130,8 @@ public class List {
         int[] emptyarr = new int[size];
         System.arraycopy(arr, 0, emptyarr, 0, size);
         return (Arrays.toString(emptyarr)).replace(" ", "");
-    } 
-    
+    }
+
     /**
      * Function to check if contains.
      *
