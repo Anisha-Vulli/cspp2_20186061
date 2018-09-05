@@ -170,7 +170,7 @@ public class List {
 
         return -1;
     }
-    
+
     /**
      * Count function.
      *
@@ -215,7 +215,7 @@ public class List {
         }
         arr[index] = item;
         size++;
-    
+
     }
 
     /**
@@ -288,4 +288,5 @@ public class List {
         }
     }
 }
+
 
