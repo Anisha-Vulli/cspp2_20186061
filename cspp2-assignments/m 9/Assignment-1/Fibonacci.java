@@ -42,7 +42,7 @@ public final class Fibonacci {
      */
 
     private Fibonacci() {
-    	// Empty constructor.
+        // Empty constructor.
     }
 
     /**
@@ -52,18 +52,18 @@ public final class Fibonacci {
      *
      * @return    list { description_of_the_return_value }
      */
-    public static List fib(int n) {
-    	List l = new List(n);
+    public static List fib(final int n) {
+        List l = new List(n);
         int fib3 = 0;
         int fib1 = 0;
         int fib2 = 1;
         l.add(fib1);
         l.add(fib2);
         for (int i = 2; i < n; i++) {
-        	fib3 = fib2 + fib1;
-        	l.add(fib3);
-        	fib1 = fib2;
-        	fib2 = fib3;
+            fib3 = fib2 + fib1;
+            l.add(fib3);
+            fib1 = fib2;
+            fib2 = fib3;
         }
         return l;
     }
@@ -74,9 +74,10 @@ public final class Fibonacci {
      * @param      args  The arguments
      */
 
-	public static void main(final String[] args) {
+    public static void main(final String[] args) {
         Scanner s = new Scanner(System.in);
         int n = s.nextInt();
         System.out.println(fib(n));
     }
 }
+
