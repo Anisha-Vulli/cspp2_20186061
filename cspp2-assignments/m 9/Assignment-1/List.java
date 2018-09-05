@@ -55,6 +55,7 @@ public class List {
     // again, don't initialize it here
     // variable initialization should be done in the constructor
     private int size;
+    int length;
 
     /*
      * The purpose of the constructor is to initialize the
@@ -63,21 +64,21 @@ public class List {
     
     
 
-    public List() {
+    // public List() {
 
-        // what are the two variables to be initialized here?
-        // think about the private variables described above.
-        // What should be the default values?
-        // In the case of the list, it should be empty but
-        // it should be initialized with an array size like 10
-        list = new int[10];
+    //     // what are the two variables to be initialized here?
+    //     // think about the private variables described above.
+    //     // What should be the default values?
+    //     // In the case of the list, it should be empty but
+    //     // it should be initialized with an array size like 10
+    //     list = new int[10];
 
-        // Think about the initial value for size.
-        // How many items do we have in the list when you create it?
-        // An empty list has how many items?
-        // That is the initial value to use for size.
-        size = 0;
-    }
+    //     // Think about the initial value for size.
+    //     // How many items do we have in the list when you create it?
+    //     // An empty list has how many items?
+    //     // That is the initial value to use for size.
+    //     size = 0;
+    // }
 
     /*
      * Overloaded constructor with list capacity as argument
@@ -95,6 +96,12 @@ public class List {
      */
 
     // todo - add an overloaded constructor here
+
+    public List(int len) {
+        this.length = len;
+        list = new int[length];
+        size = 0;
+    }
 
     
     /*
