@@ -31,6 +31,8 @@ public class Fibonacci
         int fib3 = 0;
         int fib1 = 0;
         int fib2 = 1;
+        l.add(fib1);
+        l.add(fib2);
         for (int i = 0; i < n; i++) {
         	fib3 = fib2 + fib1;
         	l.add(fib3);
