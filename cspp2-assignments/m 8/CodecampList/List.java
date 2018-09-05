@@ -170,6 +170,52 @@ public class List {
 
         return -1;
     }
+    
+    /**
+     * Count function.
+     *
+     * @param      item  The item
+     *
+     * @return     { description_of_the_return_value }
+     */
+
+    public int count(final int item) {
+        int countval = 0;
+        for (int i = 0; i < size; i++) {
+            if (item == arr[i]) {
+                countval = countval + 1;
+            }
+        }
+
+        return countval;
+    }
+
+    /**
+     * Adds all.
+     *
+     * @param      array  The array
+     */
+
+    public void addAll(final int[] array) {
+        for(int i = 0; i < arr.length; i++)
+            add(arr[i]);
+    }
+
+    /**
+     * Adds a 1.
+     *
+     * @param      index  The index
+     * @param      item   The item
+     */
+
+    public void add1(final int index, final int item) {
+        for (int i = size; i > index; i--) {
+            arr[i] = arr[i - 1];
+        }
+        arr[index] = item;
+        size++;
+    
+    }
 
     /**
      * Main function.
@@ -217,6 +263,22 @@ public class List {
                 break;
                 case "contains":
                 System.out.println(l.contains(Integer.parseInt(tokens[1])));
+                break;
+
+                case "count":
+                System.out.println(l.count(Integer.parseInt(tokens[1])));
+                break;
+
+                case "addAll":
+                int[] array1 = new int[tokens.length - 1];
+                for (int i = 0; i < tokens.length - 1; i++){
+                    array1[i] = Integer.parseInt(tokens[i + 1]);
+                }
+                l.addAll(array1);
+                break;
+
+                case "addindex":
+                l.add1(Integer.parseInt(tokens[1]), Integer.parseInt(tokens[2]));
                 break;
 
                 default:
