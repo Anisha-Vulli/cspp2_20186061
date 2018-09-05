@@ -197,7 +197,7 @@ public class List {
      */
 
     public void addAll(final int[] array) {
-        for(int i = 0; i < arr.length; i++)
+        for (int i = 0; i < arr.length; i++)
             add(arr[i]);
     }
 
@@ -271,14 +271,15 @@ public class List {
 
                 case "addAll":
                 int[] array1 = new int[tokens.length - 1];
-                for (int i = 0; i < tokens.length - 1; i++){
+                for (int i = 0; i < tokens.length - 1; i++) {
                     array1[i] = Integer.parseInt(tokens[i + 1]);
                 }
                 l.addAll(array1);
                 break;
 
                 case "addindex":
-                l.add1(Integer.parseInt(tokens[1]), Integer.parseInt(tokens[2]));
+                l.add1(Integer.parseInt(tokens[1]),
+                    Integer.parseInt(tokens[2]));
                 break;
 
                 default:
