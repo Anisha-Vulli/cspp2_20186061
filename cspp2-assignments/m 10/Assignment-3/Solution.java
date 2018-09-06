@@ -87,51 +87,51 @@ public class Solution {
             case "I"://This case will be executed for Integer type list
                 List<Integer> listInteger = new List();
                 while (stdin.hasNext()) {
-                    // read the line
-                    String line = stdin.nextLine();
-                    // split the line using space
-                    String[] tokens = line.split(" ");
-                    // based on the list operation invoke the corresponding method
-                    switch (tokens[0]) {
-                        case "add":
-                            listInteger.add(Integer.parseInt(tokens[1]));
-                        break;
-                        case "addAll":
-                        if(tokens.length == 2){
-                        String[] t1 = tokens[1].split(",");
-                        Integer[] temp = new Integer[t1.length];
-                        for (int i = 0;i < temp.length; i++ ) {
-                            temp[i] = Integer.parseInt(t1[i]);
-                        }
-                        listInteger.addAll(temp);
-                        }
-                        break;
-                        case "size":
-                        // invoke size method and print the list size
-                        // BTW, list size is not the array size
-                        // it is the number of items in the list
-                        System.out.println(listInteger.size());
-                        break;
-                        case "print":
-                        // print the list (implement toString in List class
-                        //for this to work)
-                        // expected format is [item-1,item-2,...,item-n]
-                        // review the output testcase file
-                        System.out.println(listInteger);
-                        break;
-                        case "remove":
-                        listInteger.remove(Integer.parseInt(tokens[1]));
-                        break;
-                        case "indexOf":
-                        System.out.println(listInteger.indexOf(Integer.parseInt((tokens[1]))));
-                        break;
-                        case "get":
-                        System.out.println(listInteger.get(Integer.parseInt(tokens[1])));
-                        break;
-                        case "contains":
-                        System.out.println(listInteger.contains(Integer.parseInt((tokens[1]))));
-                        break;
-                        default:
+                  // read the line
+                  String line = stdin.nextLine();
+                  // split the line using space
+                  String[] tokens = line.split(" ");
+                  // based on the list operation invoke the corresponding method
+                  switch (tokens[0]) {
+                    case "add":
+                      listInteger.add(Integer.parseInt(tokens[1]));
+                      break;
+                    case "addAll":
+                      if (tokens.length == 2) {
+                       String[] t1 = tokens[1].split(",");
+                       Integer[] temp = new Integer[t1.length];
+                       for (int i = 0; i < temp.length; i++) {
+                         temp[i] = Integer.parseInt(t1[i]);
+                       }
+                       listInteger.addAll(temp);
+                      }
+                    break;
+                    case "size":
+                      // invoke size method and print the list size
+                      // BTW, list size is not the array size
+                      // it is the number of items in the list
+                      System.out.println(listInteger.size());
+                      break;
+                    case "print":
+                      // print the list (implement toString in List class
+                      //for this to work)
+                      // expected format is [item-1,item-2,...,item-n]
+                      // review the output testcase file
+                      System.out.println(listInteger);
+                      break;
+                    case "remove":
+                      listInteger.remove(Integer.parseInt(tokens[1]));
+                      break;
+                    case "indexOf":
+                      System.out.println(listInteger.indexOf(Integer.parseInt((tokens[1]))));
+                      break;
+                    case "get":
+                      System.out.println(listInteger.get(Integer.parseInt(tokens[1])));
+                      break;
+                    case "contains":
+                      System.out.println(listInteger.contains(Integer.parseInt((tokens[1]))));
+                      break;
+                    default:
                     }
                 }
             break;
