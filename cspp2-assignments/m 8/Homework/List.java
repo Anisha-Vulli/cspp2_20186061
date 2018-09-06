@@ -262,13 +262,11 @@ public class List {
      */
     public void add(final int index,final int item) {
         
-        for (int i = 0; i < list.length; i++) {
-            if (index == i) {
-                list[i] = item;
-            } else {
-                list[i] = list[i];
-            }
+        for (int i = size; i > index; i--) {
+            list[i] = list[i - 1];
         }
+        list[index] = item;
+        size++;
 
         //return list; 
     }
