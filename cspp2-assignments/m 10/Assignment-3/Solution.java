@@ -39,47 +39,50 @@ public class Solution {
             case "S"://This case will be executed for String type list
                 List<String> listString = new List();
                 while (stdin.hasNext()) {
-                    // read the line
-                    String line = stdin.nextLine();
-                    // split the line using space
-                    String[] tokens = line.split(" ");
-                    // based on the list operation invoke the corresponding method
-                    switch (tokens[0]) {
-                        case "add":
-                            listString.add(tokens[1]);
-                        break;
-                        case "addAll":
-                        if(tokens.length == 2) {
+                  // read the line
+                  String line = stdin.nextLine();
+                  // split the line using space
+                  String[] tokens = line.split(" ");
+                  // based on the list operation invoke the corresponding method
+                  switch (tokens[0]) {
+                    case "add":
+                      listString.add(tokens[1]);
+                      break;
+                    case "addAll":
+                      if (tokens.length == 2) {
                         String[] t1 = tokens[1].split(",");
                         listString.addAll(t1);
-                        }
-                        break;
-                        case "size":
-                        // invoke size method and print the list size
-                        // BTW, list size is not the array size
-                        // it is the number of items in the list
-                        System.out.println(listString.size());
-                        break;
-                        case "print":
-                        // print the list (implement toString in List class
-                        //for this to work)
-                        // expected format is [item-1,item-2,...,item-n]
-                        // review the output testcase file
-                        System.out.println(listString);
-                        break;
-                        case "remove":
-                        listString.remove(Integer.parseInt(tokens[1]));
-                        break;
-                        case "indexOf":
-                        System.out.println(listString.indexOf(tokens[1]));
-                        break;
-                        case "get":
-                        System.out.println(listString.get(Integer.parseInt(tokens[1])));
-                        break;
-                        case "contains":
-                        System.out.println(listString.contains(tokens[1]));
-                        break;
-                        default:
+                      }
+                      break;
+                    case "size":
+                      // invoke size method and print the list size
+                      // BTW, list size is not the array size
+                      // it is the number of items in the list
+                      System.out.println(listString.size());
+                      break;
+                    case "print":
+                      // print the list (implement toString in List class
+                      //for this to work)
+                      // expected format is [item-1,item-2,...,item-n]
+                      // review the output testcase file
+                      System.out.println(listString);
+                      break;
+                    case "remove":
+                      listString.remove(Integer.parseInt(tokens[1]));
+                      break;
+                    case "indexOf":
+                      System.out.println(
+                        listString.indexOf(tokens[1]));
+                      break;
+                    case "get":
+                      System.out.println(
+                        listString.get(Integer.parseInt(tokens[1])));
+                      break;
+                    case "contains":
+                      System.out.println(
+                        listString.contains(tokens[1]));
+                      break;
+                    default:
                     }
                 }
             break;
