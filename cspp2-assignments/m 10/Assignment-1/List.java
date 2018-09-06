@@ -1,9 +1,29 @@
+/**
+ * Author : Anisha Vulli.
+ * Date : 06th Sept 2018.
+ */
+
+/**
+ * Buffered input stream import.
+ */
 import java.io.BufferedInputStream;
+
+/**
+ * Scanner method.
+ */
 import java.util.Scanner;
+
+/**
+ * Arrays import.
+ */
 import java.util.Arrays;
 
+/**
+ * List class.
+ */
+
 public class List {
-	//Implement all the methods mentioned to build a ListADT
+    //Implement all the methods mentioned to build a ListADT
 
     /*
      * The goal for the list is to store items.
@@ -292,7 +312,7 @@ public class List {
 
      /* 
         Inserts the specified element at the specified index 
-	by moving all the elements to the right.
+    by moving all the elements to the right.
         The method returns void (nothing)
      */
     public void add(final int index, final int item) {
@@ -322,7 +342,7 @@ public class List {
     }
 
 
-	public static void main(String[] args) {
+    public static void main(String[] args) {
         // create an object of the list to invoke methods on it
         List l = new List();
 
@@ -386,5 +406,5 @@ public class List {
                 break;
             }
         }
-	}
+    }
 }
