@@ -329,6 +329,14 @@ public class List {
     }
     
     /* Returns the count of occurances of a given item in the list*/
+
+    /**
+     * Count function.
+     *
+     * @param      item  The item
+     *
+     * @return     { count value. }
+     */
     public int count(final int item) {
         int countval = 0;
         for (int i = 0; i < size; i++) {
