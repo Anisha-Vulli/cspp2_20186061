@@ -261,12 +261,16 @@ public class List {
      * @param      item   The item
      */
     public void add(final int index,final int item) {
-        
-        for (int i = size; i > index; i--) {
+        if (index > 0) {
+            for (int i = size; i > index; i--) {
             list[i] = list[i - 1];
+           }
+           list[index] = item;
+           size++;
+        } else {
+            System.out.println("Negitive index exception");
         }
-        list[index] = item;
-        size++;
+        
 
         //return list; 
     }
