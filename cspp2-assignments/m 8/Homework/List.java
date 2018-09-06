@@ -270,7 +270,7 @@ public class List {
             }
         }
 
-        System.out.println(list); 
+        //return list; 
     }
     
     /* Returns the count of occurances of a given item in the list*/
