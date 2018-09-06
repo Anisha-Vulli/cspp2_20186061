@@ -1,18 +1,59 @@
+/**
+ * Author : Anisha Vulli.
+ * Date : 06th Sept 2018.
+ */
+
+/**
+ * Buffered input stream.
+ */
 import java.io.BufferedInputStream;
+
+/**
+ * Scanner method.
+ */
 import java.util.Scanner;
 //A Class is implemented for Student details
+
+/**
+ * Class for student.
+ */
 class Student {
+    /**
+     * Name string declaration.
+     */
     private String name;
     
-    public Student(final String name) {//A constructor used to initialize the instance variables
+
+    /**
+     * Constructs the object.
+     *
+     * @param      name  The name
+     */
+    public Student(final String name) {
+       //A constructor used to initialize the instance variables
         this.name = name;
     }
 
-    public String getName() {//Getter method which returns the value of instance variable
+    /**
+     * Gets the name.
+     *
+     * @return     The name.
+     */
+
+    public String getName() {
+       //Getter method which returns the value of instance variable
         return this.name;
     }
 
     @Override
+
+    /**
+     * Equals function.
+     *
+     * @param      other  The other
+     *
+     * @return     { description_of_the_return_value }
+     */
     public boolean equals(Object other) { //This method is to check if two students names are equal or not
         if (!(other instanceof Student)) {
             return false;
@@ -22,12 +63,22 @@ class Student {
         return this.getName().equals(that.getName());
     }
 
+    /**
+     * Returns a string representation of the object.
+     *
+     * @return     String representation of the object.
+     */
+
     public String toString() {
         return this.name;
     }
 }
 
-public class Solution {
+
+/**
+ * Solution class.
+ */
+public final class Solution {
     /**
      * MAin function.
      *
