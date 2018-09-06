@@ -123,13 +123,16 @@ public class Solution {
                       listInteger.remove(Integer.parseInt(tokens[1]));
                       break;
                     case "indexOf":
-                      System.out.println(listInteger.indexOf(Integer.parseInt((tokens[1]))));
+                      System.out.println(
+                        listInteger.indexOf(Integer.parseInt((tokens[1]))));
                       break;
                     case "get":
-                      System.out.println(listInteger.get(Integer.parseInt(tokens[1])));
+                      System.out.println(
+                        listInteger.get(Integer.parseInt(tokens[1])));
                       break;
                     case "contains":
-                      System.out.println(listInteger.contains(Integer.parseInt((tokens[1]))));
+                      System.out.println(
+                        listInteger.contains(Integer.parseInt((tokens[1]))));
                       break;
                     default:
                     }
