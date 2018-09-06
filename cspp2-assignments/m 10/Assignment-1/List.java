@@ -303,15 +303,14 @@ public class List {
     /**
      * Adding a list of elements.
      */
-    public void addAll(final int items[])
-    {
+    public void addAll(final int[] items) {
        for (int i = 0; i < items.length; i++) {
             add(items[i]);
         }
     }
 
-     /* 
-        Inserts the specified element at the specified index 
+     /*
+        Inserts the specified element at the specified index
     by moving all the elements to the right.
         The method returns void (nothing)
      */
