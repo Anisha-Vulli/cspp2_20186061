@@ -29,7 +29,7 @@ class Student {
      *
      * @param      name  The name
      */
-    public Student(final String name) {
+    protected Student(final String name) {
        //A constructor used to initialize the instance variables
         this.name1 = name;
     }
