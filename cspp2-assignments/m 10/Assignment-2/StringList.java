@@ -244,8 +244,8 @@ public class StringList implements StringListInterface{
         String str = "[";
         for (int i = 0; i < size - 1; i++) {
             str = str + list[i] + ",";
-        str = str + list[i] + "]";
         }
+        str = str + "]";
         return str;
     }
     
