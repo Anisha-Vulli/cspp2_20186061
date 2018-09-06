@@ -409,7 +409,7 @@ public class List {
            list[index] = item;
            size++;
         } else {
-            System.out.println("Negitive Index exception");
+            System.out.println("Negitive Index Exception");
         }
     }
 
