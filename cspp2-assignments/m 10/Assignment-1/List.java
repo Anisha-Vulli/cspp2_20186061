@@ -301,7 +301,9 @@ public class List {
     array to the end of list*/
 
     /**
-     * Adding a list of elements.
+     * Adds all.
+     *
+     * @param      items  The items
      */
     public void addAll(final int[] items) {
        for (int i = 0; i < items.length; i++) {
