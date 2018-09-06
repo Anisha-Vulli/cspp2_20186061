@@ -71,7 +71,8 @@ public class List {
         // What should be the default values?
         // In the case of the list, it should be empty but
         // it should be initialized with an array size like 10
-        list = new int[10];
+        final int ten = 10;
+        list = new int[ten];
 
         // Think about the initial value for size.
         // How many items do we have in the list when you create it?
@@ -112,7 +113,11 @@ public class List {
      */
     public void add(int item) {
         //Inserts the specified element at the end of the zelist.
-        list[size++] = item;   
+       try {
+            list[size++] = item;
+        } catch (Exception e) {
+            resize();
+        }
     }
 
     /**
