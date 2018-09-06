@@ -225,7 +225,7 @@ public class List {
      * the item exists and otherwise false
      */
     public boolean contains(int item) {
-        return indexOf(item) == -1;
+        return indexOf(item) != -1;
     }
 
     /*
