@@ -21,7 +21,7 @@ class Student {
     /**
      * Name string declaration.
      */
-    private String name;
+    private String name1;
 
 
     /**
@@ -31,7 +31,7 @@ class Student {
      */
     public Student(final String name) {
        //A constructor used to initialize the instance variables
-        this.name = name;
+        this.name1 = name;
     }
 
     /**
@@ -42,7 +42,7 @@ class Student {
 
     public String getName() {
        //Getter method which returns the value of instance variable
-        return this.name;
+        return this.name1;
     }
 
     @Override
@@ -71,7 +71,7 @@ class Student {
      */
 
     public String toString() {
-        return this.name;
+        return this.name1;
     }
 }
 
