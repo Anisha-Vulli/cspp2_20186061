@@ -201,10 +201,10 @@ public class Solution {
                       listCharacter.add(tokens[1].charAt(0));
                       break;
                     case "addAll":
-                      if(tokens.length == 2) {
+                      if (tokens.length == 2) {
                       String[] t1 = tokens[1].split(",");
                       Character[] temp = new Character[t1.length];
-                      for (int i = 0; i < t1.length ;i++ ) {
+                      for (int i = 0; i < t1.length; i++ ) {
                          temp[i] = t1[i].charAt(0);
                       }
                       listCharacter.addAll(temp);
