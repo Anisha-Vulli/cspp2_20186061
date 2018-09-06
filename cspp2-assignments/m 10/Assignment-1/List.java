@@ -315,8 +315,15 @@ public class List {
     by moving all the elements to the right.
         The method returns void (nothing)
      */
+
+    /**
+     * Add function.
+     *
+     * @param      index  The index
+     * @param      item   The item
+     */
     public void add(final int index, final int item) {
-        
+
         if (index >= 0) {
             for (int i = size; i > index; i--) {
             list[i] = list[i - 1];
@@ -327,7 +334,7 @@ public class List {
             System.out.println("Negitive index exception");
         }
     }
-    
+
     /* Returns the count of occurances of a given item in the list*/
 
     /**
