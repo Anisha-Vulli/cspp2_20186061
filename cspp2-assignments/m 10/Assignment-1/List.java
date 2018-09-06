@@ -375,7 +375,13 @@ public class List {
      */
     public void addAll(final int[] items) {
        for (int i = 0; i < items.length; i++) {
-            add(items[i]);
+            try {
+                list[size] = items[i];
+                size++;
+            } catch (Exception e) {
+                resize();
+                list[size++] = items[i];
+            }
         }
     }
 
