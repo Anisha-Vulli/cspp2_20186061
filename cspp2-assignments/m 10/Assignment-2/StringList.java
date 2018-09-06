@@ -127,8 +127,10 @@ public class StringList implements StringListInterface{
 
     public void add(String item) {
         //Inserts the specified element at the end of the list.
+        final int one = 1;
         try {
-            list[size++] = item;
+            list[size] = item;
+            size += one;
         } catch (Exception e) {
             resize();
         }
