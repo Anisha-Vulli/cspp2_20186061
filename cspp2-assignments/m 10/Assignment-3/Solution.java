@@ -22,7 +22,7 @@ class Student {
      * Name string declaration.
      */
     private String name;
-    
+
 
     /**
      * Constructs the object.
@@ -54,7 +54,7 @@ class Student {
      *
      * @return     { description_of_the_return_value }
      */
-    public boolean equals(Object other) { //This method is to check if two students names are equal or not
+    public boolean equals(final Object other) { //This method is to check if two students names are equal or not
         if (!(other instanceof Student)) {
             return false;
         }
@@ -79,11 +79,22 @@ class Student {
  * Solution class.
  */
 public final class Solution {
+    
+    /**
+     * Constructs the object.
+     */
+
+    private Solution() {
+        //Empty constructor.
+    }
+
     /**
      * MAin function.
      *
      * @param      args  The arguments
      */
+
+
 
     public static void main(final String[] args) {
         // create an object of the list to invoke methods on it
