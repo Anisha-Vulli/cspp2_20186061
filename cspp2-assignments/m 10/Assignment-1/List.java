@@ -322,7 +322,7 @@ public class List {
             str = str + list[i] + ",";
         }
         str = str + list[i] + "]";
-        if(list[0] == 0 && size == 1){
+        if (list[0] == 0 && size == 1) {
             str = str + "\n" + "Invalid Position Exception";
         }
         return str;
@@ -507,4 +507,5 @@ public class List {
         }
     }
 }
+
 
