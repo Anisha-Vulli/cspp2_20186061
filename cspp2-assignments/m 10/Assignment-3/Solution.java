@@ -28,14 +28,18 @@ class Student {
 }
 
 public class Solution {
-    
+    /**
+     * MAin function.
+     *
+     * @param      args  The arguments
+     */
 
-    public static void main(String[] args) {
+    public static void main(final String[] args) {
         // create an object of the list to invoke methods on it
         Scanner stdin = new Scanner(new BufferedInputStream(System.in));
         String objectType = stdin.nextLine();
 
-        switch(objectType) {
+        switch (objectType) {
             case "S"://This case will be executed for String type list
                 List<String> listString = new List();
                 while (stdin.hasNext()) {
