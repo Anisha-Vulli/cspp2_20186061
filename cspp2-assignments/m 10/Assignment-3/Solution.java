@@ -244,55 +244,58 @@ public class Solution {
                 List<Double> listDouble = new List();
                 while (stdin.hasNext()) {
                     // read the line
-                    String line = stdin.nextLine();
-                    // split the line using space
-                    String[] tokens = line.split(" ");
-                    // based on the list operation invoke the corresponding method
-                    switch (tokens[0]) {
-                        case "add":
-                            listDouble.add(Double.parseDouble(tokens[1]));
-                        break;
-                        case "addAll":
-                        if(tokens.length == 2) {
-                        String[] t1 = tokens[1].split(",");
-                        Double[] temp = new Double[t1.length];
-                        for (int i = 0; i < t1.length ;i++ ) {
-                            temp[i] = Double.parseDouble(t1[i]);
-                        }
-                        listDouble.addAll(temp);
-                        }
-                        break;
-                        case "size":
-                        // invoke size method and print the list size
-                        // BTW, list size is not the array size
-                        // it is the number of items in the list
-                        System.out.println(listDouble.size());
-                        break;
-                        case "print":
-                        // print the list (implement toString in StringList class
-                        //for this to work)
-                        // expected format is [item-1,item-2,...,item-n]
-                        // review the output testcase file
-                        System.out.println(listDouble);
-                        break;
-                        case "remove":
-                        listDouble.remove(Integer.parseInt(tokens[1]));
-                        break;
-                        case "indexOf":
-                        System.out.println(listDouble.indexOf(Double.parseDouble(tokens[1])));
-                        break;
-                        case "get":
-                        System.out.println(listDouble.get(Integer.parseInt(tokens[1])));
-                        break;
-                        case "contains":
-                        System.out.println(listDouble.contains(Double.parseDouble(tokens[1])));
-                        break;
-                        default:
+                  String line = stdin.nextLine();
+                  // split the line using space
+                  String[] tokens = line.split(" ");
+                  // based on the list operation invoke the corresponding method
+                  switch (tokens[0]) {
+                    case "add":
+                    listDouble.add(Double.parseDouble(tokens[1]));
+                    break;
+                    case "addAll":
+                    if(tokens.length == 2) {
+                      String[] t1 = tokens[1].split(",");
+                      Double[] temp = new Double[t1.length];
+                      for (int i = 0; i < t1.length ;i++ ) {
+                        temp[i] = Double.parseDouble(t1[i]);
+                      }
+                      listDouble.addAll(temp);
+                      }
+                      break;
+                      case "size":
+                      // invoke size method and print the list size
+                      // BTW, list size is not the array size
+                      // it is the number of items in the list
+                      System.out.println(listDouble.size());
+                      break;
+                      case "print":
+                      // print the list (implement toString in StringList class
+                      //for this to work)
+                      // expected format is [item-1,item-2,...,item-n]
+                      // review the output testcase file
+                      System.out.println(listDouble);
+                      break;
+                      case "remove":
+                      listDouble.remove(Integer.parseInt(tokens[1]));
+                      break;
+                      case "indexOf":
+                      System.out.println(
+                        listDouble.indexOf(Double.parseDouble(tokens[1])));
+                      break;
+                      case "get":
+                      System.out.println(
+                        listDouble.get(Integer.parseInt(tokens[1])));
+                      break;
+                      case "contains":
+                      System.out.println(
+                            listDouble.contains(Double.parseDouble(tokens[1])));
+                      break;
+                      default:
                     }
                 }
             break;
 
-            case "O"://This case will be executed for Student type list i.e to store List of Student Objects
+            case "O":
                 List<Student> listStudent = new List();
                 while (stdin.hasNext()) {
                   String line = stdin.nextLine();
