@@ -354,10 +354,22 @@ public class List {
      */
     public List subList(final int start, final int end) {
         List l1 = new List();
-        if (start < 0 || start > end || end < 0 || start == end || size == 0) {
+        if (start <= 0 || end <= 0) {
             System.out.println("Index Out of Bounds Exception");
             return null;
-        } else {
+        }
+
+        if (start > size || end > size || size == 0) {
+            System.out.println("Index Out of Bounds Exception");
+            return null;
+        }
+
+        if (start > end) {
+            System.out.println("Index Out of Bounds Exception");
+            return null;
+        }
+        
+        else {
             for (int i = start; i < end; i++) {
                     l1.add(list[i]);
             }
