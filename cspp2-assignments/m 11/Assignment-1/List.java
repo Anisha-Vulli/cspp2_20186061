@@ -269,7 +269,7 @@ public class List {
     public boolean contains(final int item) {
         // Replace the code below
         for (int i = 0; i < size; i++) {
-            if(item == list[i]) {
+            if (item == list[i]) {
                 return true;
             }
         }
@@ -357,19 +357,13 @@ public class List {
         if (start <= 0 || end <= 0) {
             System.out.println("Index Out of Bounds Exception");
             return null;
-        }
-
-        else if (start > size || end > size || size == 0) {
+        } else if (start > size || end > size || size == 0) {
             System.out.println("Index Out of Bounds Exception");
             return null;
-        }
-
-        else if (start > end) {
+        } else if (start > end) {
             System.out.println("Index Out of Bounds Exception");
             return null;
-        }
-        
-        else {
+        } else {
             for (int i = start; i < end; i++) {
                     l1.add(list[i]);
             }
