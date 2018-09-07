@@ -299,7 +299,7 @@ public class List {
      *
      * @param      newArray  The new array
      */
-    public void addAll(int[] newArray) {
+    public void addAll(final int[] newArray) {
         for (int i = 0; i < newArray.length; i++) {
             try {
                 list[size] = newArray[i];
@@ -365,14 +365,14 @@ public class List {
      *
      * @return     { description_of_the_return_value }
      */
-    public boolean equals(final List list) {
+    public boolean equals(final List list1) {
         // Replace the code below
-        if (size() != list.size()) {
+        if (size() != list1.size()) {
             return false;
         }
 
         for (int  i = 0; i < size; i++) {
-            if (list.contains(this.list[i])) {
+            if (list1.contains(this.list[i])) {
                 return false;
             }
         }
