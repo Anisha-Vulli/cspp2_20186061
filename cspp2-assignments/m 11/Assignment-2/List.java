@@ -221,6 +221,7 @@ public class List<E> {
 
     /*Removes all the elements from list*/
     public void clear() {
-        removeAll(list);
+        //removeAll(list);
+        size = 0;
     }
 }
