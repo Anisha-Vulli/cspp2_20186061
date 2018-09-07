@@ -1,19 +1,41 @@
 import java.io.BufferedInputStream;
 import java.util.Scanner;
-//A Class is implemented for Student details
+/**
+ * Class for student.
+ */
 class Student {
-    private String name;
-
-    public Student(String name) {//A constructor used to initialize the instance variables
-        this.name = name;
+    /**
+     * { It is of string type }.
+     */
+    private String studentname;
+    /**
+     * Constructs the object.
+     *
+     * @param      name  The name
+     */
+    Student(final String name) {
+        //A constructor used to initialize the instance variables
+        this.studentname = name;
     }
-
-    public String getName() {//Getter method which returns the value of instance variable
-        return this.name;
+    /**
+     * Gets the name.
+     *
+     * @return     The name.
+     */
+    public String getName() {
+        //Getter method which returns the value of instance variable
+        return this.studentname;
     }
-
     @Override
-    public boolean equals(Object other) { //This method is to check if two students names are equal or not
+    /**
+     * { To check for names }.
+     *
+     * @param      other  The other
+     *
+     * @return     { description_of_the_return_value }
+     */
+    public boolean equals(final Object other) {
+        //This method is to check if two students names are equal or not
         if (!(other instanceof Student)) {
             return false;
         }
@@ -21,13 +43,32 @@ class Student {
         Student that = (Student) other;
         return this.getName().equals(that.getName());
     }
-
+    @Override
+    public int hashCode() {
+        return 0;
+    }
+    /**
+     * Returns a string representation of the object.
+     *
+     * @return     String representation of the object.
+     */
     public String toString() {
-        return this.name;
+        return this.studentname;
     }
 }
 
+/**
+ * Solution class.
+ */
+
 public final class Solution {
+
+    /**
+     * Constructs the object.
+     */
+    private Solution() {
+        //Empty constructor.
+    }
 
     /**
      * Integer List method.
@@ -85,7 +126,7 @@ public final class Solution {
                         String[] t1 = tokens[1].split(",");
                         Integer[] temp = new Integer[t1.length];
                         for (int i = 0; i < temp.length; i++) {
-                            temp[i]=Integer.parseInt(t1[i]);
+                            temp[i] = Integer.parseInt(t1[i]);
                         }
                         l.addAll(temp);
                     }
@@ -100,7 +141,7 @@ public final class Solution {
                         l.removeAll(a);
                     }
                 break;
-                case "subList": {
+                case "subList":
                     if (tokens.length != 2) {
                         break;
                     }
@@ -111,12 +152,12 @@ public final class Solution {
                         System.out.println(object);
                     }
                     break;
-                }
+
                 case "equals":
                     if (tokens.length == 2) {
                         String[] lt = tokens[1].split(",");
                         List l2 = new List();
-                        for (int k = 0; k < lt.length; k++ ) {
+                        for (int k = 0; k < lt.length; k++) {
                             l2.add(Integer.parseInt(lt[k]));
                         }
                         System.out.println(l.equals(l2));
