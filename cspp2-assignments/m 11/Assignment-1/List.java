@@ -299,8 +299,16 @@ public class List {
     */
     public List subList(final int start, final int end) 
     {
-
-        return new List();
+        List l1 = new List();
+        if (start < 0 || end < size || end < 0) {
+            System.out.println("Index out of bounds");
+            return null;
+        } else {
+            for (int i = start; i <= end; i++) {
+                    l1.add(list[i]);
+            }
+            return l1;
+        }
     }
     /*
     Returns a boolean indicating whether the parameter i.e a List object is
@@ -328,9 +336,10 @@ public class List {
     */
     public void clear()
     {
-        for (int i = 0; i < size; i++) {
-            remove(i);
-        }
+        list = new int[10];
+        // for (int i = 0; i < size; i++) {
+        //     remove(i);
+        // }
 
     }
 
