@@ -345,7 +345,7 @@ public class List {
      */
     public List subList(final int start, final int end) {
         List l1 = new List();
-        if (start < 0 || start > end || end < 0) {
+        if (start < 0 || start > end || end < 0 || start == end || size == 0) {
             System.out.println("Index Out of Bounds Exception");
             return null;
         } else {
