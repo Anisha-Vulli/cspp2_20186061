@@ -283,8 +283,12 @@ public class List {
      Removes all of its elements that are contained in the specified int 
      array.    
     */
-     public void removeAll(final int[] newArray)
-     {
+     /**
+      * Removes all.
+      *
+      * @param      newArray  The new array
+      */
+     public void removeAll(final int[] newArray) {
         for (int i = 0; i < newArray.length; i++) {
             remove(newArray[i]);
         }
@@ -297,8 +301,16 @@ public class List {
     "Index Out of Bounds Exception" if any of values start and end are negative
     and also if start is greater than end.
     */
-    public List subList(final int start, final int end) 
-    {
+
+    /**
+     * Sublist function.
+     *
+     * @param      start  The start
+     * @param      end    The end
+     *
+     * @return     { description_of_the_return_value }
+     */
+    public List subList(final int start, final int end) {
         List l1 = new List();
         if (start < 0 || start > end || end < 0) {
             System.out.println("Index Out of Bounds Exception");
@@ -314,8 +326,15 @@ public class List {
     Returns a boolean indicating whether the parameter i.e a List object is
     exactly matching with the given list or not.
     */
-    public boolean equals(List list) 
-    {
+
+    /**
+     * Equal function.
+     *
+     * @param      list  The list
+     *
+     * @return     { description_of_the_return_value }
+     */
+    public boolean equals(List list) {
         // Replace the code below
         if (size() != list.size()) {
             return false;
@@ -334,16 +353,24 @@ public class List {
     * Think about this case and make the method
     * the simpler.
     */
-    public void clear()
-    {
-        list = new int[10];
+
+    /**
+     * Clear all elements.
+     */
+    public void clear() {
+        final int ten = 10;
+        list = new int[ten];
         // for (int i = 0; i < size; i++) {
         //     remove(i);
         // }
 
     }
-
-    public static void main(String[] args) {
+    /**
+     * Main function.
+     *
+     * @param      args  The arguments
+     */
+    public static void main(final String[] args) {
         // create an object of the list to invoke methods on it
         List l = new List();
 
@@ -358,7 +385,7 @@ public class List {
             // based on the list operation invoke the corresponding method
             switch (tokens[0]) {
                 case "add":
-                    if (tokens.length == 2){
+                    if (tokens.length == 2) {
                         String[] t = tokens[1].split(",");
                         if (t.length == 1) {
                             l.add(Integer.parseInt(tokens[1]));
@@ -398,8 +425,8 @@ public class List {
                     if (tokens.length == 2) {
                         String[] t1 = tokens[1].split(",");
                         int[] temp = new int[t1.length];
-                        for(int i = 0; i < temp.length; i++) {
-                            temp[i]=Integer.parseInt(t1[i]);
+                        for (int i = 0; i < temp.length; i++) {
+                            temp[i] = Integer.parseInt(t1[i]);
                         }
                         l.addAll(temp);
                     }
@@ -414,22 +441,22 @@ public class List {
                         l.removeAll(a);
                     }
                 break;
-                case "subList": {
+                case "subList":
                     if (tokens.length != 2) {
                         break;
                     }
                     String[] arrstring3 = tokens[1].split(",");
                     List object = l.subList(Integer.parseInt(arrstring3[0]),
                             Integer.parseInt(arrstring3[1]));
-                    if (object != null) 
+                    if (object != null) {
                         System.out.println(object);
+                    }
                     break;
-                }
                 case "equals":
                     if (tokens.length == 2) {
                         String[] lt = tokens[1].split(",");
                         List l2 = new List();
-                        for (int k = 0; k < lt.length; k++ ) {
+                        for (int k = 0; k < lt.length; k++) {
                             l2.add(Integer.parseInt(lt[k]));
                         }
                         System.out.println(l.equals(l2));
