@@ -174,7 +174,11 @@ public class List<E> {
      */
     public void removeAll(E[] items) {
         for (E each : items) {
-            remove(indexOf(each));
+            for (int i = 0; i < items.length; i++) {
+                if (contains(items[i])) {
+                    remove(indexOf(items[i]));
+                }
+            }
         }
     }
 
