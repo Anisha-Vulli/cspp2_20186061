@@ -300,8 +300,8 @@ public class List {
     public List subList(final int start, final int end) 
     {
         List l1 = new List();
-        if (start < 0 || end < size || end < 0) {
-            System.out.println("Index out of bounds");
+        if (start < 0 || start > end || end < 0) {
+            System.out.println("Index Out Of Bounds Exception");
             return null;
         } else {
             for (int i = start; i <= end; i++) {
