@@ -117,7 +117,12 @@ public class Solution {
             }
         }   
     }
-    public static void executeListDouble(Scanner stdin) {
+    /**
+     * Double List method.
+     *
+     * @param      stdin  The stdin
+     */
+    public static void executeListDouble(final Scanner stdin) {
         List<Double> l = new List();
         while (stdin.hasNext()) {
             // read the line
@@ -127,7 +132,7 @@ public class Solution {
             // based on the list operation invoke the corresponding method
             switch (tokens[0]) {
                 case "add":
-                    if (tokens.length == 2){
+                    if (tokens.length == 2) {
                         String[] t = tokens[1].split(",");
                         if (t.length == 1) {
                             l.add(Double.parseDouble(tokens[1]));
@@ -147,7 +152,8 @@ public class Solution {
                 break;
                 case "indexOf":
                     if (tokens.length == 2) {
-                        System.out.println(l.indexOf(Double.parseDouble(tokens[1])));
+                        System.out.println(
+                            l.indexOf(Double.parseDouble(tokens[1])));
                     }
                 break;
                 case "get":
@@ -157,7 +163,8 @@ public class Solution {
                 break;
                 case "contains":
                     if (tokens.length == 2) {
-                        System.out.println(l.contains(Double.parseDouble(tokens[1])));
+                        System.out.println(
+                            l.contains(Double.parseDouble(tokens[1])));
                     }
                 break;
                 case "addAll":
@@ -174,15 +181,19 @@ public class Solution {
                     if (tokens.length == 2) {
                         String[] t2 = tokens[1].split(",");
                         Double[] a = new Double[t2.length];
-                        for(int i = 0; i < t2.length; i++)
+                        for(int i = 0; i < t2.length; i++) {
                             a[i] = Double.parseDouble(t2[i]);
+                        }
                         l.removeAll(a);
                     }
                 break;
                 case "subList": {
-                    if (tokens.length != 2) break;
+                    if (tokens.length != 2) {
+                        break;
+                    }
                     String[] arrstring3 = tokens[1].split(",");
-                    List object = l.subList(Integer.parseInt(arrstring3[0]), Integer.parseInt(arrstring3[1]));
+                    List object = l.subList(Integer.parseInt(arrstring3[0]),
+                        Integer.parseInt(arrstring3[1]));
                     if (object != null) 
                         System.out.println(object);
                     break;
@@ -191,7 +202,7 @@ public class Solution {
                     if (tokens.length == 2) {
                         String[] lt = tokens[1].split(",");
                         List l2 = new List();
-                        for (int k = 0; k < lt.length; k++ ) {
+                        for (int k = 0; k < lt.length; k++) {
                             l2.add(Double.parseDouble(lt[k]));
                         }
                         System.out.println(l.equals(l2));
@@ -205,6 +216,11 @@ public class Solution {
             }
         }
     }
+    /**
+     * Float List method.
+     *
+     * @param      stdin  The stdin
+     */
     public static void executeListFloat(final Scanner stdin) {
         List<Float> l = new List();
         while (stdin.hasNext()) {
@@ -235,7 +251,8 @@ public class Solution {
                 break;
                 case "indexOf":
                     if (tokens.length == 2) {
-                        System.out.println(l.indexOf(Float.parseFloat(tokens[1])));
+                        System.out.println(
+                            l.indexOf(Float.parseFloat(tokens[1])));
                     }
                 break;
                 case "get":
@@ -245,14 +262,15 @@ public class Solution {
                 break;
                 case "contains":
                     if (tokens.length == 2) {
-                        System.out.println(l.contains(Float.parseFloat(tokens[1])));
+                        System.out.println(
+                            l.contains(Float.parseFloat(tokens[1])));
                     }
                 break;
                 case "addAll":
                     if (tokens.length == 2) {
                         String[] t1 = tokens[1].split(",");
                         Float[] temp = new Float[t1.length];
-                        for(int i = 0; i < temp.length; i++) {
+                        for (int i = 0; i < temp.length; i++) {
                             temp[i] = Float.parseFloat(t1[i]);
                         }
                         l.addAll(temp);
@@ -262,8 +280,9 @@ public class Solution {
                     if (tokens.length == 2) {
                         String[] t2 = tokens[1].split(",");
                         Float[] a = new Float[t2.length];
-                        for(int i = 0; i < t2.length; i++)
+                        for (int i = 0; i < t2.length; i++) {
                             a[i] = Float.parseFloat(t2[i]);
+                        }
                         l.removeAll(a);
                     }
                 break;
@@ -282,7 +301,7 @@ public class Solution {
                     if (tokens.length == 2) {
                         String[] lt = tokens[1].split(",");
                         List l2 = new List();
-                        for (int k = 0; k < lt.length; k++ ) {
+                        for (int k = 0; k < lt.length; k++) {
                             l2.add(Float.parseFloat(lt[k]));
                         }
                         System.out.println(l.equals(l2));
@@ -294,7 +313,7 @@ public class Solution {
                 default:
                 break;
             }
-        }   
+        }
     }
 
     /**
@@ -372,7 +391,7 @@ public class Solution {
                     if (tokens.length == 2) {
                         String[] lt = tokens[1].split(",");
                         List l2 = new List();
-                        for (int k = 0; k < lt.length; k++ ) {
+                        for (int k = 0; k < lt.length; k++) {
                             l2.add((lt[k]));
                         }
                         System.out.println(l.equals(l2));
