@@ -359,9 +359,9 @@ public class List {
     */
 
     /**
-     * Equal function.
+     * Equals function.
      *
-     * @param      list  The list
+     * @param      list1  The list 1
      *
      * @return     { description_of_the_return_value }
      */
