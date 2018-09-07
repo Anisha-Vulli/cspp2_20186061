@@ -359,12 +359,12 @@ public class List {
             return null;
         }
 
-        if (start > size || end > size || size == 0) {
+        else if (start > size || end > size || size == 0) {
             System.out.println("Index Out of Bounds Exception");
             return null;
         }
 
-        if (start > end) {
+        else if (start > end) {
             System.out.println("Index Out of Bounds Exception");
             return null;
         }
