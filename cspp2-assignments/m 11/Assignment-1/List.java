@@ -374,7 +374,7 @@ public class List {
         }
 
         for (int  i = 0; i < size; i++) {
-            if (list1.contains(this.list[i])) {
+            if (list[i] != list1.list[i]) {
                 return false;
             }
         }
