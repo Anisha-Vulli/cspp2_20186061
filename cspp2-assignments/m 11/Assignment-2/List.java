@@ -203,14 +203,13 @@ public class List<E> {
         if (size() != listdata.size()) {
             return false;
         }
-        else {
-            for (int  i = 0; i < size; i++) {
-            if (listdata.contains(this.list[i])) {
+
+        for (int  i = 0; i < size; i++) {
+            if (list[i] != listdata.list[i]) {
                 return false;
             }
+        }
 
-        }
-        }
         return true;
     }
 
