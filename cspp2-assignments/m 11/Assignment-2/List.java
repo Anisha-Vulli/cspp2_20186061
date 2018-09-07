@@ -217,7 +217,6 @@ public class List<E> {
 
     /*Removes all the elements from list*/
     public void clear() {
-        final int ten = 10;
-        list = ((E[])new Object[ten]);
+        removeAll(list);
     }
 }
