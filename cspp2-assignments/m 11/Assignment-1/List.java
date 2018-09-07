@@ -400,8 +400,7 @@ public class List {
      * Clear all elements.
      */
     public void clear() {
-        final int ten = 10;
-        list = new int[ten];
+        removeAll(list);
     }
     /**
      * Main function.
