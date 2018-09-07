@@ -383,7 +383,7 @@ public class Solution {
      * @param      stdin  The stdin
      */
 
-    public static void executeListStudent(Scanner stdin) {
+    public static void executeListStudent(final Scanner stdin) {
         List<Student> l = new List();
         while (stdin.hasNext()) {
             // read the line
@@ -393,7 +393,7 @@ public class Solution {
             // based on the list operation invoke the corresponding method
             switch (tokens[0]) {
                 case "add":
-                    if (tokens.length == 2){
+                    if (tokens.length == 2) {
                         String[] t = tokens[1].split(",");
                         if (t.length == 1) {
                             l.add(new Student(tokens[1]));
@@ -431,7 +431,7 @@ public class Solution {
                         String[] t1 = tokens[1].split(",");
                         Student[] students = new Student[t1.length];
                         for (int i = 0; i < t1.length; i++) {
-                            students[i] = new Student(t1[i]);   
+                            students[i] = new Student(t1[i]);
                         }
                         l.addAll(students);
                     }
@@ -441,12 +441,12 @@ public class Solution {
                         String[] t1 = tokens[1].split(",");
                         Student[] students = new Student[t1.length];
                         for (int i = 0; i < t1.length; i++) {
-                            students[i] = new Student(t1[i]);   
+                            students[i] = new Student(t1[i]);
                         }
                         l.removeAll(students);
                     }
                 break;
-                case "subList": 
+                case "subList":
                     if (tokens.length != 2) {
                         break;
                     }
@@ -457,7 +457,6 @@ public class Solution {
                         System.out.println(object);
                     }
                     break;
-                
                 case "equals":
                     if (tokens.length == 2) {
                         String[] lt = tokens[1].split(",");
