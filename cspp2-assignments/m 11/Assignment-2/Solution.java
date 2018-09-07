@@ -466,12 +466,12 @@ public class Solution {
         }	
 	}
 
-	public static void main(String[] args) {
+	public static void main(final String[] args) {
         // create an object of the list to invoke methods on it
         Scanner stdin = new Scanner(new BufferedInputStream(System.in));
         String objectType = stdin.nextLine();
 
-        switch(objectType) {
+        switch (objectType) {
         	case "S"://This case will be executed for String type list
         		executeListString(stdin);
 	        break;
@@ -492,7 +492,9 @@ public class Solution {
         		executeListDouble(stdin);
 	        break;
 
-	        case "O"://This case will be executed for Student type list i.e to store List of Student Objects
+	        case "O":
+            //This case will be executed for Student type list
+            //i.e to store List of Student Objects
 	        	executeListStudent(stdin);
 	        	break;
 	        default:
