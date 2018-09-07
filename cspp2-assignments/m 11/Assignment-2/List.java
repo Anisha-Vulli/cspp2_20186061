@@ -203,15 +203,20 @@ public class List<E> {
         if (size() != listdata.size()) {
             return false;
         }
-
-        for (int  i = 0; i < size; i++) {
+        else {
+            for (int  i = 0; i < size; i++) {
             if (listdata.contains(this.list[i])) {
                 return false;
             }
-        }
 
+        }
         return true;
+        
+        }
     }
+
+        
+
     /*Removes all the elements from list*/
     public void clear() {
         final int ten = 10;
