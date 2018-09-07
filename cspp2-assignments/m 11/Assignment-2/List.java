@@ -210,9 +210,8 @@ public class List<E> {
             }
 
         }
-        return true;
-        
         }
+        return true;
     }
 
         
