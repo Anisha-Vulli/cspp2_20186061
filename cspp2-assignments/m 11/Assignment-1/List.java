@@ -324,7 +324,7 @@ public class List {
      public void removeAll(final int[] newArray) {
         for (int each : newArray) {
             for (int i = 0; i < newArray.length; i++) {
-                if (contains(each)) {
+                if (contains(newArray[i])) {
                     remove(indexOf(newArray[i]));
                 }
             }
