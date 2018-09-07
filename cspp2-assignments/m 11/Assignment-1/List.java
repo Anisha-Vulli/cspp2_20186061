@@ -1,5 +1,19 @@
+/**
+ * Author : Anisha Vulli.
+ * Date : 07th Sept 2018.
+ */
+
+/**
+ * BufferedInputStream.
+ */
 import java.io.BufferedInputStream;
+/**
+ * Scanner class.
+ */
 import java.util.Scanner;
+/**
+ * { item_description }
+ */
 import java.util.Arrays;
 
 public class List {
@@ -26,6 +40,9 @@ public class List {
      * This is a hard concept to understand. Discuss with your mentor.
      *
     */
+    /**
+     * List initialization.
+     */
     private int[] list;
     // declare a private int[]
     // don't create the array yet using new
@@ -48,9 +65,11 @@ public class List {
      * So, to keep track of the size we need a variable called size
      * Again, we use private as we don't want that size variable
      * to be accessed by the methods that are outside of the List class.
-     * 
+     *
      */
-
+    /**
+     * Size variable.
+     */
     private int size;
 
     // declare a private int size
@@ -60,6 +79,9 @@ public class List {
     /*
      * The purpose of the constructor is to initialize the class variables with
      * some default values.
+     */
+    /**
+     * Constructs the object.
      */
     public List() {
 
@@ -87,7 +109,7 @@ public class List {
         size = 0;
         list = new int[capacity];
     }
-    
+
     /*
      * The add method does what the name suggests. Add an int item to the list.
      * The assumption is to store the item at the end of the list What is the
@@ -96,11 +118,16 @@ public class List {
      *
      * The method returns void (nothing)
      */
+    /**
+     * Adding element into list.
+     *
+     * @param      item  The item
+     */
     public void add(final int item) {
         //Inserts the specified element at the end of the list.
         try {
             list[size++] = item;
-        } catch(Exception e) {
+        } catch (Exception e) {
             resize();
         }
 
@@ -119,6 +146,11 @@ public class List {
      *
      * The method returns an int. Empty list should return 0.
      *
+     */
+    /**
+     * Size of a list caluculation.
+     *
+     * @return     { description_of_the_return_value }
      */
     public int size() {
         // replace the code below to implement the size method
@@ -147,7 +179,7 @@ public class List {
      */
     public void remove(final int index) {
         // write the logic for remove here. Think about what to do to the size
-        // variable. 
+        // variable.
 
         if (index >= 0 && index < size && size >= 0) {
             for (int i = index; i < size - 1; i++) {
@@ -260,15 +292,14 @@ public class List {
         return -1;
     }
     /*
-    Inserts all the elements of specified int array to the end of list    
+    Inserts all the elements of specified int array to the end of list
     */
     /**
      * Adds all.
      *
      * @param      newArray  The new array
      */
-    public void addAll(int[] newArray)
-    {
+    public void addAll(int[] newArray) {
         for (int i = 0; i < newArray.length; i++) {
             try {
                 list[size] = newArray[i];
@@ -280,8 +311,8 @@ public class List {
         }
     }
     /*
-     Removes all of its elements that are contained in the specified int 
-     array.    
+     Removes all of its elements that are contained in the specified int
+     array.
     */
      /**
       * Removes all.
@@ -297,7 +328,7 @@ public class List {
     /*
     Returns a list object containing elements, including startIndex and
     excluding endIndex. The first parameter indicates the startIndex and the
-    second parameter indicates the endIndex. Returns null and print 
+    second parameter indicates the endIndex. Returns null and print
     "Index Out of Bounds Exception" if any of values start and end are negative
     and also if start is greater than end.
     */
@@ -334,7 +365,7 @@ public class List {
      *
      * @return     { description_of_the_return_value }
      */
-    public boolean equals(List list) {
+    public boolean equals(final List list) {
         // Replace the code below
         if (size() != list.size()) {
             return false;
@@ -435,7 +466,7 @@ public class List {
                     if (tokens.length == 2) {
                         String[] t2 = tokens[1].split(",");
                         int[] a = new int[t2.length];
-                        for(int i = 0; i < t2.length; i++) {
+                        for (int i = 0; i < t2.length; i++) {
                             a[i] = Integer.parseInt(t2[i]);
                         }
                         l.removeAll(a);
