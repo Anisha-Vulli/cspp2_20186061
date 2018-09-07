@@ -301,10 +301,10 @@ public class List {
     {
         List l1 = new List();
         if (start < 0 || start > end || end < 0) {
-            System.out.println("Index Out Of Bounds Exception");
+            System.out.println("Index Out of Bounds Exception");
             return null;
         } else {
-            for (int i = start; i <= end; i++) {
+            for (int i = start; i < end; i++) {
                     l1.add(list[i]);
             }
             return l1;
