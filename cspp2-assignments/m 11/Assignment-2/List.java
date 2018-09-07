@@ -189,7 +189,7 @@ public class List<E> {
      */
     public List subList(int start, int end) {
         List<E> l1 = new List<>();
-        if (start < 0 || start > end || end < 0) {
+        if (start < 0 || start > end || end < 0 || start == end || size == 0) {
             System.out.println("Index Out of Bounds Exception");
             return null;
         } else {
@@ -209,7 +209,7 @@ public class List<E> {
         }
 
         for (int  i = 0; i < size; i++) {
-            if (list[i] != listdata.list[i]) {
+            if (!list[i].equals(listdata.list[i])){
                 return false;
             }
         }
