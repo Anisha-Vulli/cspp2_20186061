@@ -393,10 +393,6 @@ public class List {
     public void clear() {
         final int ten = 10;
         list = new int[ten];
-        // for (int i = 0; i < size; i++) {
-        //     remove(i);
-        // }
-
     }
     /**
      * Main function.
