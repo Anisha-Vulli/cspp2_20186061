@@ -181,7 +181,7 @@ class Set {
      * @return     { null }
      */
 
-    public int[] cartesianProduct(final Set set1, final Set set2) {
+    public int[][] cartesianProduct(final Set set1, final Set set2) {
         int a = 0;
         int b = 0;
         if (set1.size() > set2.size()) {
@@ -211,8 +211,8 @@ class Set {
         //     System.out.println(finalprod[p]);
         // }
         
-        System.out.println(Arrays.toString(finalprod[0]));
-        return null;
+        //System.out.println(Arrays.toString(finalprod));
+        return finalprod;
     }
 
 }
@@ -320,7 +320,7 @@ public final class Solution {
                 for (int i = 0; i < intArray.length; i++) {
                      t.add(intArray[i]);
                 }
-                s.cartesianProduct(s, t);
+                System.out.println(Arrays.deepToString(s.cartesianProduct(t,s)));
                 //System.out.println(Arrays.deepToString());
                 break;
                 default:
