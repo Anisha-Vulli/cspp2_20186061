@@ -12,7 +12,13 @@ import java.util.Arrays;
  * Class for set.
  */
 class Set {
+    /**
+     * Size variable declaration.
+     */
     private int size;
+    /**
+     * Set declaration.
+     */
     private int[] set;
 
     /**
@@ -29,13 +35,13 @@ class Set {
      *
      * @param      capacity  The capacity
      */
-    public Set(int capacity) {
+    public Set(final int capacity) {
         size = 0;
         set = new int[capacity];
     }
 
     /**
-     * Adding elements into a set
+     * Adding elements into a set.
      *
      * @param      val   The value
      */
@@ -127,7 +133,7 @@ class Set {
             for (int j = 0; j < b; j++) {
                 if (set1.set[i] == set2.set[j]) {
                     s1.add(set2.set[j]);
-                } 
+                }
             }
         }
        //System.out.println(s1.toString());
@@ -159,7 +165,7 @@ class Set {
             for (int j = 0; j < b; j++) {
                 if (set1.set[i] == set2.set[j]) {
                     s1.add(set2.set[j]);
-                } 
+                }
             }
         }
        //System.out.println(s1.toString());
@@ -204,7 +210,6 @@ class Set {
         //     System.out.println(finalprod[p]);
         // }
         return null;
-        
     }
 
 }
@@ -279,40 +284,40 @@ public final class Solution {
                 Set t = new Set();
                 intArray = intArray(tokens[1]);
                 for (int i = 0; i < intArray.length; i++) {
-                        p.add(intArray[i]); 
+                        p.add(intArray[i]);
                         //System.out.println(intArray[i]);  
                 }
                 intArray = intArray(tokens[2]);
                 for (int i = 0; i < intArray.length; i++) {
-                     t.add(intArray[i]);   
+                     t.add(intArray[i]);
                 }
-                System.out.println(p.intersection(p,t));
+                System.out.println(p.intersection(p, t));
                 break;
                 case "retainAll":
                 s = new Set();
                 Set k = new Set();
                 intArray = intArray(tokens[1]);
                 for (int i = 0; i < intArray.length; i++) {
-                    s.add(intArray[i]);   
+                    s.add(intArray[i]);
                 }
                 intArray = intArray(tokens[2]);
                 for (int i = 0; i < intArray.length; i++) {
-                     k.add(intArray[i]);   
+                     k.add(intArray[i]);
                 }
-                System.out.println(s.retainAll(s,k));
+                System.out.println(s.retainAll(s, k));
                 break;
                 case "cartesianProduct":
                 s = new Set();
                 t = new Set();
                 intArray = intArray(tokens[1]);
                 for (int i = 0; i < intArray.length; i++) {
-                    s.add(intArray[i]);   
+                    s.add(intArray[i]);
                 }
                 intArray = intArray(tokens[2]);
                 for (int i = 0; i < intArray.length; i++) {
-                     t.add(intArray[i]);   
+                     t.add(intArray[i]);
                 }
-                s.cartesianProduct(s,t);
+                s.cartesianProduct(s, t);
                 break;
                 default:
                 break;
