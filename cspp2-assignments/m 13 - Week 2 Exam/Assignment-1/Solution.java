@@ -211,7 +211,7 @@ class Set {
         //     System.out.println(finalprod[p]);
         // }
         
-        System.out.println(finalprod);
+        System.out.println(finalprod.toString());
         return null;
     }
 
