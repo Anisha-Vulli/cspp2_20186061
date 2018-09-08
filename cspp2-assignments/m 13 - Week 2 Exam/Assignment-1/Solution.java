@@ -17,6 +17,11 @@ class Set {
         size = 0;
     }
 
+    public Set(int capacity) {
+        size = 0;
+        set = new int[capacity];
+    }
+
     public void add(final int val) {
         try {
             if (!contains(val)) {
@@ -105,6 +110,38 @@ class Set {
         }
        //System.out.println(s1.toString());
        return s1;
+    }
+
+    public int[] cartesianProduct(final Set set1, final Set set2) {
+        int a = 0;
+        int b = 0;
+        if (set1.size() > set2.size()) {
+            a = set1.size();
+            //System.out.println(a);
+            b = set2.size();
+        } else {
+            a = set2.size();
+            b = set1.size();
+
+        }
+        Set finalprod = new Set(a * b);
+        for (int  i = 0; i < a; i++) {
+            int[] temparray = new int[2];
+            for (int j = 0; j < b; j++) {
+                temparray[0] = i;
+                temparray[1] = j;
+            }
+            Arrays.stream(temparray).toArray();
+            // //System.out.println();
+            // for (int p = 0; i < finalprod.size(); p++) {
+            //     finalprod.add(Arrays.stream(temparray).toArray());
+            // }
+        }
+        // for (int p = 0; p < finalprod.length; p++) {
+        //     System.out.println(finalprod[p]);
+        // }
+        return null;
+        
     }
 
 }
@@ -201,15 +238,19 @@ public final class Solution {
                 }
                 System.out.println(s.retainAll(s,k));
                 break;
-                // case "cartesianProduct":
-                // s = new Set();
-                // t = new Set();
-                // intArray = intArray(tokens[1]);
-                // s.add(intArray);
-                // intArray = intArray(tokens[2]);
-                // t.add(intArray);
-                // System.out.println(Arrays.deepToString(s.cartesianProduct(t)));
-                // break;
+                case "cartesianProduct":
+                s = new Set();
+                t = new Set();
+                intArray = intArray(tokens[1]);
+                for (int i = 0; i < intArray.length; i++) {
+                    s.add(intArray[i]);   
+                }
+                intArray = intArray(tokens[2]);
+                for (int i = 0; i < intArray.length; i++) {
+                     t.add(intArray[i]);   
+                }
+                s.cartesianProduct(s,t);
+                break;
                 default:
                 break;
             }
