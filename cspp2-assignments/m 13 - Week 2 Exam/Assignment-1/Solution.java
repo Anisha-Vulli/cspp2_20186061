@@ -7,21 +7,38 @@ import java.util.Arrays;
  * @author : Anisha Vulli
  * Date : 08th Sept 2018.
  */
+
+/**
+ * Class for set.
+ */
 class Set {
     private int size;
     private int[] set;
 
+    /**
+     * Constructs the object.
+     */
     public Set() {
         final int ten = 10;
         set = new int[ten];
         size = 0;
     }
 
+    /**
+     * Constructs the object.
+     *
+     * @param      capacity  The capacity
+     */
     public Set(int capacity) {
         size = 0;
         set = new int[capacity];
     }
 
+    /**
+     * Adding elements into a set
+     *
+     * @param      val   The value
+     */
     public void add(final int val) {
         try {
             if (!contains(val)) {
@@ -34,14 +51,30 @@ class Set {
         }
     }
 
+
+    /**
+     * Resizing an set.
+     */
     public void resize() {
         set = Arrays.copyOf(set, 2 * size);
     }
 
+    /**
+     * Size of a set.
+     *
+     * @return     { size of the set value }
+     */
     public int size() {
         return size;
     }
 
+    /**
+     * Checks if the element is present in the set.
+     *
+     * @param      val   The value
+     *
+     * @return     { boolean based on the condition }
+     */
     public boolean contains(final int val) {
         for (int i = 0; i < size; i++) {
             if (val == set[i]) {
@@ -51,6 +84,11 @@ class Set {
         return false;
     }
 
+    /**
+     * Returns a string representation of the object.
+     *
+     * @return     String representation of the object.
+     */
     public String toString() {
         if (size == 0) {
             return "{}";
@@ -64,6 +102,14 @@ class Set {
         return str;
     }
 
+    /**
+     * Intersection of two sets.
+     *
+     * @param      set1  The set 1
+     * @param      set2  The set 2
+     *
+     * @return     { intersected set }
+     */
     public Set intersection(final Set set1, final Set set2) {
         Set s1 = new Set();
         int a = 0;
@@ -88,6 +134,14 @@ class Set {
        return s1;
     }
 
+    /**
+     * Retainall Method.
+     *
+     * @param      set1  The set 1
+     * @param      set2  The set 2
+     *
+     * @return     { set }
+     */
     public Set retainAll(final Set set1, final Set set2) {
         Set s1 = new Set();
         int a = 0;
@@ -111,6 +165,15 @@ class Set {
        //System.out.println(s1.toString());
        return s1;
     }
+
+    /**
+     * Cartesian product method.
+     *
+     * @param      set1  The set 1
+     * @param      set2  The set 2
+     *
+     * @return     { null }
+     */
 
     public int[] cartesianProduct(final Set set1, final Set set2) {
         int a = 0;
