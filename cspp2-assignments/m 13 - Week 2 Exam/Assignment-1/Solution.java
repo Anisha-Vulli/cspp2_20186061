@@ -24,7 +24,7 @@ class Set {
     /**
      * Constructs the object.
      */
-    public Set() {
+    protected Set() {
         final int ten = 10;
         set = new int[ten];
         size = 0;
@@ -35,7 +35,7 @@ class Set {
      *
      * @param      capacity  The capacity
      */
-    public Set(final int capacity) {
+    protected Set(final int capacity) {
         size = 0;
         set = new int[capacity];
     }
