@@ -193,14 +193,15 @@ class Set {
             b = set1.size();
 
         }
-        Set finalprod = new Set(a * b);
+        int[][] finalprod = new int[a * b][2];
+        // Set finalprod = new Set(a * b);
         for (int  i = 0; i < a; i++) {
-            int[] temparray = new int[2];
+            //int[] temparray = new int[2];
             for (int j = 0; j < b; j++) {
-                temparray[0] = i;
-                temparray[1] = j;
+                finalprod[i][0] = i;
+                finalprod[i][1] = j;
             }
-            Arrays.stream(temparray).toArray();
+            //Arrays.stream(temparray).toArray();
             // //System.out.println();
             // for (int p = 0; i < finalprod.size(); p++) {
             //     finalprod.add(Arrays.stream(temparray).toArray());
@@ -209,6 +210,8 @@ class Set {
         // for (int p = 0; p < finalprod.length; p++) {
         //     System.out.println(finalprod[p]);
         // }
+        
+        System.out.println(finalprod);
         return null;
     }
 
@@ -318,6 +321,7 @@ public final class Solution {
                      t.add(intArray[i]);
                 }
                 s.cartesianProduct(s, t);
+                //System.out.println(Arrays.deepToString());
                 break;
                 default:
                 break;
