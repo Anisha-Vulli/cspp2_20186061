@@ -19,8 +19,11 @@ class Set {
 
     public void add(final int val) {
         try {
-            if (!contains(val))
-            set[size++] = val;
+            if (!contains(val)) {
+               set[size++] = val;
+
+            }
+
         } catch (Exception e) {
             resize();
         }
@@ -50,7 +53,7 @@ class Set {
         String str = "{";
         int i = 0;
         for (i = 0; i < size - 1; i++) {
-            str = str + set[i] + ",";
+            str = str + set[i] +  " " + ",";
         }
         str = str + set[i] + "}";
         return str;
