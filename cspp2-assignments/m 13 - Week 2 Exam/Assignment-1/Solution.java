@@ -186,7 +186,6 @@ class Set {
         int b = 0;
         if (set1.size() > set2.size()) {
             a = set1.size();
-            //System.out.println(a);
             b = set2.size();
         } else {
             a = set2.size();
@@ -194,24 +193,12 @@ class Set {
 
         }
         int[][] finalprod = new int[a * b][2];
-        // Set finalprod = new Set(a * b);
         for (int  i = 0; i < a; i++) {
-            //int[] temparray = new int[2];
             for (int j = 0; j < b; j++) {
-                finalprod[i][0] = i;
-                finalprod[i][1] = j;
+                finalprod[i][0] = set1.set[i];
+                finalprod[i][1] = set2.set[j];
             }
-            //Arrays.stream(temparray).toArray();
-            // //System.out.println();
-            // for (int p = 0; i < finalprod.size(); p++) {
-            //     finalprod.add(Arrays.stream(temparray).toArray());
-            // }
         }
-        // for (int p = 0; p < finalprod.length; p++) {
-        //     System.out.println(finalprod[p]);
-        // }
-        
-        //System.out.println(Arrays.toString(finalprod));
         return finalprod;
     }
 
@@ -320,7 +307,7 @@ public final class Solution {
                 for (int i = 0; i < intArray.length; i++) {
                      t.add(intArray[i]);
                 }
-                System.out.println(Arrays.deepToString(s.cartesianProduct(t,s)));
+                System.out.println(Arrays.deepToString(s.cartesianProduct(s,t)));
                 //System.out.println(Arrays.deepToString());
                 break;
                 default:
