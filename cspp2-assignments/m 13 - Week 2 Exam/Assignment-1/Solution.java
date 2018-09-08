@@ -83,6 +83,29 @@ class Set {
        return s1;
     }
 
+    public Set retainAll(final Set set1, final Set set2) {
+        Set s1 = new Set();
+        int a = 0;
+        int b = 0;
+        if (set1.size() > set2.size()) {
+            a = set1.size();
+            //System.out.println(a);
+            b = set2.size();
+        } else {
+            a = set2.size();
+            b = set1.size();
+
+        }
+        for (int  i = 0; i < a; i++) {
+            for (int j = 0; j < b; j++) {
+                if (set1.set[i] == set2.set[j]) {
+                    s1.add(set2.set[j]);
+                } 
+            }
+        }
+       //System.out.println(s1.toString());
+       return s1;
+    }
 
 }
 /**
@@ -165,13 +188,19 @@ public final class Solution {
                 }
                 System.out.println(p.intersection(p,t));
                 break;
-                // case "retainAll":
-                // s = new Set();
-                // intArray = intArray(tokens[1]);
-                // s.add(intArray);
-                // intArray = intArray(tokens[2]);
-                // System.out.println(s.retainAll(intArray));
-                // break;
+                case "retainAll":
+                s = new Set();
+                Set k = new Set();
+                intArray = intArray(tokens[1]);
+                for (int i = 0; i < intArray.length; i++) {
+                    s.add(intArray[i]);   
+                }
+                intArray = intArray(tokens[2]);
+                for (int i = 0; i < intArray.length; i++) {
+                     k.add(intArray[i]);   
+                }
+                System.out.println(s.retainAll(s,k));
+                break;
                 // case "cartesianProduct":
                 // s = new Set();
                 // t = new Set();
