@@ -275,7 +275,7 @@ public final class Solution {
                     s.add(intArray[0]);
                 } else {
                     for (int i = 0; i < intArray.length; i++) {
-                        s.add(intArray[i]);   
+                        s.add(intArray[i]);
                     }
                 }
                 break;
@@ -285,7 +285,7 @@ public final class Solution {
                 intArray = intArray(tokens[1]);
                 for (int i = 0; i < intArray.length; i++) {
                         p.add(intArray[i]);
-                        //System.out.println(intArray[i]);  
+                        //System.out.println(intArray[i]);
                 }
                 intArray = intArray(tokens[2]);
                 for (int i = 0; i < intArray.length; i++) {
