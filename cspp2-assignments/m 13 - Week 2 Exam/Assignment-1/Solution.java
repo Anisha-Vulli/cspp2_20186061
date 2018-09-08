@@ -19,6 +19,7 @@ class Set {
 
     public void add(final int val) {
         try {
+            if (!contains(val))
             set[size++] = val;
         } catch (Exception e) {
             resize();
