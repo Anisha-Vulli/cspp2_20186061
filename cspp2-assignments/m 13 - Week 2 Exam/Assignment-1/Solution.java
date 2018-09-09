@@ -122,25 +122,17 @@ class Set {
      *
      * @return     { intersected set }
      */
-    public Set intersection(final Set set1, final Set set2) {
-        Set s1 = new Set();
-        int a = 0;
-        int b = 0;
-        if (set1.size() > set2.size()) {
-            a = set1.size();
-            //System.out.println(a);
-            b = set2.size();
-        } else {
-            a = set2.size();
-            b = set1.size();
-
+    public Set intersection(final Set set1) {
+        if (this.size() == 0 || set1.size() == 0) {
+            return new Set();
         }
-        for (int  i = 0; i < a; i++) {
-            for (int j = 0; j < b; j++) {
-                if (set1.set[i] == set2.set[j]) {
-                    s1.add(set2.set[j]);
-                }
+
+        Set s1 = new Set();
+        for (int  i = 0; i < this.size(); i++) {
+            if (set1.contains(this.set[i])) {
+                s1.add(this.set[i]);
             }
+            
         }
        //System.out.println(s1.toString());
        return s1;
@@ -291,15 +283,15 @@ public final class Solution {
                     s.add(intArray);
                 }
                 break;
-                // case "intersection":
-                // s = new Set();
-                // Set t = new Set();
-                // intArray = intArray(tokens[1]);
-                // s.add(intArray);
-                // intArray = intArray(tokens[2]);
-                // t.add(intArray);
-                // System.out.println(s.intersection(t));
-                // break;
+                case "intersection":
+                s = new Set();
+                Set t = new Set();
+                intArray = intArray(tokens[1]);
+                s.add(intArray);
+                intArray = intArray(tokens[2]);
+                t.add(intArray);
+                System.out.println(s.intersection(t));
+                break;
                 // case "retainAll":
                 // s = new Set();
                 // intArray = intArray(tokens[1]);
