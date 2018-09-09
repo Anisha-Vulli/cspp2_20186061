@@ -124,9 +124,8 @@ class Set {
      * Intersection of two sets.
      *
      * @param      set1  The set 1
-     * @param      set2  The set 2
      *
-     * @return     { intersected set }
+     * @return     { intersected set. }
      */
     public Set intersection(final Set set1) {
         if (this.size() == 0 || set1.size() == 0) {
@@ -143,19 +142,18 @@ class Set {
        return s1;
     }
 
-    /**
-     * RetainAll function.
-     *
-     * @param      set1  The set 1
-     *
-     * @return     { description_of_the_return_value }
-     */
+   /**
+    * Retain all function.
+    *
+    * @param      intArray  The int array
+    *
+    * @return     { intersected set. }
+    */
     public Set retainAll(final int[] intArray) {
         Set set2 = new Set();
         set2.add(intArray);
         return this.intersection(set2);
     }
-        
     /**
      * Cartesian product of two sets.
      *
@@ -276,6 +274,8 @@ public final class Solution {
         }
     }
 }
+
+
 
 
 
