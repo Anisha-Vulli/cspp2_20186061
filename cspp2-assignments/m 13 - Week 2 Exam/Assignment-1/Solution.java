@@ -57,6 +57,12 @@ class Set {
         }
     }
 
+    /**
+     * Adding array of values function.
+     *
+     * @param      values  The values
+     */
+
     public  void add(final int[] values) {
         for (int each : values) {
             add(each);
@@ -132,7 +138,6 @@ class Set {
             if (set1.contains(this.set[i])) {
                 s1.add(this.set[i]);
             }
-            
         }
        //System.out.println(s1.toString());
        return s1;
@@ -152,19 +157,18 @@ class Set {
     }
         
     /**
-     * Cartesian product method.
+     * Cartesian product of two sets.
      *
      * @param      set1  The set 1
-     * @param      set2  The set 2
      *
-     * @return     { null }
+     * @return     { cartesian product array }
      */
 
     public int[][] cartesianProduct(final Set set1) {
         if (this.size() == 0 || set1.size() == 0) {
             return null;
         }
-        
+
         int[][] cartesianprod = new int[this.size() * set1.size()][2];
         int count = 0;
         for (int i = 0; i < this.size(); i++) {
