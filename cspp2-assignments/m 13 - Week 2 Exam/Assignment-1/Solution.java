@@ -139,37 +139,18 @@ class Set {
     }
 
     /**
-     * Retainall Method.
+     * RetainAll function.
      *
      * @param      set1  The set 1
-     * @param      set2  The set 2
      *
-     * @return     { set }
+     * @return     { description_of_the_return_value }
      */
-    public Set retainAll(final Set set1, final Set set2) {
-        Set s1 = new Set();
-        int a = 0;
-        int b = 0;
-        if (set1.size() > set2.size()) {
-            a = set1.size();
-            //System.out.println(a);
-            b = set2.size();
-        } else {
-            a = set2.size();
-            b = set1.size();
-
-        }
-        for (int  i = 0; i < a; i++) {
-            for (int j = 0; j < b; j++) {
-                if (set1.set[i] == set2.set[j]) {
-                    s1.add(set2.set[j]);
-                }
-            }
-        }
-       //System.out.println(s1.toString());
-       return s1;
+    public Set retainAll(final int[] intArray) {
+        Set set2 = new Set();
+        set2.add(intArray);
+        return this.intersection(set2);
     }
-
+        
     /**
      * Cartesian product method.
      *
@@ -292,13 +273,13 @@ public final class Solution {
                 t.add(intArray);
                 System.out.println(s.intersection(t));
                 break;
-                // case "retainAll":
-                // s = new Set();
-                // intArray = intArray(tokens[1]);
-                // s.add(intArray);
-                // intArray = intArray(tokens[2]);
-                // System.out.println(s.retainAll(intArray));
-                // break;
+                case "retainAll":
+                s = new Set();
+                intArray = intArray(tokens[1]);
+                s.add(intArray);
+                intArray = intArray(tokens[2]);
+                System.out.println(s.retainAll(intArray));
+                break;
                 // case "cartesianProduct":
                 // s = new Set();
                 // t = new Set();
