@@ -257,15 +257,15 @@ public final class Solution {
                 intArray = intArray(tokens[2]);
                 System.out.println(s.retainAll(intArray));
                 break;
-                // case "cartesianProduct":
-                // s = new Set();
-                // t = new Set();
-                // intArray = intArray(tokens[1]);
-                // s.add(intArray);
-                // intArray = intArray(tokens[2]);
-                // t.add(intArray);
-                // System.out.println(Arrays.deepToString(s.cartesianProduct(t)));
-                // break;
+                case "cartesianProduct":
+                s = new Set();
+                t = new Set();
+                intArray = intArray(tokens[1]);
+                s.add(intArray);
+                intArray = intArray(tokens[2]);
+                t.add(intArray);
+                System.out.println(Arrays.deepToString(s.cartesianProduct(t)));
+                break;
                 default:
                 break;
             }
