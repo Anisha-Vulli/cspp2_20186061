@@ -160,43 +160,20 @@ class Set {
      * @return     { null }
      */
 
-    public int[][] cartesianProduct(final Set set1, final Set set2) {
-        int a = 0;
-        int b = 0;
-        if (set1.size() > set2.size()) {
-            a = set1.size();
-            b = set2.size();
-        } else {
-            a = set2.size();
-            b = set1.size();
-
-        }
-        final int len = a * b;
-        int j = 0;
-        int k = 0;
-        int[][] finalprod = new int[a * b][2];
-        for (int  i = 0; i < len; i++) {
-            if (j == a && k == b) {
-                j = 0;
-                k = 0;
-            }
-            else {
-                while (i < len) {
-                   while (j < a) {
-                    while (k < b) {
-                        finalprod[i][0] = set1.set[j];
-                        finalprod[i][1] = set2.set[k];
-                        k += 1;
-                    }
-                    j += 1;
-                  } 
-                  i += 1;
-                }
-                
-            }
+    public int[][] cartesianProduct(final Set set1) {
+        if (this.size() == 0 || set1.size() == 0) {
+            return null;
         }
         
-        return finalprod;
+        int[][] cartesianprod = new int[this.size() * set1.size()][2];
+        int count = 0;
+        for (int i = 0; i < this.size(); i++) {
+            for (int j = 0; j < set1.size(); j++) {
+                cartesianprod[count][0] = this.set[i];
+                cartesianprod[count++][1] = set1.set[j];
+            }
+        }
+        return cartesianprod;
     }
 
 }
