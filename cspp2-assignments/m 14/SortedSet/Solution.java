@@ -200,12 +200,12 @@ class Sortedset extends Set {
     }
 
     /**
-     * Subset of a given set.
+     * Subset of the given set.
      *
-     * @param      start  The start
-     * @param      end    The end
+     * @param      startelement  The startelement
+     * @param      endelement    The endelement
      *
-     * @return     { set }
+     * @return     { subset }
      */
     public Set subSet(final int startelement, final int endelement) {
         int start = startelement;
@@ -234,7 +234,7 @@ class Sortedset extends Set {
      * @return     { head value }
      */
 
-    public Set headSet(int element) {
+    public Set headSet(final int element) {
         Set head = new Set();
         for (int i = 0; i < size; i++) {
             if (set[i] < element) {
@@ -251,12 +251,12 @@ class Sortedset extends Set {
      * @return     { value }
      */
     public int last() {
-        if(size <= 0) {
+        if (size <= 0) {
             System.out.println("Set Empty Exception");
             return -1;
         }
         Arrays.sort(set, 0, size);
-        int s = size -1;
+        int s = size - 1;
         return set[s];
     }
 }
@@ -332,10 +332,9 @@ public final class Solution {
                 intArray[0] = Integer.parseInt(strArray[0]);
                 intArray[1] = Integer.parseInt(strArray[1]);
                 Set sub = s.subSet(intArray[0], intArray[1]);
-                if( sub != null) {
+                if (sub != null) {
                     System.out.println(sub);
                 }
-                
                 break;
                 case "headSet":
                 String[] strArray1 = tokens[1].split(",");
@@ -369,7 +368,8 @@ public final class Solution {
                 // s.add(intArray);
                 // intArray = intArray(tokens[2]);
                 // t.add(intArray);
-                // System.out.println(Arrays.deepToString(s.cartesianProduct(t)));
+                // System.out.println(
+                // Arrays.deepToString(s.cartesianProduct(t)));
                 // break;
                 default:
                 break;
