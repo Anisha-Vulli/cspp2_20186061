@@ -15,11 +15,11 @@ class Set {
     /**
      * Size variable declaration.
      */
-    protected int size;
+    private int size;
     /**
      * Set declaration.
      */
-    protected int[] set;
+    private int[] set;
 
     /**
      * Constructs the object.
@@ -40,6 +40,13 @@ class Set {
         set = new int[capacity];
     }
 
+    int[] getSet() {
+        return set;
+    }
+
+    void setSet(final int[] sets) {
+        this.set = sets;
+    }
     /**
      * Adding elements into a set.
      *
@@ -195,7 +202,7 @@ class Sortedset extends Set {
      * @return     String representation of the object.
      */
     public String toString() {
-        Arrays.sort(set, 0, size);
+        Arrays.sort(getSet(), 0, size());
         return super.toString();
     }
 
@@ -236,9 +243,9 @@ class Sortedset extends Set {
 
     public Set headSet(final int element) {
         Set head = new Set();
-        for (int i = 0; i < size; i++) {
-            if (set[i] < element) {
-                head.add(set[i]);
+        for (int i = 0; i < size(); i++) {
+            if (getSet()[i] < element) {
+                head.add(getSet()[i]);
             }
         }
         return head;
@@ -251,13 +258,13 @@ class Sortedset extends Set {
      * @return     { value }
      */
     public int last() {
-        if (size <= 0) {
+        if (size() <= 0) {
             System.out.println("Set Empty Exception");
             return -1;
         }
-        Arrays.sort(set, 0, size);
-        int s = size - 1;
-        return set[s];
+        Arrays.sort(getSet(), 0, size());
+        int s = size() - 1;
+        return getSet()[s];
     }
 }
 
