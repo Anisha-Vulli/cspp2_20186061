@@ -187,9 +187,9 @@ class Sortedset extends Set {
         return super.toString();
     }
 
-    public Set subset(int start, final int end) {
-        System.out.println(start);
-        System.out.println(end);
+    public Set subSet(int start, final int end) {
+        //System.out.println(start);
+        //System.out.println(end);
         if (end < start) {
             System.out.println("Invalid Arguments to Subset Exception");
             return null;
@@ -206,7 +206,7 @@ class Sortedset extends Set {
         return subset;
     }
 
-    public Set headset(int element) {
+    public Set headSet(int element) {
         Set head = new Set();
         for (int i = 0; i < size; i++) {
             if (set[i] < element) {
@@ -293,22 +293,22 @@ public final class Solution {
                     s.add(intArray);
                 }
                 break;
-                case "subset":
+                case "subSet":
                 String[] strArray = tokens[1].split(",");
                 intArray = new int[2];
                 intArray[0] = Integer.parseInt(strArray[0]);
                 intArray[1] = Integer.parseInt(strArray[1]);
-                Set sub = s.subset(intArray[0], intArray[1]);
+                Set sub = s.subSet(intArray[0], intArray[1]);
                 if( sub != null) {
                     System.out.println(sub);
                 }
                 
                 break;
-                case "headset":
+                case "headSet":
                 String[] strArray1 = tokens[1].split(",");
                 intArray = new int[1];
                 intArray[0] = Integer.parseInt(strArray1[0]);
-                System.out.println(s.headset(intArray[0]));
+                System.out.println(s.headSet(intArray[0]));
                 break;
                 case "last":
                 System.out.println(s.last());
