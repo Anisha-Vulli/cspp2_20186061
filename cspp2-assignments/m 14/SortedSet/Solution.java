@@ -49,7 +49,7 @@ class Set {
         try {
             if (!contains(val)) {
                set[size++] = val;
-            } 
+            }
         } catch (Exception e) {
             resize();
         }
@@ -177,16 +177,36 @@ class Set {
     }
 
 }
+
+/**
+ * Class for sortedset.
+ */
 class Sortedset extends Set {
+    /**
+     * Constructs the object.
+     */
     Sortedset() {
         super();
     }
 
+    /**
+     * Returns a string representation of the object.
+     *
+     * @return     String representation of the object.
+     */
     public String toString() {
         Arrays.sort(set, 0, size);
         return super.toString();
     }
 
+    /**
+     * Subset of a given set.
+     *
+     * @param      start  The start
+     * @param      end    The end
+     *
+     * @return     { set }
+     */
     public Set subSet(int start, final int end) {
         //System.out.println(start);
         //System.out.println(end);
@@ -206,6 +226,14 @@ class Sortedset extends Set {
         return subset;
     }
 
+    /**
+     * Headset of the given set.
+     *
+     * @param      element  The element
+     *
+     * @return     { head value }
+     */
+
     public Set headSet(int element) {
         Set head = new Set();
         for (int i = 0; i < size; i++) {
@@ -217,6 +245,11 @@ class Sortedset extends Set {
     }
 
 
+    /**
+     * last value.
+     *
+     * @return     { value }
+     */
     public int last() {
         if(size <= 0) {
             System.out.println("Set Empty Exception");
