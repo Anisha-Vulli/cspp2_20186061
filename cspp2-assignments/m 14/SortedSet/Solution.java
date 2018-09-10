@@ -39,11 +39,19 @@ class Set {
         size = 0;
         set = new int[capacity];
     }
-
+    /**
+     * Gets the set.
+     *
+     * @return     The set.
+     */
     int[] getSet() {
         return set;
     }
-
+    /**
+     * Sets the set.
+     *
+     * @param      sets  The sets
+     */
     void setSet(final int[] sets) {
         this.set = sets;
     }
