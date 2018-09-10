@@ -207,9 +207,9 @@ class Sortedset extends Set {
      *
      * @return     { set }
      */
-    public Set subSet(int start, final int end) {
-        //System.out.println(start);
-        //System.out.println(end);
+    public Set subSet(final int startelement, final int endelement) {
+        int start = startelement;
+        int end = endelement;
         if (end < start) {
             System.out.println("Invalid Arguments to Subset Exception");
             return null;
