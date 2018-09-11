@@ -409,6 +409,16 @@ public class List {
     public void clear() {
         removeAll(list);
     }
+
+    public int count(final int element) {
+        int count = 0;
+        for (int i = 0; i < size; i++) {
+            if(contains(element)) {
+                count = count + 1;
+            }
+        }
+        return count;
+    }
     /**
      * Main function.
      *
@@ -509,6 +519,11 @@ public class List {
                 case "clear":
                     l.clear();
                 break;
+                case "count":
+                    if (tokens.length == 2) {
+                        System.out.println(l.count(
+                            Integer.parseInt(tokens[1])));
+                    }
                 default:
                 break;
             }
