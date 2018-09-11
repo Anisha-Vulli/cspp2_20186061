@@ -13,7 +13,7 @@ import java.util.Arrays;
 
 /**.
  * Class for set.
- * @author : Khyathi
+ * @author : Anisha Vulli.
  */
 /**.
  * Exception for signaling set empty errors.
