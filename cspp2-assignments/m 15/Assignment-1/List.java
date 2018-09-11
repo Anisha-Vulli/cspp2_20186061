@@ -411,7 +411,7 @@ public class List {
     }
 
     public int count(final int element) {
-        int count = 0;
+        int count = 1;
         for (int i = 0; i < size; i++) {
             if(i == element) {
                 count = count + 1;
