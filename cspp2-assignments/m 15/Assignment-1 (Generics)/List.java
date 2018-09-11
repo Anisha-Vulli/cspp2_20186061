@@ -197,7 +197,7 @@ public class List<E> {
      */
     public List subList(int start, int end) {
         try {
-            if (start <= 0 || end <= 0 || start > size
+            if (start < 0 || end < 0 || start > size
                 || end > size || size == 0 || start > end) {
                 throw new Exception();
             }
