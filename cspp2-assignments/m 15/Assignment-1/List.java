@@ -332,20 +332,13 @@ public class List {
       * @param      newArray  The new array
       */
      public void removeAll(final int[] newArray) {
-        try {
+        for (int each : newArray) {
             for (int i = 0; i < newArray.length; i++) {
                 if (contains(newArray[i])) {
                     remove(indexOf(newArray[i]));
-                } else {
-                    throw new Exception();
                 }
             }
-        } catch (Exception e) {
-            System.out.println("Element not found");
         }
-        // for (int each : newArray) {
-            
-        // }
      }
     /*
     Returns a list object containing elements, including startIndex and
