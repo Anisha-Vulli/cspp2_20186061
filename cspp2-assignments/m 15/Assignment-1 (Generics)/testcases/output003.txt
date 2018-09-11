@@ -1,13 +1,9 @@
-Index Out of Bounds Exception
-Index Out of Bounds Exception
-Index Out of Bounds Exception
-0
-[]
-[]
-0
-false
-[1,2,3,4]
-false
-[1,2,3,4,1,2]
 2
-2
+[D,c,-,+]
+[c,-]
+[-,+]
+Index Out of Bounds Exception
+false
+false
+4
+[D,c,-,+]

@@ -1,7 +1,7 @@
 2
-[1,-1]
+[1a,2b]
 Index Out of Bounds Exception
-true
+false
 6
-[1,-1,0,0,0,-1]
+[1a,2b,0c,0d,0e,2f]
 0

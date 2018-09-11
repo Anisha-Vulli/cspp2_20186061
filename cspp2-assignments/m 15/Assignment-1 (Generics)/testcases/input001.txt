@@ -1,4 +1,5 @@
-19
+I
+13
 add 5
 add -1
 size
@@ -12,10 +13,3 @@ equals 1,2,3,4
 equals 5,-1,0,99
 size
 print
-remove 3
-remove 2
-remove 1
-remove 0
-remove -1
-print
-
