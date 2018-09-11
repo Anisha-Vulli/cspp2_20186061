@@ -73,6 +73,7 @@ class Sortedset extends Set {
      */
     public int[] SubSet(final int startelement, final int endelement)
     throws InvalidSubsetSelectionException {
+    	//System.out.println("hello");
     	int start = getIndex(startelement);
         int end = getIndex(endelement);
     	if (start > end) {
@@ -130,7 +131,7 @@ class Sortedset extends Set {
      */
     public int getIndex(final int item) {
     	for (int i = 0; i < size(); i++) {
-    		if (item <= this.get(i)) {
+    		if (item == this.get(i)) {
     			return i;
     		}
     	}
@@ -183,7 +184,7 @@ public class Solution {
                 if (intArray.length == 1) {
                     s.add(intArray[0]);
                 } else {
-                    s.addAll(intArray);
+                    s.add(intArray);
                 }
                 break;
             case "SubSet":
@@ -192,7 +193,7 @@ public class Solution {
                     int[] subarray = s.SubSet(Integer.parseInt(arrstring[0]),
                             Integer.parseInt(arrstring[1]));
                     Set subset = new Set();
-                    subset.addAll(subarray);
+                    subset.add(subarray);
                     if (subset != null) {
                         System.out.println(subset);
                     }
@@ -204,7 +205,7 @@ public class Solution {
                 try {
                     int[] headarray = s.headSet(Integer.parseInt(tokens[1]));
                     Set headset = new Set();
-                    headset.addAll(headarray);
+                    headset.add(headarray);
                     if (headset != null) {
                         System.out.println(headset);
                     }
@@ -225,15 +226,15 @@ public class Solution {
                 s = new Sortedset();
                 Sortedset t = new Sortedset();
                 intArray = intArray(tokens[1]);
-                s.addAll(intArray);
+                s.add(intArray);
                 intArray = intArray(tokens[2]);
-                t.addAll(intArray);
+                t.add(intArray);
                 System.out.println(s.intersection(t));
             break;
             case "retainAll":
                 s = new Sortedset();
                 intArray = intArray(tokens[1]);
-                s.addAll(intArray);
+                s.add(intArray);
                 intArray = intArray(tokens[2]);
                 System.out.println(s.retainAll(intArray));
             break;
@@ -241,9 +242,9 @@ public class Solution {
                 s = new Sortedset();
                 t = new Sortedset();
                 intArray = intArray(tokens[1]);
-                s.addAll(intArray);
+                s.add(intArray);
                 intArray = intArray(tokens[2]);
-                t.addAll(intArray);
+                t.add(intArray);
                 System.out.println(Arrays.deepToString(s.cartesianProduct(t)));
             break;
             default:

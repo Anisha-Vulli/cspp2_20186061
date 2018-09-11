@@ -51,7 +51,7 @@ public class Set {
      * @param      values  The values
      */
 
-    public  void addAll(final int[] values) {
+    public  void add(final int[] values) {
         for (int each : values) {
             add(each);
         }
