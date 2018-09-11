@@ -358,8 +358,8 @@ public class List {
      */
     public List subList(final int start, final int end) {
         try {
-            if (start <= 0 || end <= 0 || start > size ||
-                end > size || size == 0 || start > end) {
+            if (start <= 0 || end <= 0 || start > size
+                || end > size || size == 0 || start > end) {
                 throw new Exception();
             }
         } catch (Exception e) {
