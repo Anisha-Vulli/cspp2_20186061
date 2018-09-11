@@ -411,10 +411,17 @@ public class List {
         removeAll(list);
     }
 
+    /**
+     * Counting the instances of the element.
+     *
+     * @param      element  The element
+     *
+     * @return     { the count value }
+     */
     public int count(final int element) {
         int count = 1;
         for (int i = 0; i < size; i++) {
-            if(i == element) {
+            if (i == element) {
                 count = count + 1;
             }
         }
