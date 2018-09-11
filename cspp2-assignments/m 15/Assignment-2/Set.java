@@ -51,7 +51,7 @@ public class Set {
      * @param      values  The values
      */
 
-    public  void add(final int[] values) {
+    public  void addAll(final int[] values) {
         for (int each : values) {
             add(each);
         }
@@ -175,7 +175,7 @@ public class Set {
     public Set retainAll(final int[] intArray) {
         Set set = new Set();
         for (int each : intArray) {
-        	set.add(intArray);
+        	set.add(each);
         }
         return intersection(set);
     }

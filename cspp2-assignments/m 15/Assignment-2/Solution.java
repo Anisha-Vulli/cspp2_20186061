@@ -183,7 +183,7 @@ public class Solution {
                 if (intArray.length == 1) {
                     s.add(intArray[0]);
                 } else {
-                    s.add(intArray);
+                    s.addAll(intArray);
                 }
                 break;
             case "SubSet":
@@ -192,7 +192,7 @@ public class Solution {
                     int[] subarray = s.SubSet(Integer.parseInt(arrstring[0]),
                             Integer.parseInt(arrstring[1]));
                     Set subset = new Set();
-                    subset.add(subarray);
+                    subset.addAll(subarray);
                     if (subset != null) {
                         System.out.println(subset);
                     }
@@ -204,7 +204,7 @@ public class Solution {
                 try {
                     int[] headarray = s.headSet(Integer.parseInt(tokens[1]));
                     Set headset = new Set();
-                    headset.add(headarray);
+                    headset.addAll(headarray);
                     if (headset != null) {
                         System.out.println(headset);
                     }
@@ -225,15 +225,15 @@ public class Solution {
                 s = new Sortedset();
                 Sortedset t = new Sortedset();
                 intArray = intArray(tokens[1]);
-                s.add(intArray);
+                s.addAll(intArray);
                 intArray = intArray(tokens[2]);
-                t.add(intArray);
+                t.addAll(intArray);
                 System.out.println(s.intersection(t));
             break;
             case "retainAll":
                 s = new Sortedset();
                 intArray = intArray(tokens[1]);
-                s.add(intArray);
+                s.addAll(intArray);
                 intArray = intArray(tokens[2]);
                 System.out.println(s.retainAll(intArray));
             break;
@@ -241,9 +241,9 @@ public class Solution {
                 s = new Sortedset();
                 t = new Sortedset();
                 intArray = intArray(tokens[1]);
-                s.add(intArray);
+                s.addAll(intArray);
                 intArray = intArray(tokens[2]);
-                t.add(intArray);
+                t.addAll(intArray);
                 System.out.println(Arrays.deepToString(s.cartesianProduct(t)));
             break;
             default:
