@@ -130,8 +130,16 @@ class Sortedset extends Set {
         return size();
     }
 }
-
+/**
+ * Class for solution.
+ */
 public class Solution {
+    /**
+     * Constructs the object.
+     */
+    private Solution() {
+        //Empty constructor.
+    }
     /**.
      * { function_description }
      *
