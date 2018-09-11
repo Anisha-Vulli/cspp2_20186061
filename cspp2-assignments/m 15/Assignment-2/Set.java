@@ -3,7 +3,7 @@ import java.util.Scanner;
 import java.util.Arrays;
 
 public class Set {
-	/**
+    /**
      * Size variable declaration.
      */
     private int size;
@@ -63,15 +63,15 @@ public class Set {
      * @param      item   The item
      */
     public void add(final int index, final int item) {
-    	if (index < 0) {
-    		System.out.println("Negative Index Exception");
-    	} else {
-    		for (int i = size; i > index; i--) {
-    			set[i] = set[i - 1];
-    		}
-    		set[index] = item;
-    		size++;
-    	}
+     if (index < 0) {
+         System.out.println("Negative Index Exception");
+     } else {
+         for (int i = size; i > index; i--) {
+             set[i] = set[i - 1];
+         }
+         set[index] = item;
+         size++;
+     }
     }
     /**
      * Getting the element in the index.
@@ -175,7 +175,7 @@ public class Set {
     public Set retainAll(final int[] intArray) {
         Set set = new Set();
         for (int each : intArray) {
-        	set.add(each);
+            set.add(each);
         }
         return intersection(set);
     }
