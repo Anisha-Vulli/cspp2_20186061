@@ -270,9 +270,13 @@ class SortedSet extends Set {
      * @return     { value }
      */
     public int last() {
-        if (size() <= 0) {
+        try {
+            if (size() <= 0) {
+                throw new Exception();
+            }
+        } catch(Exception e) {
             System.out.println("Set Empty Exception");
-            return -1;
+            return 0;
         }
         Arrays.sort(getSet(), 0, size());
         int s = size() - 1;
