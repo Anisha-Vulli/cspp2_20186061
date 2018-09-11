@@ -413,7 +413,7 @@ public class List {
     public int count(final int element) {
         int count = 0;
         for (int i = 0; i < size; i++) {
-            if(contains(element)) {
+            if(i == element) {
                 count = count + 1;
             }
         }
