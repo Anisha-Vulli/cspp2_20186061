@@ -64,8 +64,8 @@ class Sortedset extends Set {
     	if (startelement > endelement) {
     		throw new InvalidSubsetSelectionException("Invalid Arguments to Subset Exception");
     	} else {
-    		int start = startelement;
-            int end = endelement;
+    		int start = getIndex(startelement);
+            int end = getIndex(endelement);
             int[] subset = new int[start - end];
             int k = 0;
             for (int i = start; i < end; i++) {
