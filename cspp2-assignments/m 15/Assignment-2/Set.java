@@ -148,15 +148,16 @@ public class Set {
      * @return string.
      */
     public String toString() {
-        if (this.size() == 0) {
+        if (size == 0) {
             return "{}";
         }
-        StringBuilder sb = new StringBuilder("{");
-        for (int i = 0; i < size - 1; i++) {
-            sb.append(set[i] + ", ");
+        String str = "{";
+        int i = 0;
+        for (i = 0; i < size - 1; i++) {
+            str = str + set[i] + "," + " ";
         }
-        sb.append(set[size - 1] + "}");
-        return sb.toString();
+        str = str + set[i] + "}";
+        return str;
     }
 
     /**
