@@ -49,6 +49,18 @@ class Sortedset extends Set {
         super();
     }
 
+    /**.
+     * Add function to add the elements into the set
+     *
+     * @param      item  The item
+     */
+    public void add(final int item) {
+        if (!contains(item)) {
+            int index = getIndex(item);
+            add(index, item);
+        }
+    }
+
     /**
      * Subset of the given set.
      *
