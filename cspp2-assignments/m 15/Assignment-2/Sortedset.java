@@ -1,4 +1,4 @@
-/**.
+ /**.
  * Creates a input stream
  */
 import java.io.BufferedInputStream;
@@ -10,11 +10,16 @@ import java.util.Scanner;
  * for array operations
  */
 import java.util.Arrays;
-/**
+
+/**.
+ * Class for set.
+ * @author : Anisha Vulli.
+ */
+/**.
  * Exception for signaling set empty errors.
  */
 class SetEmptyException extends Exception {
-    /**
+    /**.
      * Constructs the object.
      *
      * @param      s     { parameter_description }
@@ -23,12 +28,11 @@ class SetEmptyException extends Exception {
         super(s);
     }
 }
-
-/**
+/**.
  * Exception for signaling invalid subset selection errors.
  */
 class InvalidSubsetSelectionException extends Exception {
-    /**
+    /**.
      * Constructs the object.
      *
      * @param      s     { parameter_description }
@@ -37,72 +41,16 @@ class InvalidSubsetSelectionException extends Exception {
         super(s);
     }
 }
-
-/**
+/**.
  * Class for sortedset.
  */
 class Sortedset extends Set {
-    /**
-     * Constructs the object.
-     */
-    Sortedset() {
-        super();
-    }
-
-    /**
-     * Subset of the given set.
+    /**.
+     * { function_description }
      *
-     * @param      startelement                     The startelement
-     * @param      endelement                       The endelement
+     * @return     { description_of_the_return_value }
      *
-     * @return     { array of subset }
-     *
-     * @throws     InvalidSubsetSelectionException  { exception_description }
-     */
-    public int[] SubSet(final int startelement, final int endelement)
-    throws InvalidSubsetSelectionException {
-        //System.out.println("hello");
-        int start = indexOf(startelement);
-        //System.out.println(start);
-        int end = indexOf(endelement);
-        //System.out.println(end);
-        if (start > end) {
-            throw new InvalidSubsetSelectionException("Invalid Arguments to Subset Exception");
-        } else {
-            int[] subset = new int[end - start];
-            int k = 0;
-            for (int i = start; i < end; i++) {
-                subset[k++] = this.get(i);
-            }
-            return subset;
-        }
-    }
-
-    /**
-     * Headset function
-     *
-     * @param      element         The element
-     *
-     * @return     { array of headset }
-     *
-     * @throws     SetEmptyException                { exception_description }
-     * @throws     InvalidSubsetSelectionException  { exception_description }
-     */
-    public int[] headSet(final int element) throws SetEmptyException,
-    InvalidSubsetSelectionException {
-        if (element <= this.get(0)) {
-            throw new SetEmptyException("Set Empty Exception");
-        } else {
-            return SubSet(get(0), element);
-        }
-    }
-
-    /**
-     * Last element in the set.
-     *
-     * @return     { last element in the set }
-     *
-     * @throws     SetEmptyException  { Empty set exception }
+     * @throws     SetEmptyException  { exception_description }
      */
     public int last() throws SetEmptyException {
         if (size() == 0) {
@@ -111,8 +59,62 @@ class Sortedset extends Set {
             return get(size() - 1);
         }
     }
-
-    /**
+    /**.
+     * { function_description }
+     *
+     * @param      toele  The toele
+     *
+     * @return     { description_of_the_return_value }
+     *
+     * @throws     SetEmptyException                { exception_description }
+     * @throws     InvalidSubsetSelectionException  { exception_description }
+     */
+    public int[] headset(final int toele) throws SetEmptyException,
+                         InvalidSubsetSelectionException {
+        if (toele <= this.get(0)) {
+            throw new SetEmptyException("Set Empty Exception");
+        } else {
+            return subSet(get(0), toele);
+        }
+    }
+    /**.
+     * Subset function
+     *
+     * @param      fromele                          The fromele
+     * @param      toele                            The toele
+     *
+     * @return     { description_of_the_return_value }
+     *
+     * @throws     InvalidSubsetSelectionException  { exception_description }
+     */
+    public int[] subSet(final int fromele, final int toele) throws
+                            InvalidSubsetSelectionException {
+        if (fromele > toele) {
+            throw new InvalidSubsetSelectionException(
+                    "Invalid Arguments to Subset Exception");
+        } else {
+            int fromindex = getIndex(fromele);
+            int toindex = getIndex(toele);
+            int[] subset = new int[toindex - fromindex];
+            int k = 0;
+            for (int i = fromindex; i < toindex; i++) {
+                subset[k++] = this.get(i);
+            }
+            return subset;
+        }
+    }
+    /**.
+     * Add function to add the elements into the set
+     *
+     * @param      item  The item
+     */
+    public void add(final int item) {
+        if (!contains(item)) {
+            int index = getIndex(item);
+            add(index, item);
+        }
+    }
+    /**.
      * Gets the index.
      *
      * @param      item  The item
@@ -121,15 +123,19 @@ class Sortedset extends Set {
      */
     public int getIndex(final int item) {
         for (int i = 0; i < size(); i++) {
-            if (item == this.get(i)) {
+            if (item <= this.get(i)) {
                 return i;
             }
         }
-        return -1;
+        return size();
     }
-}
-
-public class Solution {
+    /**.
+     * { function_description }
+     *
+     * @param      s     { parameter_description }
+     *
+     * @return     { description_of_the_return_value }
+     */
     public static int[] intArray(final String s) {
         String input = s;
         if (input.equals("[]")) {
@@ -180,21 +186,20 @@ public class Solution {
             case "subSet":
                 try {
                     String[] arrstring = tokens[1].split(",");
-                    int[] subarray = s.SubSet(Integer.parseInt(arrstring[0]),
+                    int[] subarray = s.subSet(Integer.parseInt(arrstring[0]),
                             Integer.parseInt(arrstring[1]));
-                    //System.out.println(Arrays.toString(subarray));
-                    Sortedset subset = new Sortedset();
+                    Set subset = new Set();
                     subset.add(subarray);
-                
+                    if (subset != null) {
                         System.out.println(subset);
-                    
+                    }
                 } catch (InvalidSubsetSelectionException e) {
                     System.out.println(e.getMessage());
                 }
                 break;
             case "headSet":
                 try {
-                    int[] headarray = s.headSet(Integer.parseInt(tokens[1]));
+                    int[] headarray = s.headset(Integer.parseInt(tokens[1]));
                     Set headset = new Set();
                     headset.add(headarray);
                     if (headset != null) {
