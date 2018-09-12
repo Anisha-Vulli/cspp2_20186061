@@ -178,7 +178,8 @@ class BookYourShow {
      * @param      patron    The patron
      * @param      seats     The seats
      */
-    void bookAShow(String mvename, String showtime, Patron patron, String[] seats) {
+    void bookAShow(final String mvename, final String showtime,
+        final Patron patron, final String[] seats) {
         Show show = getAShow(mvename, showtime);
         boolean flag = false;
         if (show == null) {
