@@ -29,7 +29,7 @@ class Show {
     }
 
     public String toString() {
-        return mvename + " " + showtime;
+        return mvename + "," + showtime;
     }
 }
 
@@ -51,7 +51,7 @@ class Patron {
     }
 
     public String toString() {
-        return name + "," + mobile;
+        return name + " " + mobile;
     }
 }
 
@@ -102,7 +102,7 @@ class BookYourShow {
     }
 
     void printTicket(String movie, String showtime, String mobile) {
-        String t = movie + "" + showtime + "" + mobile;
+        String t = movie + " " + showtime + " " + mobile;
         if (ticketlist.contains(t)) {
             System.out.println(t);
         } else {
