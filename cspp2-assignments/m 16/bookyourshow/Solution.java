@@ -17,15 +17,15 @@ class Show {
     /**
      * Movie name.
      */
-    String mvename;
+    private String mvename;
     /**
      * Show time string.
      */
-    String showtime;
+    private String showtime;
     /**
      * Seats in a string array.
      */
-    String[] seats;
+    private String[] seats;
     /**
      * Constructs the object.
      *
@@ -33,7 +33,8 @@ class Show {
      * @param      showtime  The showtime
      * @param      seats     The seats
      */
-    Show(final String mvename, final String showtime, final String[] seats) {
+    Show(final String mvename,
+        final String showtime, final String[] seats) {
         this.mvename = mvename;
         this.showtime = showtime;
         this.seats = seats;
@@ -67,7 +68,7 @@ class Show {
      *
      * @param      index  The index
      */
-    void setSeatNA(int index) {
+    void setSeatNA(final int index) {
         seats[index] = "N/A";
     }
     /**
@@ -150,7 +151,7 @@ class BookYourShow {
      *
      * @param      show  The show
      */
-    void addAShow(Show show) {
+    void addAShow(final Show show) {
         showlist.add(show);
     }
     /**
