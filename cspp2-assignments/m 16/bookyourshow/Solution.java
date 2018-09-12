@@ -97,7 +97,7 @@ class BookYourShow {
             }
 
         if (flag) {
-            ticketlist.add(patron.getnum() + " " + mvename + " " + showtime);
+            ticketlist.add(mvename + " " + showtime + " " + patron.getnum());
         }
     }
 
@@ -112,7 +112,8 @@ class BookYourShow {
 
     void showAll() {
         for (Show show : showlist) {
-            System.out.println(show.toString() + "," + Arrays.toString(show.getseats()).replace(" ",""));
+            System.out.println(show.toString() + "," +
+                Arrays.toString(show.getseats()).replace(" ",""));
         }
     }
 }
