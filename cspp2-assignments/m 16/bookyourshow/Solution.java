@@ -29,9 +29,9 @@ class Show {
     /**
      * Constructs the object.
      *
-     * @param      mvename   The mvename
-     * @param      showtime  The showtime
-     * @param      seats     The seats
+     * @param      mvename1   The mvename 1
+     * @param      showtime1  The showtime 1
+     * @param      seats1     The seats 1
      */
     Show(final String mvename1,
         final String showtime1, final String[] seats1) {
@@ -95,12 +95,12 @@ class Patron {
     /**
      * Constructs the object.
      *
-     * @param      name    The name
-     * @param      mobile  The mobile
+     * @param      name1    The name 1
+     * @param      mobile1  The mobile 1
      */
-    Patron(final String name, final String mobile) {
-        this.name = name;
-        this.mobile = mobile;
+    Patron(final String name1, final String mobile1) {
+        this.name = name1;
+        this.mobile = mobile1;
     }
     /**
      * Getting the name.
