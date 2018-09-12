@@ -184,7 +184,7 @@ class BookYourShow {
         if (show == null) {
             System.out.println("No show");
             return;
-        } 
+        }
 
         String[] sseats = show.getseats();
             for (String seat : seats) {
