@@ -1,73 +1,166 @@
-import java.util.Scanner;
+/**
+ * ArrayList.
+ */
 import java.util.ArrayList;
+/**
+ * Scanner class.
+ */
+import java.util.Scanner;
+/**
+ * Arrays.
+ */
 import java.util.Arrays;
-
+/**
+ * Class for show.
+ */
 class Show {
+    /**
+     * Movie name.
+     */
     String mvename;
+    /**
+     * Show time string.
+     */
     String showtime;
+    /**
+     * Seats in a string array.
+     */
     String[] seats;
+    /**
+     * Constructs the object.
+     *
+     * @param      mvename   The mvename
+     * @param      showtime  The showtime
+     * @param      seats     The seats
+     */
     Show(final String mvename, final String showtime, final String[] seats) {
         this.mvename = mvename;
         this.showtime = showtime;
         this.seats = seats;
     }
-
+    /**
+     * Getting movie name.
+     *
+     * @return     { Movie name }
+     */
     String getmve() {
         return mvename;
     }
-
+    /**
+     * Getting show time.
+     *
+     * @return     { showtime string }
+     */
     String getshowtime() {
         return showtime;
     }
-
+    /**
+     * Seats in the form of string array.
+     *
+     * @return     { Seats array }
+     */
     String[] getseats() {
         return seats;
     }
-
+    /**
+     * Sets the seat na.
+     *
+     * @param      index  The index
+     */
     void setSeatNA(int index) {
         seats[index] = "N/A";
     }
-
+    /**
+     * Returns a string representation of the object.
+     *
+     * @return     String representation of the object.
+     */
     public String toString() {
         return mvename + "," + showtime;
     }
 }
-
+/**
+ * Class for patron.
+ */
 class Patron {
+    /**
+     * Name of the user.
+     */
     private String name;
+    /**
+     * Mobile number of the user.
+     */
     private String mobile;
-
+    /**
+     * Constructs the object.
+     *
+     * @param      name    The name
+     * @param      mobile  The mobile
+     */
     Patron(final String name, final String mobile) {
         this.name = name;
         this.mobile = mobile;
     }
-
+    /**
+     * Getting the name.
+     *
+     * @return     { user name }
+     */
     String getname() {
         return name;
     }
-
+    /**
+     * Mobile number.
+     *
+     * @return     { Mobile number }
+     */
     String getnum() {
         return mobile;
     }
-
+    /**
+     * Returns a string representation of the object.
+     *
+     * @return     String representation of the object.
+     */
     public String toString() {
         return name + " " + mobile;
     }
 }
-
+/**
+ * Class for book your show.
+ */
 class BookYourShow {
+    /**
+     * Showlist in the form of array list.
+     */
     ArrayList<Show> showlist;
+    /**
+     * Tickets in the form of ticket list.
+     */
     ArrayList<String> ticketlist;
-
+    /**
+     * Constructs the object.
+     */
     BookYourShow() {
         showlist = new ArrayList<>();
         ticketlist = new ArrayList<>();
     }
-
+    /**
+     * Adds a show.
+     *
+     * @param      show  The show
+     */
     void addAShow(Show show) {
         showlist.add(show);
     }
-
+    /**
+     * Gets a show.
+     *
+     * @param      mvename   The mvename
+     * @param      showtime  The showtime
+     *
+     * @return     A show.
+     */
     Show getAShow(String mvename, String showtime) {
         for (Show show : showlist) {
             if (show.getmve().equals(mvename) && show.getshowtime().equals(showtime)) {
@@ -77,7 +170,14 @@ class BookYourShow {
 
         return null;
     }
-
+    /**
+     * Booking a show.
+     *
+     * @param      mvename   The movie name
+     * @param      showtime  The showtime
+     * @param      patron    The patron
+     * @param      seats     The seats
+     */
     void bookAShow(String mvename, String showtime, Patron patron, String[] seats) {
         Show show = getAShow(mvename, showtime);
         boolean flag = false;
@@ -100,7 +200,13 @@ class BookYourShow {
             ticketlist.add(patron.getnum() + " " + mvename + " " + showtime);
         }
     }
-
+    /**
+     * Printing the booked ticket.
+     *
+     * @param      movie     The movie
+     * @param      showtime  The showtime
+     * @param      mobile    The mobile
+     */
     void printTicket(String movie, String showtime, String mobile) {
         String t = mobile + " " + movie + " " + showtime;
         if (ticketlist.contains(t)) {
@@ -109,7 +215,9 @@ class BookYourShow {
             System.out.println("Invalid");
         }
     }
-
+    /**
+     * Shows all.
+     */
     void showAll() {
         for (Show show : showlist) {
             System.out.println(show.toString() + "," +
@@ -125,7 +233,7 @@ public final class Solution {
      * Constructs the object.
      */
     private Solution() {
-
+        //Empty constructor.
     }
     /**
      * main method to drive program.
