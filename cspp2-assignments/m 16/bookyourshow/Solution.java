@@ -100,8 +100,8 @@ class BookYourShow {
         }
     }
 
-    void printTicket(String mobile, String movie, String showtime) {
-        String t = mobile + " " + movie + " " + showtime;
+    void printTicket(String movie, String showtime, String mobile) {
+        String t = movie + " " + showtime + " " + mobile;
 
         // for (String ticket : ticketlist) {
         //     if (t.equals(ticket)) {
