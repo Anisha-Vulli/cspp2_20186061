@@ -97,12 +97,12 @@ class BookYourShow {
             }
 
         if (flag) {
-            ticketlist.add(mvename + " " + showtime + " " + patron.getnum());
+            ticketlist.add(patron.getnum() + " " + mvename + " " + showtime);
         }
     }
 
     void printTicket(String movie, String showtime, String mobile) {
-        String t = movie + " " + showtime + " " + mobile;
+        String t = mobile + " " + movie + " " + showtime;
         if (ticketlist.contains(t)) {
             System.out.println(t);
         } else {
