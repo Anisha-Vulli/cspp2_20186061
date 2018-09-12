@@ -207,7 +207,7 @@ class BookYourShow {
      * @param      showtime  The showtime
      * @param      mobile    The mobile
      */
-    void printTicket(String movie, String showtime, String mobile) {
+    void printTicket(final String movie, final String showtime, final String mobile) {
         String t = mobile + " " + movie + " " + showtime;
         if (ticketlist.contains(t)) {
             System.out.println(t);
