@@ -134,11 +134,11 @@ class BookYourShow {
     /**
      * Showlist in the form of array list.
      */
-    ArrayList<Show> showlist;
+    private ArrayList<Show> showlist;
     /**
      * Tickets in the form of ticket list.
      */
-    ArrayList<String> ticketlist;
+    private ArrayList<String> ticketlist;
     /**
      * Constructs the object.
      */
