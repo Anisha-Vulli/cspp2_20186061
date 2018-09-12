@@ -50,7 +50,7 @@ class Patron {
     }
 
     public String toString() {
-        return name + "" + mobile;
+        return name + "," + mobile;
     }
 }
 
