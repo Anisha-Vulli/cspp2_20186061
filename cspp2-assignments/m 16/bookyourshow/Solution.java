@@ -1,5 +1,6 @@
 import java.util.Scanner;
 import java.util.ArrayList;
+import java.util.Arrays;
 
 class Show {
     String mvename;
@@ -118,7 +119,7 @@ class BookYourShow {
 
     void showAll() {
         for (Show show : showlist) {
-            System.out.println(show);
+            System.out.println(show.toString() + "," + Arrays.toString(show.getseats()).replace(" ",""));
         }
     }
 }
