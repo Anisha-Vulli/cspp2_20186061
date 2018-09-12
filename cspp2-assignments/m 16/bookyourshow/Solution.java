@@ -33,11 +33,11 @@ class Show {
      * @param      showtime  The showtime
      * @param      seats     The seats
      */
-    Show(final String mvename,
-        final String showtime, final String[] seats) {
-        this.mvename = mvename;
-        this.showtime = showtime;
-        this.seats = seats;
+    Show(final String mvename1,
+        final String showtime1, final String[] seats1) {
+        this.mvename = mvename1;
+        this.showtime = showtime1;
+        this.seats = seats1;
     }
     /**
      * Getting movie name.
