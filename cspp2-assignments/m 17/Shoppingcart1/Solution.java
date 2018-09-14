@@ -167,6 +167,7 @@ class Shoppingcart {
         System.out.println("Total" + String.valueOf(totalamount));
         System.out.println("Disc%" + String.valueOf(discountedval));
         System.out.println("Tax:" + String.valueOf(taxval));
+        System.out.println("Payable amount: " + String.valueOf(getPayableamount()));
     }
 }
 public final class Solution {
