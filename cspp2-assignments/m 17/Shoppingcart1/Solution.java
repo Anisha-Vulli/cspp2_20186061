@@ -6,10 +6,6 @@ import java.util.ArrayList;
  * Scanner class.
  */
 import java.util.Scanner;
-/**
- * Arrays.
- */
-import java.util.Arrays;
 
 /**
  * Class for item.
