@@ -1,8 +1,4 @@
 /**
- * ArrayList.
- */
-import java.util.ArrayList;
-/**
  * Scanner class.
  */
 import java.util.Scanner;
@@ -58,6 +54,8 @@ public final class Solution {
                 break;
                 case "catalog":
                 shc.showCatalog();
+                break;
+                default:
                 break;
             }
         }
