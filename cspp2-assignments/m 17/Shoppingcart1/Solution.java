@@ -141,6 +141,15 @@ class Shoppingcart {
         }
     }
 
+    public float getPrice(String name) {
+        for (Item e : catalog) {
+            if (e.getiname().equals(name)) {
+                return Float.valueOf(e.getprice());
+            }
+        }
+        return 0.0f;
+    }
+
     void showCatalog() {
         for (Item item : catalog) {
             System.out.println(item.toString());
@@ -150,7 +159,7 @@ class Shoppingcart {
     void printInvoice() {
         System.out.println("Name" + " " + "Quantity" + " " + "Price");
         for (Item iter : cart) {
-            //System.out.println(iter + getprice(iter.getiname()));
+            System.out.println(iter.getiname() + " " + iter.getquant() + " " + getPrice(iter.getiname()));
         }
 
     }
