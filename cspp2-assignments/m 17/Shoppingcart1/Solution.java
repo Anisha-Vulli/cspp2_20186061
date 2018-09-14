@@ -119,10 +119,10 @@ class Shoppingcart {
 
     void applycoupon(final String coupon) {
         int[] couponvals = new int[] {10, 20, 30, 50};
-        String[] num = coupon.split("IND");
+        String[] num = coupon.split("D");
         int coupondis = Integer.parseInt(num[1]);
         for (int i = 0; i < couponvals.length; i++) {
-            if (coupondis == i) {
+            if (coupondis == couponvals[i]) {
                 discount = coupondis;
             }
         }
