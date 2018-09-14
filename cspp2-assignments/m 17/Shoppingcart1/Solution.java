@@ -24,15 +24,15 @@ class Item {
     }
 
     public String getiname() {
-        return this.iname;
+        return iname;
     }
 
     public String getquant() {
-        return this.quant;
+        return quant;
     }
 
     public String getprice() {
-        return this.price;
+        return price;
     }
 
     public void setQuantity(String quant2) {
