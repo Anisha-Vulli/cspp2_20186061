@@ -79,10 +79,10 @@ class Shoppingcart {
 
     Double getTotalamount() {
         double total = 0;
-        for (Item item : cart) {
-            for (Item cartit : catalog) {
-                if ((item.getiname()).equals(cartit.getiname())) {
-                    double price = Double.valueOf(item.getquant()) * Double.valueOf(cartit.getprice());
+        for (Item cartit : cart) {
+            for (Item cat : catalog) {
+                if ((cartit.getiname()).equals(cat.getiname())) {
+                    double price = Double.valueOf(cat.getprice()) * Double.valueOf(cartit.getquant());
                     total = total + price;
                 }
             }
