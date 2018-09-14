@@ -164,8 +164,8 @@ class Shoppingcart {
         double totalamount = getTotalamount();
         double discountedval = (discount * totalamount) / 100;
         double taxval = (15 * discountedval) / 100;
-        System.out.println("Total" + String.valueOf(totalamount));
-        System.out.println("Disc%" + String.valueOf(discountedval));
+        System.out.println("Total:" + String.valueOf(totalamount));
+        System.out.println("Disc%:" + String.valueOf(discountedval));
         System.out.println("Tax:" + String.valueOf(taxval));
         System.out.println("Payable amount: " + String.valueOf(getPayableamount()));
     }
