@@ -50,11 +50,12 @@ class Shoppingcart {
     private ArrayList<Item>cart;
     //private ArrayList<Float>pricearr;
     int discount;
+    boolean cflag;
     Shoppingcart() {
         catalog = new ArrayList<>();
         cart = new ArrayList<>();
         discount = 0;
-        //pricearr = new ArrayList<>();
+        cflag = true;
     }
 
     void addToCatalog(final Item item) {
@@ -124,11 +125,14 @@ class Shoppingcart {
         int[] couponvals = new int[] {10, 20, 30, 50};
         String[] num = coupon.split("D");
         int coupondis = Integer.parseInt(num[1]);
-        for (int i = 0; i < couponvals.length; i++) {
+        if (cflag) {
+            for (int i = 0; i < couponvals.length; i++) {
             if (coupondis == couponvals[i]) {
                 discount = coupondis;
+                cflag = false;
                 return;
             }
+          }
         }
         System.out.println("Invalid coupon");
         //System.out.println(discount);
