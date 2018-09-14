@@ -112,7 +112,7 @@ class Shoppingcart {
         double amt = getTotalamount();
         double discountval = (discount * amt) / 100;
         double amount = amt - discountval;
-        double tax = (15 * amt) / 100;
+        double tax = (15 * amount) / 100;
         payableAmount = amount  + tax;
         return payableAmount;
     }
