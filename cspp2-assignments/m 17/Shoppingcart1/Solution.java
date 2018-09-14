@@ -157,7 +157,7 @@ class Shoppingcart {
     }
 
     void printInvoice() {
-        System.out.println("Name" + " " + "quantity" + " " + "Price");
+        System.out.println("Name" + "   " + "quantity" + "   " + "Price");
         for (Item iter : cart) {
             System.out.println(iter.getiname() + " " + iter.getquant() + " " + getPrice(iter.getiname()));
         }
