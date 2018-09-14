@@ -125,10 +125,9 @@ class Shoppingcart {
             if (coupondis == couponvals[i]) {
                 discount = coupondis;
                 return;
-            } else {
-                System.out.println("Invalid coupon");
             }
         }
+        System.out.println("Invalid coupon");
         //System.out.println(discount);
         return;
     }
