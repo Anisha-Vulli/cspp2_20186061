@@ -127,10 +127,10 @@ class Shoppingcart {
                 return;
             } else {
                 System.out.println("Invalid coupon");
-                return;
             }
         }
         //System.out.println(discount);
+        return;
     }
 
     void showCart() {
