@@ -163,7 +163,12 @@ class Shoppingcart {
         }
         double totalamount = getTotalamount();
         double discountedval = (discount * totalamount) / 100;
-        double taxval = (15 * discountedval) / 100;
+        double taxval = 0.0;
+        if (discountedval == 0.0) {
+            taxval = (15 * totalamount) / 100;
+        } else {
+            taxval = (15 * discountedval) / 100;
+        }
         System.out.println("Total:" + String.valueOf(totalamount));
         System.out.println("Disc%:" + String.valueOf(discountedval));
         System.out.println("Tax:" + String.valueOf(taxval));
