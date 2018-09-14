@@ -64,7 +64,7 @@ class Item {
      *
      * @param      quant2  The quant 2
      */
-    public void setQuantity(String quant2) {
+    public void setQuantity(final String quant2) {
         this.quant = quant2;
     }
     /**
