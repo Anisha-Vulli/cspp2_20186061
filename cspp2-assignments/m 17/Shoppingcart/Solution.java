@@ -48,7 +48,7 @@ class Item {
 class Shoppingcart {
     private ArrayList<Item>catalog;
     private ArrayList<Item>cart;
-    double discount;
+    int discount;
     Shoppingcart() {
         catalog = new ArrayList<>();
         cart = new ArrayList<>();
@@ -120,6 +120,7 @@ class Shoppingcart {
     void applycoupon(final String coupon) {
         String[] num = coupon.split("IND");
         discount = Integer.parseInt(num[1]);
+        //System.out.println(discount);
     }
 
     void showCart() {
