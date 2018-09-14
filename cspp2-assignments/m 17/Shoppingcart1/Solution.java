@@ -48,11 +48,13 @@ class Item {
 class Shoppingcart {
     private ArrayList<Item>catalog;
     private ArrayList<Item>cart;
+    //private ArrayList<Float>pricearr;
     int discount;
     Shoppingcart() {
         catalog = new ArrayList<>();
         cart = new ArrayList<>();
         discount = 0;
+        //pricearr = new ArrayList<>();
     }
 
     void addToCatalog(final Item item) {
@@ -100,6 +102,7 @@ class Shoppingcart {
             for (Item cat : catalog) {
                 if ((cartit.getiname()).equals(cat.getiname())) {
                     double price = Double.valueOf(cat.getprice()) * Double.valueOf(cartit.getquant());
+                    //pricearr.add(price);
                     total = total + price;
                 }
             }
@@ -146,6 +149,10 @@ class Shoppingcart {
 
     void printInvoice() {
         System.out.println("Name" + " " + "Quantity" + " " + "Price");
+        for (Item iter : cart) {
+            System.out.println(iter.getiname() + iter.getquant() + iter.getprice());
+        }
+        
     }
 }
 public final class Solution {
