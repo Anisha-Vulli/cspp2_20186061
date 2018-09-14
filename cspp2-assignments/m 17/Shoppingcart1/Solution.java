@@ -10,7 +10,10 @@ import java.util.Scanner;
  * Arrays.
  */
 import java.util.Arrays;
-import java.util.stream.*;
+/**
+ * Stream class.
+ */
+//import java.util.stream.collections;
 
 
 class Item {
