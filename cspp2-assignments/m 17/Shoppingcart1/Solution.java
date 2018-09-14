@@ -23,19 +23,19 @@ class Item {
         this.price = price1;
     }
 
-    String getiname() {
+    public String getiname() {
         return this.iname;
     }
 
-    String getquant() {
+    public String getquant() {
         return this.quant;
     }
 
-    String getprice() {
+    public String getprice() {
         return this.price;
     }
 
-    void setQuantity(String quant2) {
+    public void setQuantity(String quant2) {
         this.quant = quant2;
     }
 
@@ -150,9 +150,7 @@ class Shoppingcart {
     void printInvoice() {
         System.out.println("Name" + " " + "Quantity" + " " + "Price");
         for (Item iter : cart) {
-            for (Item cataiter : catalog) {
-                System.out.println(iter.getiname() + iter.getquant() + cataiter.getprice());
-            }
+            //System.out.println(iter + getprice(iter.getiname()));
         }
 
     }
