@@ -124,6 +124,7 @@ public final class Solution {
                 break;
                 case "totalAmount":
                 System.out.println("totalAmount: " + String.valueOf(shc.getTotalamount()));
+                break;
                 case "show":
                 shc.showCart();
                 break;
