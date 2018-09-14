@@ -38,15 +38,15 @@ public final class Solution {
                 shc.removeFromcart(new Item(token1[0], token1[1], null));
                 break;
                 case "totalAmount":
-                System.out.println("totalAmount: " +
-                    String.valueOf(shc.getTotalamount()));
+                System.out.println("totalAmount: "
+                    + String.valueOf(shc.getTotalamount()));
                 break;
                 case "coupon":
                 shc.applycoupon(input[1]);
                 break;
                 case "payableAmount":
-                System.out.println("Payable amount: " +
-                    String.valueOf(shc.getPayableamount()));
+                System.out.println("Payable amount: "
+                    + String.valueOf(shc.getPayableamount()));
                 break;
                 case "print":
                 shc.printInvoice();
