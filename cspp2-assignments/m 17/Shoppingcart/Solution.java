@@ -73,6 +73,18 @@ class Shoppingcart {
         }
     }
 
+    Double getTotalamount() {
+        double total = 0;
+        for (Item item : catalog) {
+            for (Item cartit : cart) {
+                if (item.getiname() == cartit.getiname()) {
+                    double price = Double.valueOf(cartit.getquant()) * Double.valueOf(item.getprice());
+                    total = total + price;
+                }
+            }
+        }
+        return total;
+    }
     void showCart() {
         for (Item cartit : cart) {
             System.out.println(cartit.getiname() + " " + cartit.getquant());
@@ -95,14 +107,10 @@ public final class Solution {
             switch(input[0]) {
                 case "Item":
                 String[] tokens = input[1].split(",");
-                //int quanti = Integer.parseInt(tokens[1]);
-                //int fl = Integer.parseInt(tokens[2]);
-                //float price = fl;
                 shc.addToCatalog(new Item(tokens[0], tokens[1], tokens[2]));
                 break;
                 case "add":
                 String[] token = input[1].split(",");
-                //int quant = Integer.parseInt(token[1]);
                 shc.addToCart(new Item(token[0], token[1], null));
                 break;
                 case "remove":
@@ -110,6 +118,8 @@ public final class Solution {
                 int removequant = Integer.parseInt(token1[1]);
                 shc.removeFromcart(token1[0], removequant);
                 break;
+                case "totalamount":
+                System.out.println("totalAmount: " + String.valueOf(shc.getTotalamount()));
                 case "show":
                 shc.showCart();
                 break;
