@@ -24,7 +24,7 @@ public final class Solution {
         int n = Integer.parseInt(scan.nextLine());
         for (int i = 0; i < n; i++) {
             String[] input = scan.nextLine().split(" ");
-            switch(input[0]) {
+            switch (input[0]) {
                 case "Item":
                 String[] tokens = input[1].split(",");
                 shc.addToCatalog(new Item(tokens[0], tokens[1], tokens[2]));
@@ -38,13 +38,15 @@ public final class Solution {
                 shc.removeFromcart(new Item(token1[0], token1[1], null));
                 break;
                 case "totalAmount":
-                System.out.println("totalAmount: " + String.valueOf(shc.getTotalamount()));
+                System.out.println("totalAmount: " +
+                    String.valueOf(shc.getTotalamount()));
                 break;
                 case "coupon":
                 shc.applycoupon(input[1]);
                 break;
                 case "payableAmount":
-                System.out.println("Payable amount: " + String.valueOf(shc.getPayableamount()));
+                System.out.println("Payable amount: " +
+                    String.valueOf(shc.getPayableamount()));
                 break;
                 case "print":
                 shc.printInvoice();
