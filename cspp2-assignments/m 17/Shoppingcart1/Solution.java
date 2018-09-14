@@ -92,12 +92,12 @@ class Shoppingcart {
     /**
      * discount.
      */
-    int discount;
+    private int discount;
     /**
      * flag.
      */
-    boolean cflag;
-    int hundred = 100;
+    private boolean cflag;
+    private int hundred = 100;
     /**
      * Constructs the object.
      */
