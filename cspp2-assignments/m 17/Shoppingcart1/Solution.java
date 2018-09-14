@@ -133,10 +133,9 @@ class Shoppingcart {
                 return;
             }
           }
+          System.out.println("Invalid coupon");
+          return;
         }
-        System.out.println("Invalid coupon");
-        //System.out.println(discount);
-        return;
     }
 
     void showCart() {
