@@ -143,6 +143,10 @@ class Shoppingcart {
             System.out.println(item.toString());
         }
     }
+
+    void printInvoice() {
+        System.out.println("Name" + "Quantity" + "Price");
+    }
 }
 public final class Solution {
     public static void main(final String[] args) {
@@ -172,6 +176,9 @@ public final class Solution {
                 break;
                 case "payableAmount":
                 System.out.println("Payable amount: " + String.valueOf(shc.getPayableamount()));
+                break;
+                case "print":
+                shc.printInvoice();
                 break;
                 case "show":
                 shc.showCart();
