@@ -35,7 +35,7 @@ class Item {
         return this.price;
     }
 
-    void SetQuantity(String quant2) {
+    void setQuantity(String quant2) {
         this.quant = quant2;
     }
 
@@ -48,31 +48,48 @@ class Item {
 class Shoppingcart {
     private ArrayList<Item>catalog;
     private ArrayList<Item>cart;
+    double discount;
     Shoppingcart() {
         catalog = new ArrayList<>();
         cart = new ArrayList<>();
+        discount = 0;
     }
 
     void addToCatalog(final Item item) {
         catalog.add(item);
     }
 
-    void addToCart(final Item cartItem) {
-        for (Item item : catalog) {
-            if ((item.getiname()).equals(cartItem.getiname())) {
-                cart.add(cartItem);
-            }
+    void addToCart(final Item item) {
+        for (Item catalogitem : catalog) {
+            if ((catalogitem.getiname()).equals(item.getiname())) {
+                for (Item cartitem : cart) {
+                    if ((cartitem.getiname().equals(item.getiname()))) {
+                        int a = Integer.parseInt(cartitem.getquant());
+                        int b = Integer.parseInt(item.getquant());
+                        int c = a + b;
+                        cartitem.setQuantity(String.valueOf(c));
+                        return;
+                    }
+                }
+                cart.add(item);
+                return;
+            } 
         }
     }
 
-    void removeFromcart(final String name, final int quant) {
-        int newquant = 0;
-        for (Item cartin : cart) {
-            if (cartin.getiname().equals(name)) {
-                int a = Integer.parseInt(cartin.getquant());
-                //int b = quant;
-                int c = a - quant;
-                cartin.SetQuantity(String.valueOf(c));
+    void removeFromcart(final Item items) {
+        for (Item cartitems : cart) {
+            if ((cartitems.getiname()).equals(items.getiname())) {
+                int a = Integer.parseInt(cartitems.getquant());
+                int b = Integer.parseInt(items.getquant());
+                int c = a - b;
+                if (c == 0) {
+                    cart.remove(cartitems);
+                    return;
+                } else { 
+                    cartitems.setQuantity(String.valueOf(c));
+                    return;
+                }
             }
         }
     }
@@ -89,6 +106,22 @@ class Shoppingcart {
         }
         return total;
     }
+
+    Double getPayableamount() {
+        double payableAmount = 0;
+        double amt = getTotalamount();
+        double discountval = (discount * amt) / 100;
+        double amount = amt - discountval;
+        double tax = (15 * amount) / 100;
+        payableAmount = amount  + tax;
+        return payableAmount;
+    }
+
+    void applycoupon(final String coupon) {
+        String[] num = coupon.split("IND");
+        discount = Integer.parseInt(num[1]);
+    }
+
     void showCart() {
         for (Item cartit : cart) {
             System.out.println(cartit.getiname() + " " + cartit.getquant());
@@ -119,11 +152,16 @@ public final class Solution {
                 break;
                 case "remove":
                 String[] token1 = input[1].split(",");
-                int removequant = Integer.parseInt(token1[1]);
-                shc.removeFromcart(token1[0], removequant);
+                shc.removeFromcart(new Item(token1[0], token1[1], null));
                 break;
                 case "totalAmount":
                 System.out.println("totalAmount: " + String.valueOf(shc.getTotalamount()));
+                break;
+                case "coupon":
+                shc.applycoupon(input[1]);
+                break;
+                case "payableAmount":
+                System.out.println("Payable amount: " + String.valueOf(shc.getPayableamount()));
                 break;
                 case "show":
                 shc.showCart();
