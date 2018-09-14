@@ -10,61 +10,120 @@ import java.util.Scanner;
  * Arrays.
  */
 import java.util.Arrays;
+
 /**
- * Stream class.
+ * Class for item.
  */
-//import java.util.stream.collections;
-
-
 class Item {
+    /**
+     * Name of the item.
+     */
     private String iname;
+    /**
+     * Quantity.
+     */
     private String quant;
+    /**
+     * Price.
+     */
     private String price;
+    /**
+     * Constructs the object.
+     *
+     * @param      iname1  The iname 1
+     * @param      quant1  The quant 1
+     * @param      price1  The price 1
+     */
     Item(final String iname1, final String quant1, final String price1) {
         this.iname = iname1;
         this.quant = quant1;
         this.price = price1;
     }
-
+    /**
+     * getting name.
+     *
+     * @return     { name }
+     */
     public String getiname() {
         return iname;
     }
-
+    /**
+     * getting quantity.
+     *
+     * @return     { quantity }
+     */
     public String getquant() {
         return quant;
     }
-
+    /**
+     * getting price.
+     *
+     * @return     { price }
+     */
     public String getprice() {
         return price;
     }
-
+    /**
+     * Sets the quantity.
+     *
+     * @param      quant2  The quant 2
+     */
     public void setQuantity(String quant2) {
         this.quant = quant2;
     }
-
+    /**
+     * Returns a string representation of the object.
+     *
+     * @return     String representation of the object.
+     */
     public String toString() {
         return iname + " " + quant + " " + Float.valueOf(price);
     }
 }
 
-
+/**
+ * Class for shoppingcart.
+ */
 class Shoppingcart {
+    /**
+     * Catalog arraylist.
+     */
     private ArrayList<Item>catalog;
+    /**
+     * cart arraylist.
+     */
     private ArrayList<Item>cart;
-    //private ArrayList<Float>pricearr;
+    /**
+     * discount.
+     */
     int discount;
+    /**
+     * flag.
+     */
     boolean cflag;
+    int hundred = 100;
+    /**
+     * Constructs the object.
+     */
     Shoppingcart() {
         catalog = new ArrayList<>();
         cart = new ArrayList<>();
         discount = 0;
         cflag = true;
     }
-
+    /**
+     * Adds to catalog.
+     *
+     * @param      item  The item
+     */
     void addToCatalog(final Item item) {
         catalog.add(item);
     }
-
+    /**
+     * Adds to cartesian.
+     *
+     * @param      item  The item
+     */
     void addToCart(final Item item) {
         for (Item catalogitem : catalog) {
             if ((catalogitem.getiname()).equals(item.getiname())) {
@@ -82,7 +141,11 @@ class Shoppingcart {
             } 
         }
     }
-
+    /**
+     * Removes a from cart.
+     *
+     * @param      items  The items
+     */
     void removeFromcart(final Item items) {
         for (Item cartitems : cart) {
             if ((cartitems.getiname()).equals(items.getiname())) {
@@ -99,7 +162,11 @@ class Shoppingcart {
             }
         }
     }
-
+    /**
+     * Gets the totalamount.
+     *
+     * @return     The totalamount.
+     */
     Double getTotalamount() {
         double total = 0;
         for (Item cartit : cart) {
@@ -113,17 +180,25 @@ class Shoppingcart {
         }
         return total;
     }
-
+    /**
+     * Gets the payableamount.
+     *
+     * @return     The payableamount.
+     */
     Double getPayableamount() {
         double payableAmount = 0;
         double amt = getTotalamount();
-        double discountval = (discount * amt) / 100;
+        double discountval = (discount * amt) / hundred;
         double amount = amt - discountval;
-        double tax = (15 * amount) / 100;
+        double tax = (15 * amount) / hundred;
         payableAmount = amount  + tax;
         return payableAmount;
     }
-
+    /**
+     * Applying coupon.
+     *
+     * @param      coupon  The coupon
+     */
     void applycoupon(final String coupon) {
         int[] couponvals = new int[] {10, 20, 30, 50};
         String[] num = coupon.split("D");
@@ -140,13 +215,21 @@ class Shoppingcart {
           return;
         }
     }
-
+    /**
+     * Shows the cartesian.
+     */
     void showCart() {
         for (Item cartit : cart) {
             System.out.println(cartit.getiname() + " " + cartit.getquant());
         }
     }
-
+    /**
+     * Gets the price.
+     *
+     * @param      name  The name
+     *
+     * @return     The price.
+     */
     public float getPrice(String name) {
         for (Item e : catalog) {
             if (e.getiname().equals(name)) {
@@ -155,25 +238,29 @@ class Shoppingcart {
         }
         return 0.0f;
     }
-
+    /**
+     * Shows the catalog.
+     */
     void showCatalog() {
         for (Item item : catalog) {
             System.out.println(item.toString());
         }
     }
-
+    /**
+     * Printing invoice.
+     */
     void printInvoice() {
         System.out.println("Name" + "   " + "quantity" + "   " + "Price");
         for (Item iter : cart) {
             System.out.println(iter.getiname() + " " + iter.getquant() + " " + getPrice(iter.getiname()));
         }
         double totalamount = getTotalamount();
-        double discountedval = (discount * totalamount) / 100;
+        double discountedval = (discount * totalamount) / hundred;
         double taxval = 0.0;
         if (discountedval == 0.0) {
-            taxval = (15 * totalamount) / 100;
+            taxval = (15 * totalamount) / hundred;
         } else {
-            taxval = (15 * (totalamount - discountedval)) / 100;
+            taxval = (15 * (totalamount - discountedval)) / hundred;
         }
         System.out.println("Total:" + String.valueOf(totalamount));
         System.out.println("Disc%:" + String.valueOf(discountedval));
@@ -181,7 +268,21 @@ class Shoppingcart {
         System.out.println("Payable amount: " + String.valueOf(getPayableamount()));
     }
 }
+/**
+ * Class for Solution.
+ */
 public final class Solution {
+    /**
+     * Constructs the object.
+     */
+    private Solution() {
+        //Empty constructor.
+    }
+    /**
+     * Main function.
+     *
+     * @param      args  The arguments
+     */
     public static void main(final String[] args) {
         Shoppingcart shc = new Shoppingcart();
         Scanner scan = new Scanner(System.in);
