@@ -58,7 +58,11 @@ class Shoppingcart {
     }
 
     void addToCart(final Item cartItem) {
-        cart.add(cartItem);
+        for (Item item : catalog) {
+            if ((item.getiname()).equals(cartItem.getiname())) {
+                cart.add(cartItem);
+            }
+        }
     }
 
     void removeFromcart(final String name, final int quant) {
@@ -75,10 +79,10 @@ class Shoppingcart {
 
     Double getTotalamount() {
         double total = 0;
-        for (Item item : catalog) {
-            for (Item cartit : cart) {
-                if (item.getiname() == cartit.getiname()) {
-                    double price = Double.valueOf(cartit.getquant()) * Double.valueOf(item.getprice());
+        for (Item item : cart) {
+            for (Item cartit : catalog) {
+                if ((item.getiname()).equals(cartit.getiname())) {
+                    double price = Double.valueOf(item.getquant()) * Double.valueOf(cartit.getprice());
                     total = total + price;
                 }
             }
@@ -118,7 +122,7 @@ public final class Solution {
                 int removequant = Integer.parseInt(token1[1]);
                 shc.removeFromcart(token1[0], removequant);
                 break;
-                case "totalamount":
+                case "totalAmount":
                 System.out.println("totalAmount: " + String.valueOf(shc.getTotalamount()));
                 case "show":
                 shc.showCart();
