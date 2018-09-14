@@ -84,11 +84,11 @@ class Shoppingcart {
     /**
      * Catalog arraylist.
      */
-    private ArrayList<Item>catalog;
+    private ArrayList<Item> catalog;
     /**
      * cart arraylist.
      */
-    private ArrayList<Item>cart;
+    private ArrayList<Item> cart;
     /**
      * discount.
      */
