@@ -145,7 +145,7 @@ class Shoppingcart {
     }
 
     void printInvoice() {
-        System.out.println("Name" + "Quantity" + "Price");
+        System.out.println("Name" + " " + "Quantity" + " " + "Price");
     }
 }
 public final class Solution {
