@@ -60,7 +60,7 @@ class Quiz {
 				System.out.println();
 			}
 
-			System.out.println(question[i] + "(" + question[i].answer + ")");
+			System.out.println(question[i] + "(" + question[i].crctmark + ")");
 			String[] displaychoice = question[i].choices.split(",");
 			for (int j = 0; j < displaychoice.length; j++) {
 				System.out.println(displaychoice[j] + "		");
