@@ -4,17 +4,17 @@ import java.util.ArrayList;
 
 class Quiz {
     private ArrayList<String> answerchoice;
-    private ArrayList<String> questions;
+    private String[] questions;
     private ArrayList<String> answers;
-    private ArrayList<String> choices;
+    private String[] choices;
     private int size;
     // private ArrayList<Integer> correctmark;
     // private ArrayList<Integer> wrongmark;
     Quiz() {
         answerchoice = new ArrayList<>();
-        questions = new ArrayList<>();
+        questions = new String[10];
         answers = new ArrayList<>();
-        choices = new ArrayList<>();
+        choices = new String[10];
         size = 0;
         // correctmark = new ArrayList<>();
         // wrongmark = new ArrayList<>();
@@ -27,7 +27,7 @@ class Quiz {
 
     void addquestions(final String question) {
         size = 0;
-        questions.add(question);
+        questions[size++] = question;
     }
 
     void addanswers(final String answerenter) {
@@ -37,7 +37,7 @@ class Quiz {
 
     void addchoices(final String choice) {
         size = 0;
-        choices.add(choice);
+        choices[size++] = choice;
     }
 
     int size() {
@@ -58,22 +58,12 @@ class Quiz {
                 System.out.println(tempstr1);
             }
         }
-
         return "";
     }
 
+    void caluculateScore() {
 
-    // int getanswer() {
-    //     return this.answer;
-    // }
-
-    // int getcorrectmark() {
-    //     return this.correctmark;
-    // }
-
-    // int getwrongmark() {
-    //     return this.wrongmark;
-    // }
+    }
 }
 
 /**
