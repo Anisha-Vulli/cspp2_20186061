@@ -9,7 +9,7 @@ class Question {
 		questionname = question1;
 		choices = choices1;
 		answer = answer1;
-		crctmark = crctmark;
+		crctmark = crctmark1;
 		wrngmark = wrngmark1;
 	}
 }
