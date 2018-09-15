@@ -124,6 +124,8 @@ public final class Solution {
             String[] tokens = s.nextLine().split(" ");
             quiz.addanswer(tokens[1]);
         }
+
+        quiz.toString();
     }
 
     /**
