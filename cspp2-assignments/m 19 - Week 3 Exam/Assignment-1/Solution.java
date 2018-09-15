@@ -46,15 +46,16 @@ class Quiz {
 
     public String toString() {
         String str = "";
-        for (int i = 0; i < questions.length; i++) {
-            String tempstr = "";
-            //System.out.println(questions[i]);
-            for (int j = 0; j < choices.length; j++) {
-                System.out.println(choices.length);
-                // tempstr = tempstr + " " + choices[i];
-                // System.out.println(tempstr);
-            }
-        }
+        System.out.println(choices.length);
+        // for (int i = 0; i < questions.length; i++) {
+        //     String tempstr = "";
+        //     //System.out.println(questions[i]);
+        //     for (int j = 0; j < choices.length; j++) {
+                
+        //         // tempstr = tempstr + " " + choices[i];
+        //         // System.out.println(tempstr);
+        //     }
+        // }
 
         return "";
     }
