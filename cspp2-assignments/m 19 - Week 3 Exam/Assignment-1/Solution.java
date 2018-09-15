@@ -81,7 +81,7 @@ class Quiz {
                     System.out.println(" " + "Marks awarded" + correctmark.get(Integer.parseInt(stng)));
                 } else {
                     System.out.print("Wrong answer");
-                    System.out.println(" " + "Marks awarded" + correctmark.get(Integer.parseInt(stng)));
+                    System.out.println(" " + "Marks awarded" + wrongmark.get(Integer.parseInt(stng)));
                 }
             }
             //System.out.println("Wrong answer");
