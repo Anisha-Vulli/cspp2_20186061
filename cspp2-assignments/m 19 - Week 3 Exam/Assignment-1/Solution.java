@@ -51,8 +51,8 @@ class Quiz {
             System.out.println(str);
             for (String iter : choices) {
                 tempstr = tempstr + " " + iter;
-                System.out.println(tempstr);
             }
+            System.out.println(tempstr);
         }
 
         return "";
