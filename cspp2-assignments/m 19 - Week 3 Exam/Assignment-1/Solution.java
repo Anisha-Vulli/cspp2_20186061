@@ -60,7 +60,7 @@ class Quiz {
         //String str = "";
         for (String str : questions) {
             String tempstr = "";
-            System.out.println(str + "(" +  ")");
+            System.out.println(str + "(" + answers.get(Integer.parseInt(str))+ ")");
             for (String iter : choices) {
                 String tempstr1 = "";
                 String[] iterarray = iter.split(",");
