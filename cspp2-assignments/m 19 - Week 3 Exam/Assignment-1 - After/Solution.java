@@ -4,6 +4,7 @@ import java.util.Scanner;
  * Solution class for code-eval.
  */
 public final class Solution {
+    private static boolean errorflag = false;
      /**
      * Constructs the object.
      */
@@ -64,10 +65,14 @@ public final class Solution {
         // add the question objects to the quiz class
         if (questionCount == 0) {
                 System.out.println("Quiz does not have questions");
+                errorflag = true;
         }
         for (int i = 0; i < questionCount; i++) {
             String[] tokens = s.nextLine().split(":");
-
+            if (tokens.length != 5 || tokens[0].equals("")) {
+                System.out.println("Error! Malformed question");
+                errorflag = true;
+            }
         }
     }
 
