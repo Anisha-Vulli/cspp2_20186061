@@ -80,6 +80,12 @@ public final class Solution {
                 errorflag = true;
                 return;
             }
+
+            if (Integer.parseInt(tokens[2]) <= 4) {
+                System.out.println("Error! Correct answer choice number is out of range for question text 1");
+                errorflag = true;
+                return;
+            }
         }
     }
 
