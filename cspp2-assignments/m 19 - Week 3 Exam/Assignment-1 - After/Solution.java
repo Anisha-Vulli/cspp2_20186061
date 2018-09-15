@@ -107,9 +107,8 @@ public final class Solution {
                 Integer.parseInt(tokens[3]), Integer.parseInt(tokens[4]));
 
             quiz.addtoques(newques);
+            quiz.displaycount();
         }
-
-        quiz.displaycount();
     }
 
     /**
