@@ -70,7 +70,7 @@ public final class Solution {
         if (questionCount == 0) {
                 System.out.println("Quiz does not have questions");
                 errorflag = true;
-        }
+        } else {
         for (int i = 0; i < questionCount; i++) {
             String[] tokens = s.nextLine().split(":");
             if (tokens.length != 5 || tokens[0].equals("")) {
@@ -107,8 +107,9 @@ public final class Solution {
                 Integer.parseInt(tokens[3]), Integer.parseInt(tokens[4]));
 
             quiz.addtoques(newques);
-            quiz.displaycount();
         }
+        quiz.displaycount();
+    }
     }
 
     /**
