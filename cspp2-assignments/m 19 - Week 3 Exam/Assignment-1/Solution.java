@@ -1,27 +1,42 @@
 import java.util.Scanner;
 import java.util.Arrays;
+import java.util.ArrayList;
 
 class Quiz {
-    private int answer;
-    private int correctmark;
-    private int wrongmark;
+    private String[] answerchoice;
+    private int size;
+    // private ArrayList<Integer> correctmark;
+    // private ArrayList<Integer> wrongmark;
     Quiz() {
-        this.answer = answer;
-        this.correctmark = correctmark;
-        this.wrongmark = wrongmark;
+        answerchoice = new String[10];
+        size = 0;
+        // correctmark = new ArrayList<>();
+        // wrongmark = new ArrayList<>();
     }
 
-    int getanswer() {
-        return this.answer;
+    void addanswer(final String answers) {
+        answerchoice[size++] = answers;
     }
 
-    int getcorrectmark() {
-        return this.correctmark;
-    }
+    public String toString() {
+        String str = "";
+        for (int i = 0; i < size; i++) {
+            str = str + answerchoice[i];
+        }
 
-    int getwrongmark() {
-        return this.wrongmark;
+        return str;
     }
+    // int getanswer() {
+    //     return this.answer;
+    // }
+
+    // int getcorrectmark() {
+    //     return this.correctmark;
+    // }
+
+    // int getwrongmark() {
+    //     return this.wrongmark;
+    // }
 }
 
 /**
@@ -84,10 +99,12 @@ public final class Solution {
      */
     public static void loadQuestions(final Scanner s, final Quiz quiz, final int questionCount) {
         //int count = 0;
+        //ArrayList<String> questions = new ArrayList<>();
         for (int i = 0; i < questionCount; i++) {
             String[] input = s.nextLine().split(":");
-            System.out.println(Arrays.toString(input));
+            //questions.add(input);
         }
+        //System.out.println(n);
         System.out.println("4 are added to the quiz");
     }
 
@@ -102,6 +119,11 @@ public final class Solution {
         // write your code here to display the quiz questions
         // read the user responses from the console
         // store the user respones in the quiz object
+        
+        for (int i = 0; i < answerCount; i++) {
+            String[] tokens = s.nextLine().split(" ");
+            quiz.addanswer(tokens[1]);
+        }
     }
 
     /**
