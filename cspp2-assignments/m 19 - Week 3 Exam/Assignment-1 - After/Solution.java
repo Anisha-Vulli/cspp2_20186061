@@ -11,7 +11,11 @@ public final class Solution {
     private Solution() {
         // leave this blank
     }
-
+    /**
+     * Flag checking
+     *
+     * @return     { flag }
+     */
     public static boolean getflag() {
         return errorflag;
     }
@@ -67,19 +71,21 @@ public final class Solution {
         // write your code here to read the questions from the console
         // tokenize the question line and create the question object
         // add the question objects to the quiz class
+        final int five = 5;
+        final int two = 2;
         if (questionCount == 0) {
                 System.out.println("Quiz does not have questions");
                 errorflag = true;
         } else {
         for (int i = 0; i < questionCount; i++) {
             String[] tokens = s.nextLine().split(":");
-            if (tokens.length != 5 || tokens[0].equals("")) {
+            if (tokens.length != five || tokens[0].equals("")) {
                 System.out.println("Error! Malformed question");
                 errorflag = true;
                 return;
             }
 
-            if(tokens[1].split(",").length < 2) {
+            if(tokens[1].split(",").length < two) {
                 System.out.println(tokens[0] + " does not have enough answer choices");
                 errorflag = true;
                 return;
