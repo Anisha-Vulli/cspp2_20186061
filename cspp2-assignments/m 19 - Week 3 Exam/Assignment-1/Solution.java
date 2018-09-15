@@ -50,13 +50,12 @@ class Quiz {
             String tempstr = "";
             System.out.println(str);
             for (String iter : choices) {
-                String tempstr1 = "";
+                String temp = "";
                 String[] iterarray = iter.split(",");
                 for (int i = 0; i < iterarray.length; i++) {
-                    String temp = "";
-                    tempstr1 = temp + " " + iterarray[i];   
+                    temp = temp + " " + iterarray[i];   
                 }
-                System.out.println(tempstr1);
+                System.out.println(temp);
             }
         }
 
