@@ -5,18 +5,22 @@ import java.util.ArrayList;
 class Quiz {
     private String[] answerchoice;
     private String[] questions;
+    private String[] answers;
+    private String[] choices;
     private int size;
     // private ArrayList<Integer> correctmark;
     // private ArrayList<Integer> wrongmark;
     Quiz() {
         answerchoice = new String[10];
         questions = new String[10];
+        answers = new String[10];
+        choices = new String[10];
         size = 0;
         // correctmark = new ArrayList<>();
         // wrongmark = new ArrayList<>();
     }
 
-    void addanswer(final String answers) {
+    void addanswerchoice(final String answers) {
         answerchoice[size++] = answers;
     }
 
@@ -24,13 +28,30 @@ class Quiz {
         questions[size++] = question;
     }
 
+    void addanswers(final String answerenter) {
+        answers[size++] = answerenter;
+    }
+
+    void addchoices(final String choice) {
+        choices[size++] = choice;
+    }
+
+    int size() {
+        return size;
+    }
+
     public String toString() {
         String str = "";
-        for (int i = 0; i < size; i++) {
-            str = str + questions[i];
+        for (int i = 0; i < questions.length; i++) {
+            String tempstr = "";
+            System.out.println(questions[i]);
+            for (int j = 0; j < choices.length; j++) {
+                tempstr = tempstr + " " + choices[i];
+                System.out.println(tempstr);
+            }
         }
 
-        return str;
+        return "";
     }
     // int getanswer() {
     //     return this.answer;
@@ -109,8 +130,9 @@ public final class Solution {
         for (int i = 0; i < questionCount; i++) {
             String[] input = s.nextLine().split(":");
             quiz.addquestions(input[0]);
+            quiz.addchoices(input[1]);
+            quiz.addanswers(input[2]);
         }
-        System.out.println(quiz.toString());
         System.out.println("4 are added to the quiz");
     }
 
@@ -128,8 +150,10 @@ public final class Solution {
         
         for (int i = 0; i < answerCount; i++) {
             String[] tokens = s.nextLine().split(" ");
-            quiz.addanswer(tokens[1]);
+            quiz.addanswerchoice(tokens[1]);
         }
+
+        quiz.toString();
     }
 
     /**
