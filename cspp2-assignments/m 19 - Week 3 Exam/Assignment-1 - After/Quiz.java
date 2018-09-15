@@ -70,4 +70,42 @@ class Quiz {
 		}
 		System.out.println();
 	}
+
+	int caluculatescore() {
+		for (int i = 0; i < quescount; i++) {
+			if (userchoice[i].split(" ")[1].equals("a") || userchoice[i].split(" ")[1].equals("b") || userchoice[i].split(" ")[1].equals("c") || userchoice[i].split(" ")[1].equals("d")) {
+				if(question[i].answer.equals("1")) {
+					question[i].answer = "a";
+				} else if (question[i].answer.equals("2")) {
+					question[i].answer = "b";
+				} else if (question[i].answer.equals("3")) {
+					question[i].answer = "c";
+				} else {
+					question[i].answer = "d";
+				}
+			}
+
+			if (userchoice[i].split(" ")[1].equals("1") || userchoice[i].split(" ")[1].equals("2") || userchoice[i].split(" ")[1].equals("3") || userchoice[i].split(" ")[1].equals("4")) {
+				if (question[i].answer.equals("1")) {
+					question[i].answer = question[i].choices.split(",")[0].split(" ")[1];
+				} else if (question[i].answer.equals("2")) {
+					question[i].answer = question[i].choices.split(",")[1].split(" ")[1];
+				} else if (question[i].answer.equals("3")) {
+					question[i].answer = question[i].choices.split(",")[2].split(" ")[1];
+				} else {
+					question[i].answer = question[i].choices.split(",")[3].split(" ")[1];
+				}
+			}
+
+			System.out.println(question[i].questionname);
+			if (question[i].answer.equals(userchoice[i].split(" ")[1])) {
+				System.out.println(" Correct Answer! - Marks Awarded: " + question[i].crctmark);
+				totalscore = totalscore + question[i].crctmark;
+			} else {
+			    System.out.println(" Wrong Answer! - Penalty: " + question[i].wrngmark);
+			    totalscore = totalscore + question[i].wrngmark;
+			}
+		}
+		return totalscore;
+	}
 }

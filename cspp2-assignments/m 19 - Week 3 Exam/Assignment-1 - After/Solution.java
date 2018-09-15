@@ -140,5 +140,9 @@ public final class Solution {
      */
     public static void displayScore(final Quiz quiz) {
         // write your code here to display the score report
+        if (getflag()) {
+            return;
+        }
+        System.out.println("Total Score: " + quiz.caluculatescore());
     }
 }
