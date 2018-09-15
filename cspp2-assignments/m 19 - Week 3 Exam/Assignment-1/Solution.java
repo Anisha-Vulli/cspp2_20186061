@@ -54,9 +54,9 @@ class Quiz {
                 String[] iterarray = iter.split(",");
                 for (int i = 0; i < iterarray.length; i++) {
                     String temp = "";
-                    tempstr = temp + " " + iterarray[i];   
+                    tempstr1 = temp + " " + iterarray[i];   
                 }
-                System.out.println(tempstr);
+                System.out.println(tempstr1);
             }
         }
 
