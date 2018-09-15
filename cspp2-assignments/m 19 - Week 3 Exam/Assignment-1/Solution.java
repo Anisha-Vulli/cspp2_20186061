@@ -4,17 +4,21 @@ import java.util.ArrayList;
 
 class Quiz {
     private ArrayList<String> answerchoice;
-    private String[] questions;
+    private ArrayList<String> questions;
     private ArrayList<String> answers;
-    private String[] choices;
+    private ArrayList<String> choices;
+    private ArrayList<String> correctmark;
+    private ArrayList<String> wrongmark;
     private int size;
     // private ArrayList<Integer> correctmark;
     // private ArrayList<Integer> wrongmark;
     Quiz() {
         answerchoice = new ArrayList<>();
-        questions = new String[10];
+        questions = new ArrayList<>();
         answers = new ArrayList<>();
-        choices = new String[10];
+        choices = new ArrayList<>();
+        correctmark = new ArrayList<>();
+        wrongmark = new ArrayList<>();
         size = 0;
         // correctmark = new ArrayList<>();
         // wrongmark = new ArrayList<>();
@@ -27,7 +31,7 @@ class Quiz {
 
     void addquestions(final String question) {
         size = 0;
-        questions[size++] = question;
+        questions.add(question);
     }
 
     void addanswers(final String answerenter) {
@@ -37,7 +41,15 @@ class Quiz {
 
     void addchoices(final String choice) {
         size = 0;
-        choices[size++] = choice;
+        choices.add(choice);
+    }
+
+    void addcorrectmarks(final String crctmark) {
+        correctmark.add(crctmark);
+    }
+
+    void addwrongmarks(final String wrngmark) {
+        wrongmark.add(wrngmark);
     }
 
     int size() {
@@ -51,11 +63,13 @@ class Quiz {
             System.out.println(str + "(" +  ")");
             for (String iter : choices) {
                 String tempstr1 = "";
-                tempstr1 = tempstr1 + " " + iter;   
+                String[] iterarray = iter.split(",");
+                for (String stng : iterarray) {
+                    tempstr1 = tempstr1 + " " + stng;   
                 }
-                System.out.println(tempstr);
+                System.out.println(tempstr1);
             }
-        
+        }
         return "";
     }
 
@@ -130,6 +144,8 @@ public final class Solution {
             quiz.addquestions(input[0]);
             quiz.addchoices(input[1]);
             quiz.addanswers(input[2]);
+            quiz.addcorrectmarks(input[3]);
+            quiz.addwrongmarks(input[4]);
         }
         System.out.println("4 are added to the quiz");
     }
