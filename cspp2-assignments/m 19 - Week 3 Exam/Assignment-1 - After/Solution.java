@@ -90,25 +90,29 @@ public final class Solution {
             }
 
             if(tokens[one].split(",").length < two) {
-                System.out.println(tokens[zero] + " does not have enough answer choices");
+                System.out.println(tokens[zero]
+                    + " does not have enough answer choices");
                 errorflag = true;
                 return;
             }
 
             if (Integer.parseInt(tokens[two]) > four) {
-                System.out.println("Error! Correct answer choice number is out of range for " + tokens[0]);
+                System.out.println("Error! Correct answer" + 
+                    " choice number is out of range for " + tokens[0]);
                 errorflag = true;
                 return;
             }
 
             if (Integer.parseInt(tokens[three]) < zero) {
-                System.out.println("Invalid max marks for " + tokens[0]);
+                System.out.println("Invalid max marks for "
+                    + tokens[0]);
                 errorflag = true;
                 return;
             }
 
             if (Integer.parseInt(tokens[four]) > zero) {
-                System.out.println("Invalid penalty for " + tokens[0]);
+                System.out.println("Invalid penalty for "
+                    + tokens[0]);
                 errorflag = true;
                 return;
             }
