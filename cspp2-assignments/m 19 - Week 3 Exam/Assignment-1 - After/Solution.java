@@ -1,9 +1,15 @@
+/**
+ * Scanner.
+ */
 import java.util.Scanner;
 
 /**
  * Solution class for code-eval.
  */
 public final class Solution {
+    /**
+     * Error flag.
+     */
     private static boolean errorflag = false;
      /**
      * Constructs the object.
@@ -12,7 +18,7 @@ public final class Solution {
         // leave this blank
     }
     /**
-     * Flag checking
+     * Flag checking.
      *
      * @return     { flag }
      */
@@ -67,7 +73,8 @@ public final class Solution {
      * @param      quiz           The quiz object
      * @param      questionCount  The question count
      */
-    public static void loadQuestions(final Scanner s, final Quiz quiz, final int questionCount) {
+    public static void loadQuestions(final Scanner s,
+        final Quiz quiz, final int questionCount) {
         // write your code here to read the questions from the console
         // tokenize the question line and create the question object
         // add the question objects to the quiz class
@@ -89,7 +96,7 @@ public final class Solution {
                 return;
             }
 
-            if(tokens[one].split(",").length < two) {
+            if (tokens[one].split(",").length < two) {
                 System.out.println(tokens[zero]
                     + " does not have enough answer choices");
                 errorflag = true;
@@ -97,8 +104,8 @@ public final class Solution {
             }
 
             if (Integer.parseInt(tokens[two]) > four) {
-                System.out.println("Error! Correct answer" + 
-                    " choice number is out of range for " + tokens[0]);
+                System.out.println("Error! Correct answer"
+                    +  " choice number is out of range for " + tokens[0]);
                 errorflag = true;
                 return;
             }
