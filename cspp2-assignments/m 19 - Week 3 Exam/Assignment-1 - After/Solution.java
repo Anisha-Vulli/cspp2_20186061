@@ -94,7 +94,7 @@ public final class Solution {
             }
 
             if (Integer.parseInt(tokens[4]) > 0) {
-                System.out.println("Invalid penality for" + tokens[0]);
+                System.out.println("Invalid penalty for " + tokens[0]);
                 errorflag = true;
                 return;
             }
