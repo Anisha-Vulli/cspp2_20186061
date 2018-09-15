@@ -11,6 +11,10 @@ public final class Solution {
     private Solution() {
         // leave this blank
     }
+
+    public static boolean getflag() {
+        return errorflag;
+    }
     /**
      * main function to execute test cases.
      *
@@ -119,6 +123,15 @@ public final class Solution {
         // write your code here to display the quiz questions
         // read the user responses from the console
         // store the user respones in the quiz object
+        if (getflag()) {
+            return;
+        }
+
+        for (int i = 0; i < answerCount; i++) {
+            String choiceline = s.nextLine();
+            quiz.addtochoices(choiceline);
+        }
+        quiz.displayqueschoice();
     }
 
     /**

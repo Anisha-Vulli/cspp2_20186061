@@ -45,4 +45,29 @@ class Quiz {
 		question[quescount] = ques;
 		quescount++;
 	}
+
+	void addtochoices(String userchoices) {
+		if (userchoicecount == userchoice.length) {
+			choiceresize();
+		}
+
+		userchoice[userchoicecount++] = userchoices;
+	}
+
+	void displayqueschoice() {
+		for (int i = 0; i < quescount; i++) {
+			if (i > 0) {
+				System.out.println();
+			}
+
+			System.out.println(question[i] + "(" + question[i].answer + ")");
+			String[] displaychoice = question[i].choices.split(",");
+			for (int j = 0; j < displaychoice.length; j++) {
+				System.out.println(displaychoice[j] + "		");
+			}
+			System.out.print(displaychoice[displaychoice.length - 1]);
+			System.out.println();
+		}
+		System.out.println();
+	}
 }
