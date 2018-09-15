@@ -72,11 +72,13 @@ public final class Solution {
             if (tokens.length != 5 || tokens[0].equals("")) {
                 System.out.println("Error! Malformed question");
                 errorflag = true;
+                return;
             }
 
             if(tokens[1].split(",").length < 2) {
                 System.out.println(tokens[0] + "does not have enough answer choices");
                 errorflag = true;
+                return;
             }
         }
     }
