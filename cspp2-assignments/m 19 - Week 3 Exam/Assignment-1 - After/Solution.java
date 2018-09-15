@@ -73,44 +73,48 @@ public final class Solution {
         // add the question objects to the quiz class
         final int five = 5;
         final int two = 2;
+        final int zero = 0;
+        final int one = 1;
+        final int three = 3;
+        final int four = 4;
         if (questionCount == 0) {
                 System.out.println("Quiz does not have questions");
                 errorflag = true;
         } else {
         for (int i = 0; i < questionCount; i++) {
             String[] tokens = s.nextLine().split(":");
-            if (tokens.length != five || tokens[0].equals("")) {
+            if (tokens.length != five || tokens[zero].equals("")) {
                 System.out.println("Error! Malformed question");
                 errorflag = true;
                 return;
             }
 
-            if(tokens[1].split(",").length < two) {
-                System.out.println(tokens[0] + " does not have enough answer choices");
+            if(tokens[one].split(",").length < two) {
+                System.out.println(tokens[zero] + " does not have enough answer choices");
                 errorflag = true;
                 return;
             }
 
-            if (Integer.parseInt(tokens[2]) > 4) {
+            if (Integer.parseInt(tokens[two]) > four) {
                 System.out.println("Error! Correct answer choice number is out of range for " + tokens[0]);
                 errorflag = true;
                 return;
             }
 
-            if (Integer.parseInt(tokens[3]) < 0) {
+            if (Integer.parseInt(tokens[three]) < zero) {
                 System.out.println("Invalid max marks for " + tokens[0]);
                 errorflag = true;
                 return;
             }
 
-            if (Integer.parseInt(tokens[4]) > 0) {
+            if (Integer.parseInt(tokens[four]) > zero) {
                 System.out.println("Invalid penalty for " + tokens[0]);
                 errorflag = true;
                 return;
             }
 
-            Question newques = new Question(tokens[0], tokens[1], tokens[2],
-                Integer.parseInt(tokens[3]), Integer.parseInt(tokens[4]));
+            Question newques = new Question(tokens[zero], tokens[one], tokens[two],
+                Integer.parseInt(tokens[three]), Integer.parseInt(tokens[four]));
 
             quiz.addtoques(newques);
         }
