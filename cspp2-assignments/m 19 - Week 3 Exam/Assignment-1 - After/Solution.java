@@ -113,8 +113,10 @@ public final class Solution {
                 return;
             }
 
-            Question newques = new Question(tokens[zero], tokens[one], tokens[two],
-                Integer.parseInt(tokens[three]), Integer.parseInt(tokens[four]));
+            Question newques = new Question(tokens[zero],
+                tokens[one], tokens[two],
+                Integer.parseInt(tokens[three]),
+                Integer.parseInt(tokens[four]));
 
             quiz.addtoques(newques);
         }
