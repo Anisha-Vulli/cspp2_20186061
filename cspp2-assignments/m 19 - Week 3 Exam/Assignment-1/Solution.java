@@ -21,18 +21,22 @@ class Quiz {
     }
 
     void addanswerchoice(final String answers) {
+        size = 0;
         answerchoice[size++] = answers;
     }
 
     void addquestions(final String question) {
+        size = 0;
         questions[size++] = question;
     }
 
     void addanswers(final String answerenter) {
+        size = 0;
         answers[size++] = answerenter;
     }
 
     void addchoices(final String choice) {
+        size = 0;
         choices[size++] = choice;
     }
 
