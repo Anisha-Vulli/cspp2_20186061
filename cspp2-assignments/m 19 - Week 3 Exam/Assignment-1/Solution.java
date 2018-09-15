@@ -48,7 +48,7 @@ class Quiz {
         //String str = "";
         for (String str : questions) {
             String tempstr = "";
-            System.out.println(str + "(" + answers.indexOf(str) + ")");
+            System.out.println(str + "(" +  ")");
             for (String iter : choices) {
                 String tempstr1 = "";
                 String[] iterarray = iter.split(",");
