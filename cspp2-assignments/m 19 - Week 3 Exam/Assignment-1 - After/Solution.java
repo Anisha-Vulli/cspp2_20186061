@@ -98,7 +98,14 @@ public final class Solution {
                 errorflag = true;
                 return;
             }
+
+            Question newques = new Question(tokens[0], tokens[1], tokens[2],
+                Integer.parseInt(tokens[3]), Integer.parseInt(tokens[4]));
+
+            quiz.addtoques(newques);
         }
+
+        quiz.displaycount();
     }
 
     /**
