@@ -74,6 +74,15 @@ class Quiz {
     }
 
     void caluculateScore() {
+        for (String str : answers) {
+            for (String stng : answerchoice) {
+                if (Integer.parseInt(stng) == Integer.parseInt(str)) {
+                    System.out.println("Correct answer");
+                }
+            }
+            //System.out.println("Wrong answer");
+            return;
+        }
 
     }
 }
@@ -176,6 +185,7 @@ public final class Solution {
      * @param      quiz     The quiz object
      */
     public static void displayScore(final Quiz quiz) {
+        quiz.caluculateScore();
         // write your code here to display the score report
     }
 }
