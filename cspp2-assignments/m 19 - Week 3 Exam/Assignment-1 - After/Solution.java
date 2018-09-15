@@ -82,7 +82,19 @@ public final class Solution {
             }
 
             if (Integer.parseInt(tokens[2]) > 4) {
-                System.out.println("Error! Correct answer choice number is out of range for question text 1");
+                System.out.println("Error! Correct answer choice number is out of range for " + tokens[0]);
+                errorflag = true;
+                return;
+            }
+
+            if (Integer.parseInt(tokens[3]) < 0) {
+                System.out.println("Invalid max marks for " + tokens[0]);
+                errorflag = true;
+                return;
+            }
+
+            if (Integer.parseInt(tokens[4]) > 0) {
+                System.out.println("Invalid penality for " + tokens[0]);
                 errorflag = true;
                 return;
             }
