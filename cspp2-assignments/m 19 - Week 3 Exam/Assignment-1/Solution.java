@@ -3,18 +3,18 @@ import java.util.Arrays;
 import java.util.ArrayList;
 
 class Quiz {
-    private String[] answerchoice;
-    private String[] questions;
-    private String[] answers;
-    private String[] choices;
+    private ArrayList<String> answerchoice;
+    private ArrayList<String> questions;
+    private ArrayList<String> answers;
+    private ArrayList<String> choices;
     private int size;
     // private ArrayList<Integer> correctmark;
     // private ArrayList<Integer> wrongmark;
     Quiz() {
-        answerchoice = new String[10];
-        questions = new String[10];
-        answers = new String[10];
-        choices = new String[10];
+        answerchoice = new ArrayList<>();
+        questions = new ArrayList<>();
+        answers = new ArrayList<>();
+        choices = new ArrayList<>();
         size = 0;
         // correctmark = new ArrayList<>();
         // wrongmark = new ArrayList<>();
@@ -22,22 +22,22 @@ class Quiz {
 
     void addanswerchoice(final String answers) {
         size = 0;
-        answerchoice[size++] = answers;
+        answerchoice.add(answers);
     }
 
     void addquestions(final String question) {
         size = 0;
-        questions[size++] = question;
+        questions.add(question);
     }
 
     void addanswers(final String answerenter) {
         size = 0;
-        answers[size++] = answerenter;
+        answers.add(answerenter);
     }
 
     void addchoices(final String choice) {
         size = 0;
-        choices[size++] = choice;
+        choices.add(choice);
     }
 
     int size() {
@@ -46,7 +46,7 @@ class Quiz {
 
     public String toString() {
         String str = "";
-        System.out.println(choices.length);
+        System.out.println(choices.size());
         // for (int i = 0; i < questions.length; i++) {
         //     String tempstr = "";
         //     //System.out.println(questions[i]);
