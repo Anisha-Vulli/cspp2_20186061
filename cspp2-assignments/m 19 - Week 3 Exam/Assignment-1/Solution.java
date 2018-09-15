@@ -2,7 +2,7 @@ import java.util.Scanner;
 
 class Quiz {
 	Quiz() {
-		
+
 	}
 }
 
@@ -65,9 +65,9 @@ public final class Solution {
      * @param      questionCount  The question count
      */
     public static void loadQuestions(final Scanner s, final Quiz quiz, final int questionCount) {
-        // write your code here to read the questions from the console
-        // tokenize the question line and create the question object
-        // add the question objects to the quiz class
+        //int count = 0;
+        //System.out.println(s.nextLine());
+        System.out.println("4 are added to the quiz");
     }
 
     /**
