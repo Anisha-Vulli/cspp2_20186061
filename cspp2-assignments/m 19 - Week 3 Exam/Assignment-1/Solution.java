@@ -50,7 +50,8 @@ class Quiz {
             String tempstr = "";
             System.out.println(str);
             for (String iter : choices) {
-                tempstr = tempstr + " " + iter;
+                String temp = "";
+                tempstr = temp + " " + iter;
             }
             System.out.println(tempstr);
         }
