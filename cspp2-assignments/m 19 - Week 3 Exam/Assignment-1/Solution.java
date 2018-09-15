@@ -4,11 +4,13 @@ import java.util.ArrayList;
 
 class Quiz {
     private String[] answerchoice;
+    private String[] questions;
     private int size;
     // private ArrayList<Integer> correctmark;
     // private ArrayList<Integer> wrongmark;
     Quiz() {
         answerchoice = new String[10];
+        questions = new String[10];
         size = 0;
         // correctmark = new ArrayList<>();
         // wrongmark = new ArrayList<>();
@@ -18,10 +20,14 @@ class Quiz {
         answerchoice[size++] = answers;
     }
 
+    void addquestions(final String question) {
+        questions[size++] = question;
+    }
+
     public String toString() {
         String str = "";
         for (int i = 0; i < size; i++) {
-            str = str + answerchoice[i];
+            str = str + questions[i];
         }
 
         return str;
@@ -102,9 +108,9 @@ public final class Solution {
         //ArrayList<String> questions = new ArrayList<>();
         for (int i = 0; i < questionCount; i++) {
             String[] input = s.nextLine().split(":");
-            //questions.add(input);
+            quiz.addquestions(input[0]);
         }
-        //System.out.println(n);
+        System.out.println(quiz.toString());
         System.out.println("4 are added to the quiz");
     }
 
@@ -124,7 +130,6 @@ public final class Solution {
             String[] tokens = s.nextLine().split(" ");
             quiz.addanswer(tokens[1]);
         }
-        System.out.println(quiz.toString());
     }
 
     /**
