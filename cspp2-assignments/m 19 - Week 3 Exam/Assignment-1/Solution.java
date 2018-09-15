@@ -76,12 +76,14 @@ class Quiz {
     void caluculateScore() {
         for (String str : answers) {
             for (String stng : answerchoice) {
+                int i = 0;
                 if (Integer.parseInt(stng) == Integer.parseInt(str)) {
                     System.out.print("Correct answer"); 
                     System.out.println(" " + "Marks awarded" + correctmark.get(Integer.parseInt(stng)));
                 } else {
                     System.out.print("Wrong answer");
-                    System.out.println(" " + "Marks awarded" + wrongmark.get(Integer.parseInt(stng)));
+                    System.out.println(" " + "Marks awarded" + wrongmark.get(i));
+                    i++;
                 }
             }
             //System.out.println("Wrong answer");
