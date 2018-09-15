@@ -1,9 +1,27 @@
 import java.util.Scanner;
+import java.util.Arrays;
 
 class Quiz {
-	Quiz() {
+    private int answer;
+    private int correctmark;
+    private int wrongmark;
+    Quiz() {
+        this.answer = answer;
+        this.correctmark = correctmark;
+        this.wrongmark = wrongmark;
+    }
 
-	}
+    int getanswer() {
+        return this.answer;
+    }
+
+    int getcorrectmark() {
+        return this.correctmark;
+    }
+
+    int getwrongmark() {
+        return this.wrongmark;
+    }
 }
 
 /**
@@ -66,7 +84,10 @@ public final class Solution {
      */
     public static void loadQuestions(final Scanner s, final Quiz quiz, final int questionCount) {
         //int count = 0;
-        //System.out.println(s.nextLine());
+        for (int i = 0; i < questionCount; i++) {
+            String[] input = s.nextLine().split(":");
+            System.out.println(Arrays.toString(input));
+        }
         System.out.println("4 are added to the quiz");
     }
 
