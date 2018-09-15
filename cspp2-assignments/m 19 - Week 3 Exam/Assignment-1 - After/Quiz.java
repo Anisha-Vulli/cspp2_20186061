@@ -63,10 +63,11 @@ class Quiz {
 			System.out.println(question[i].questionname + "(" + question[i].crctmark + ")");
 			String[] displaychoice = question[i].choices.split(",");
 			for (int j = 0; j < displaychoice.length - 1; j++) {
-				System.out.print(displaychoice[j] + "		");
+				System.out.print(displaychoice[j] + "	");
 			}
 			System.out.print(displaychoice[displaychoice.length - 1]);
 			System.out.println();
 		}
 		System.out.println();
-	
+	}
+}
