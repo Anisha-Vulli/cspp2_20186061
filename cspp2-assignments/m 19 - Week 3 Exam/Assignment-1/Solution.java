@@ -52,10 +52,7 @@ class Quiz {
             for (String iter : choices) {
                 String temp = "";
                 String[] iterarray = iter.split(",");
-                for (int i = 0; i < iterarray.length; i++) {
-                    temp = temp + " " + iterarray[i];   
-                }
-                System.out.println(temp);
+                System.out.println(Arrays.toString(iterarray));
             }
         }
 
