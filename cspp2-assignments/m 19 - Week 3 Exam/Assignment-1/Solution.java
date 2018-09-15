@@ -78,7 +78,7 @@ class Quiz {
             for (String stng : answerchoice) {
                 if (Integer.parseInt(stng) == Integer.parseInt(str)) {
                     System.out.print("Correct answer"); 
-                    System.out.println("Marks awarded" + correctmark.get(Integer.parseInt(stng)));
+                    System.out.println(" " + "Marks awarded" + correctmark.get(Integer.parseInt(stng)));
                 }
             }
             //System.out.println("Wrong answer");
