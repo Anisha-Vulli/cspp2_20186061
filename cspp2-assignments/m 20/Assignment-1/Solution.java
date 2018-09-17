@@ -1,179 +1,5 @@
 import java.util.Scanner;
 /**
- * Class for question.
- */
-class Question {
-    /**
-     * { var_description }.
-     */
-    private String questiontext;
-    /**
-     * { var_description }.
-     */
-    private String[] choices;
-    /**
-     * { var_description }.
-     */
-    private int correctAnswer;
-    /**
-     * { var_description }.
-     */
-    private int maxMarks;
-    /**
-     * { var_description }.
-     */
-    private int penalty;
-    /**
-     * { var_description }.
-     */
-    private String response;
-    /**
-     * Constructs the object.
-     */
-    Question() {
-
-    }
-    /**
-     * Constructs the object.
-     *
-     * @param      question1       The question 1
-     * @param      choices1        The choices 1
-     * @param      correctAnswer1  The correct answer 1
-     * @param      maxMarks1       The maximum marks 1
-     * @param      penalty1        The penalty 1
-     */
-    Question(final String question1, final String[] choices1,
-        final int correctAnswer1, final int maxMarks1, final int penalty1) {
-
-    }
-    /**
-     * { function_description }.
-     *
-     * @param      choice  The choice
-     *
-     * @return     { description_of_the_return_value }
-     */
-    public boolean evaluateResponse(final String choice) {
-        return false;
-    }
-    /**
-     * Gets the correct answer.
-     *
-     * @return     The correct answer.
-     */
-    public String getCorrectAnswer() {
-        return null;
-    }
-    /**
-     * Gets the question text.
-     *
-     * @return     The question text.
-     */
-    public String getQuestionText() {
-        return null;
-    }
-    /**
-     * Gets the choice.
-     *
-     * @return     The choice.
-     */
-    public String[] getChoice() {
-        return null;
-    }
-    /**
-     * Gets the maximum marks.
-     *
-     * @return     The maximum marks.
-     */
-    public int getMaxMarks() {
-        return 1;
-    }
-    /**
-     * Gets the penalty.
-     *
-     * @return     The penalty.
-     */
-    public int getPenalty() {
-        return 1;
-    }
-    /**
-     * Sets the response.
-     *
-     * @param      answer  The answer
-     */
-    public void setResponse(final String answer) {
-
-    }
-    /**
-     * Gets the response.
-     *
-     * @return     The response.
-     */
-    public String getResponse() {
-        return null;
-    }
-    /**
-     * Returns a string representation of the object.
-     *
-     * @return     String representation of the object.
-     */
-    public String toString() {
-        String s = "";
-        return s;
-    }
-}
-/**
- * Class for quiz.
- */
-class Quiz {
-    /**
-     * { var_description }.
-     */
-    private final int onehundred = 100;
-    /**
-     * { var_description }.
-     */
-    private Question[] questions;
-    /**
-     * { var_description }.
-     */
-    private int size;
-    /**
-     * Constructs the object.
-     */
-    Quiz() {
-
-    }
-    /**
-     * Adds a question.
-     *
-     * @param      q     The question
-     */
-    public void addQuestion(final Question q) {
-
-    }
-    /**
-     * Gets the question.
-     *
-     * @param      index  The index
-     *
-     * @return     The question.
-     */
-    public Question getQuestion(final int index) {
-        return null;
-    }
-    /**
-     * Shows the report.
-     *
-     * @return     { description_of_the_return_value }
-     */
-    public String showReport() {
-        String s = "";
-        return s;
-    }
-
-}
-/**
  * Solution class for code-eval.
  */
 public final class Solution {
@@ -250,8 +76,7 @@ public final class Solution {
         if (q == zero) {
             System.out.println("Quiz does not have questions");
             errorflag = true;
-        }
-
+        } else {
         for (int i = 0; i < q; i++) {
             String[] tokens = scan.nextLine().split(":");
             if (tokens.length != five || tokens[0].equals("")) {
@@ -283,7 +108,14 @@ public final class Solution {
                 errorflag = true;
                 return;
             }
+            Question newques = new Question(tokens[0], tokens[1].split(","),
+                Integer.parseInt(tokens[2]),
+                Integer.parseInt(tokens[3]), Integer.parseInt(tokens[4]));
+
+            quiz.addQuestion(newques);
         }
+        quiz.displaycount(q);
+    }
     }
     /**
      * Starts a quiz.
