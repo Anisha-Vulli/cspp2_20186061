@@ -162,8 +162,8 @@ class Quiz {
         quescount++;
     }
 
-    public String displaycount(final int quescount) {
-        return quescount + " are added to the quiz";
+    public void displaycount(final int quescount) {
+        System.out.println(quescount + " are added to the quiz");
     }
     /**
      * Gets the question.
