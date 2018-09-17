@@ -244,6 +244,8 @@ public final class Solution {
         // add the question objects to the quiz class
         final int five = 5;
         final int zero = 0;
+        final int one = 1;
+        final int two = 2;
         if (q == zero) {
             System.out.println("Quiz does not have questions");
             errorflag = true;
@@ -255,7 +257,10 @@ public final class Solution {
                 System.out.println("Error! Malformed question");
                 errorflag = true;
             } 
-            // if ()
+            if (tokens[1].split(",").length < two) {
+                System.out.println(tokens[0] + "does not have enough answer choices");
+                errorflag = true;
+            }
         }
     }
     /**
