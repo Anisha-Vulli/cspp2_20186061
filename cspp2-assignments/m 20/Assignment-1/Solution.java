@@ -201,8 +201,7 @@ class Quiz {
                 s += "Correct Answer! " + '-'
                 + " Marks Awarded: " + question.getMaxMarks();
                 marks += question.getMaxMarks();
-            }
-            else {
+            } else {
                 s += "Wrong Answer! " + '-'
                 + " Penalty: " + question.getPenalty();
                 marks += question.getPenalty();
@@ -250,8 +249,7 @@ public final class Solution {
                 System.out.println("|----------------|");
                 try {
                     loadQuestions(s, q, Integer.parseInt(tokens[1]));
-                }
-                catch (Exception e) {
+                } catch (Exception e) {
                     System.out.println(e.getMessage());
                     flag = false;
                 }
@@ -289,22 +287,30 @@ public final class Solution {
         // write your code here to read the questions from the console
         // tokenize the question line and create the question object
         // add the question objects to the quiz class
-        if (q==0) throw new Exception("Quiz does not have questions");
+        if (q==0){
+            throw new Exception("Quiz does not have questions");
+        }
         for (int  i = 0; i < q; i++) {
             String[] tokens = scan.nextLine().split(":");
             for (String token : tokens)
                 if (token.equals(""))
                     throw new Exception("Error! Malformed question");
-            if (tokens.length < 5)
+            if (tokens.length < 5) {
                 throw new Exception("Error! Malformed question");
-            if (tokens[1].split(",").length < 2)
+            }
+            if (tokens[1].split(",").length < 2) {
                 throw new Exception(tokens[0] + " does not have enough answer choices");
-            if (Integer.parseInt(tokens[2]) > tokens[1].split(",").length)
-                throw new Exception("Error! Correct answer choice number is out of range for question text "+(i+1));
-            if (Integer.parseInt(tokens[3]) < 0)
+            }
+            if (Integer.parseInt(tokens[2]) > tokens[1].split(",").length) {
+                throw new Exception("Error! Correct answer choice number"
+                    + " is out of range for question text "+(i+1));
+            }
+            if (Integer.parseInt(tokens[3]) < 0) {
                 throw new Exception("Invalid max marks for " + tokens[0]);
-            if (Integer.parseInt(tokens[4]) > 0)
+            }
+            if (Integer.parseInt(tokens[4]) > 0) {
                 throw new Exception("Invalid penalty for " + tokens[0]);
+            }
             quiz.addQuestion(new Question(tokens[0], tokens[1].split(","), Integer.parseInt(tokens[2]), Integer.parseInt(tokens[3]), Integer.parseInt(tokens[4])));
             // System.out.println(i);
         }
