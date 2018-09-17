@@ -242,14 +242,16 @@ public final class Solution {
         // write your code here to read the questions from the console
         // tokenize the question line and create the question object
         // add the question objects to the quiz class
-        if (q == 0) {
+        final int five = 5;
+        final int zero = 0;
+        if (q == zero) {
             System.out.println("Quiz does not have questions");
             errorflag = true;
         }
 
         for (int i = 0; i < q; i++) {
             String[] tokens = scan.nextLine().split(":");
-            if (tokens.length != 5 || tokens[0].equals("")) {
+            if (tokens.length != five || tokens[0].equals("")) {
                 System.out.println("Error! Malformed question");
                 errorflag = true;
             } 
