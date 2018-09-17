@@ -254,19 +254,34 @@ public final class Solution {
 
         for (int i = 0; i < q; i++) {
             String[] tokens = scan.nextLine().split(":");
-            if ((tokens.length != five || tokens[0].equals("")) && (errorflag == false)) {
+            if (tokens.length != five || tokens[0].equals("")) {
                 System.out.println("Error! Malformed question");
                 errorflag = true;
+                return;
             } 
-            if (tokens[1].split(",").length < two && errorflag == false) {
+            if (tokens[1].split(",").length < two) {
                 System.out.println(tokens[0]
                     + " does not have enough answer choices");
                 errorflag = true;
+                return;
             } 
-            if (Integer.parseInt(tokens[2]) > four && errorflag == false) {
+            if (Integer.parseInt(tokens[2]) > four) {
                 System.out.println("Error! Correct answer"
                     + " choice number is out of range for " + tokens[0]);
                 errorflag = true;
+                return;
+            }
+            if ((Integer.parseInt(tokens[3]) < zero)) {
+                System.out.println("Invalid max marks for "
+                    + tokens[0]);
+                errorflag = true;
+                return;
+            } 
+            if (Integer.parseInt(tokens[4]) > zero) {
+                System.out.println("Invalid penalty for "
+                    + tokens[0]);
+                errorflag = true;
+                return;
             }
         }
     }
