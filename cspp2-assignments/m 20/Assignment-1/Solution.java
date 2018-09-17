@@ -177,11 +177,16 @@ class Quiz {
  * Solution class for code-eval.
  */
 public final class Solution {
+    private static boolean errorflag = false;
      /**
      * Constructs the object.
      */
     private Solution() {
         // leave this blank
+    }
+
+    public static boolean getflag() {
+        return errorflag;        
     }
     /**
      * main function to execute test cases.
@@ -239,6 +244,16 @@ public final class Solution {
         // add the question objects to the quiz class
         if (q == 0) {
             System.out.println("Quiz does not have questions");
+            errorflag = true;
+        }
+
+        for (int i = 0; i < q; i++) {
+            String[] tokens = scan.nextLine().split(":");
+            if (tokens.length != 5 || tokens[0].equals("")) {
+                System.out.println("Error! Malformed question");
+                errorflag = true;
+            } 
+            // if ()
         }
     }
     /**
