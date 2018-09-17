@@ -246,6 +246,7 @@ public final class Solution {
         final int zero = 0;
         final int one = 1;
         final int two = 2;
+        final int four = 4;
         if (q == zero) {
             System.out.println("Quiz does not have questions");
             errorflag = true;
@@ -260,6 +261,11 @@ public final class Solution {
             if (tokens[1].split(",").length < two) {
                 System.out.println(tokens[0]
                     + " does not have enough answer choices");
+                errorflag = true;
+            } 
+            if (Integer.parseInt(tokens[2]) > four) {
+                System.out.println("Error! Correct answer"
+                    + " choice number is out of range" + tokens[0]);
                 errorflag = true;
             }
         }
