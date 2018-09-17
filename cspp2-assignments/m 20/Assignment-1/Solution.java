@@ -263,7 +263,7 @@ public final class Solution {
                     + " does not have enough answer choices");
                 errorflag = true;
             } 
-            if (Integer.parseInt(tokens[two]) > four) {
+            if (Integer.parseInt(tokens[2]) > four) {
                 System.out.println("Error! Correct answer"
                     + " choice number is out of range for " + tokens[0]);
                 errorflag = true;
