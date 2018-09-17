@@ -44,7 +44,8 @@ class Question {
      * @param      penalty1        The penalty 1
      */
     Question(final String question1, final String[] choices1,
-        final int correctAnswerIndex1, final int maxMarks1, final int penalty1) {
+        final int correctAnswerIndex1,
+        final int maxMarks1, final int penalty1) {
         this.questiontext = question1;
         this.choices = choices1;
         this.correctAnswerIndex = correctAnswerIndex1;
@@ -69,7 +70,7 @@ class Question {
      * @return     The correct answer.
      */
     public String getCorrectAnswer() {
-        return choices[correctAnswerIndex-1];
+        return choices[correctAnswerIndex - 1];
     }
     /**
      * Gets the question text.
@@ -126,7 +127,7 @@ class Question {
      */
     public String toString() {
         String s = "";
-        s += questiontext+'(' + maxMarks + ')' + '\n';
+        s += questiontext + '(' + maxMarks + ')' + '\n';
         for (String choice : choices) {
             s += choice + '\t';
         }
@@ -154,7 +155,8 @@ class Quiz {
      * Constructs the object.
      */
     Quiz() {
-        questions = new Question[10];
+        final int ten = 10;
+        questions = new Question[ten];
         size = 0;
     }
     /**
@@ -175,7 +177,11 @@ class Quiz {
     public Question getQuestion(final int index) {
         return questions[index];
     }
-
+    /**
+     * Gets the questions.
+     *
+     * @return     The questions.
+     */
     public Question[] getQuestions() {
         // System.out.println(Arrays.toString(Arrays.copyOf(questions, size)));
         return Arrays.copyOf(questions, size);
@@ -192,11 +198,13 @@ class Quiz {
         for (Question question : getQuestions()) {
             s += question.getQuestionText() + '\n' + ' ';
             if (question.evaluateResponse(question.getResponse())) {
-                s += "Correct Answer! " + '-' + " Marks Awarded: " + question.getMaxMarks();
+                s += "Correct Answer! " + '-'
+                + " Marks Awarded: " + question.getMaxMarks();
                 marks += question.getMaxMarks();
             }
             else {
-                s += "Wrong Answer! " + '-' + " Penalty: " + question.getPenalty();
+                s += "Wrong Answer! " + '-'
+                + " Penalty: " + question.getPenalty();
                 marks += question.getPenalty();
             }
             s += '\n';
