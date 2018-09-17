@@ -258,7 +258,8 @@ public final class Solution {
                 errorflag = true;
             } 
             if (tokens[1].split(",").length < two) {
-                System.out.println(tokens[0] + "does not have enough answer choices");
+                System.out.println(tokens[0]
+                    + " does not have enough answer choices");
                 errorflag = true;
             }
         }
