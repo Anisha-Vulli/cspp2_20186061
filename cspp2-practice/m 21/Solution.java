@@ -28,6 +28,7 @@ public class Solution {
             break;
             case "Foodlog":
             fb.displayfood();
+            // fb.displayfoodwithdate("18/9/2018");
             break;
             case "Waterlog":
             fb.displaywater();
@@ -42,7 +43,11 @@ public class Solution {
             fb.displaysleep();
             break;
             case "Summary":
-            fb.displaysummary();
+            if (token.length == 1) {
+                fb.displaysummary();   
+            } else {
+                fb.displaysummarywithdate(token[1]);
+            }
             break;
             }
         }

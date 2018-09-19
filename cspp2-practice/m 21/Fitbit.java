@@ -35,6 +35,10 @@ class Fooddata {
     // public void setfoodtime(final String time) {
     //     this.foodtime = time;
     // }
+    
+    public String getdate() {
+        return this.date;
+    }
 
     public String toString() {
         return "Food" + "\n" + "Date:" + date + "\n" + "Time:" + foodtime + "\n" + "Name:" + fooditem + "\n" + "Quantity:" + foodquant;
@@ -51,9 +55,9 @@ class Waterdata {
         this.time = time1;
     }
 
-    // public int getwaterquant() {
-    //     return waterquant;
-    // }
+    public String getdate() {
+        return date;
+    }
 
     // public void setwaterquant(final int quant) {
     //     this.waterquant = quant;
@@ -78,37 +82,37 @@ class Activitydata {
         this.activitydate = activitydate1;
     }
 
-    public String getactname() {
-        return activityname;
+    // public String getactname() {
+    //     return activityname;
+    // }
+
+    // public String getactstime() {
+    //     return activitystime;
+    // }
+
+    // public String getsctetime() {
+    //     return activityetime;
+    // }
+
+    public String getdate() {
+        return activitydate;
     }
 
-    public String getactstime() {
-        return activitystime;
-    }
+    // public void setactname(String name) {
+    //     this.activityname = name;
+    // }
 
-    public String getsctetime() {
-        return activityetime;
-    }
+    // public void setactstime(String stime) {
+    //     this.activitystime = stime;
+    // }
 
-    public String getactnotes() {
-        return activitynotes;
-    }
+    // public void setactetime(String etime) {
+    //     this.activityetime = etime;
+    // }
 
-    public void setactname(String name) {
-        this.activityname = name;
-    }
-
-    public void setactstime(String stime) {
-        this.activitystime = stime;
-    }
-
-    public void setactetime(String etime) {
-        this.activityetime = etime;
-    }
-
-    public void setactnotes(String notes) {
-        this.activitynotes = notes;
-    }
+    // public void setactnotes(String notes) {
+    //     this.activitynotes = notes;
+    // }
 
     public String toString() {
         String title = "PhysicalActivity";
@@ -134,9 +138,9 @@ class Weightdata {
         this.time = time1;
     }
 
-    // public int getweight() {
-    //     return weight;
-    // }
+    public String getdate() {
+        return date;
+    }
 
     // public int getfatper() {
     //     return fatper;
@@ -162,9 +166,9 @@ class Sleepdata {
         this.sleepetime = sleepetime1;
     }
 
-    // public String getsleepstime() {
-    //     return this.sleepstime;
-    // }
+    public String getsleepdate() {
+        return sleepdate;
+    }
 
     // public String getsleepetime() {
     //     return this.sleepetime;
@@ -239,12 +243,34 @@ class Fitbit {
         }
     }
 
+    public void displayfoodwithdate(String date) {
+        if (foodarray.size() == 0) {
+            System.out.println("None");
+        }
+        for (Fooddata food : foodarray) {
+            if (food.getdate().equals(date)) {
+                System.out.println(food);      
+            }
+        }
+    }
+
     public void displaywater() {
         if (waterarray.size() == 0) {
             System.out.println("None");
         }
         for (Waterdata water : waterarray) {
             System.out.println(water);
+        }
+    }
+
+    public void displaywaterwithdate(String date) {
+        if (waterarray.size() == 0) {
+            System.out.println("None");
+        }
+        for (Waterdata water : waterarray) {
+            if (water.getdate().equals(date)) {
+                System.out.println(water);   
+            }
         }
     }
 
@@ -257,12 +283,34 @@ class Fitbit {
         }
     }
 
+    public void displayactwithdate(String date) {
+        if (activityarray.size() == 0) {
+            System.out.println("None");
+        }
+        for (Activitydata act : activityarray) {
+            if (act.getdate().equals(date)) {
+                System.out.println(act);   
+            }
+        }
+    }
+
     public void displayweigh() {
         if (weightarray.size() == 0) {
             System.out.println("None");
         }
         for (Weightdata weigh : weightarray) {
             System.out.println(weigh);
+        }
+    }
+
+    public void displayweighwithdate(String date) {
+        if (weightarray.size() == 0) {
+            System.out.println("None");
+        }
+        for (Weightdata weigh : weightarray) {
+            if (weigh.getdate().equals(date)) {
+                System.out.println(weigh);   
+            }
         }
     }
 
@@ -275,11 +323,30 @@ class Fitbit {
         }
     }
 
+    public void displaysleepwithdate(String date) {
+        if (sleeparray.size() == 0) {
+            System.out.println("None");
+        }
+        for (Sleepdata sleep : sleeparray) {
+            if (sleep.getsleepdate().equals(date)) {
+                System.out.println(sleep);   
+            }
+        }
+    }
+
     public void displaysummary() {
         displayfood();
         displaywater();
         displayact();
         displayweigh();
         displaysleep();
+    }
+
+    public void displaysummarywithdate(String date) {
+        displayfoodwithdate(date);
+        displaywaterwithdate(date);
+        displayactwithdate(date);
+        displayweighwithdate(date);
+        displaysleepwithdate(date);
     }
 }
