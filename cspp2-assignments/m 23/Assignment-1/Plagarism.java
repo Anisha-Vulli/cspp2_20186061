@@ -158,7 +158,8 @@ public class Plagarism {
         //System.out.println(a1);
         //System.out.println(b1);
         // distance = 100 * (numval / (Math.sqrt(a1) * Math.sqrt(b1)));
-        distance = ((numval / (Math.sqrt(a1) * Math.sqrt(b1))) * 100);
+        final int hundred = 100;
+        distance = ((numval / (Math.sqrt(a1) * Math.sqrt(b1))) * hundred);
         values.add(Math.round(distance));
         //System.out.print(values);
         cosine = Math.acos(distance);
