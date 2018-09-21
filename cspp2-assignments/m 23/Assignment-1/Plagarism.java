@@ -23,16 +23,8 @@ public class Plagarism {
      *
      * @param      buffer  The buffer
      */
-    public static void format(String buffer) {
-        //input1 = input1.replaceAll("\\s","");
+    public static void format(final String buffer) {
         inputlist.add(buffer);
-        //System.out.println(inputlist);
-        // for (int k = 0; k < inputlist.size(); k++) {
-        //     lcscal();
-        // }
-        //print();
-
-        //return null;
     }
     /**
      * Sending to make dictionary.
@@ -41,7 +33,7 @@ public class Plagarism {
         //System.out.println(inputlist.size());
         for (int i = 0; i < inputlist.size(); i++) {
             for (int j = 0; j < inputlist.size(); j++) {
-                freqdict(inputlist.get(i),inputlist.get(j));
+                freqdict(inputlist.get(i), inputlist.get(j));
             }
             //System.out.println(inputlist);
         }
