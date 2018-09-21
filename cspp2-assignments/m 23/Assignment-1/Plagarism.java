@@ -134,7 +134,7 @@ public class Plagarism {
         // for (Map.Entry<String, Integer> val : mapor.entrySet()) {
         //     for (Map.Entry<String, Integer> valco : mapco.entrySet()) {
         //         if (val.getKey().equals(valco.getKey())) {
-        //             numval += val.getValue() * valco.getValue();           
+        //             numval += val.getValue() * valco.getValue();
         //         }
         //     }
         // }
