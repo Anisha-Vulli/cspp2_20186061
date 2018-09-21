@@ -102,7 +102,7 @@ public class Plagarism {
         //int distance = 0;
         Double numval = 0.0;
         Double distance = 0.0;
-        //Double cosine = 0;
+        Double cosine = 0.0;
 
         //System.out.println(mapor.size());
         // System.out.println(mapco.size());
@@ -137,7 +137,7 @@ public class Plagarism {
         distance = ((numval / (Math.sqrt(a1) * Math.sqrt(b1))) * 100);
         values.add(Math.round(distance));
         //System.out.print(values);
-        //cosine = Math.acos(distance);
+        cosine = Math.acos(distance);
     }
     public static void print(ArrayList<String> list) {
         //System.out.println(list);
