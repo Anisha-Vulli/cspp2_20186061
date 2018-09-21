@@ -91,7 +91,8 @@ public class Plagarism {
                 mapco.put(each, mapco.get(each) + 1);
             } else {
                 mapco.put(each, 1);
-            } if (!mapor.containsKey(each)) {
+            } 
+            if (!mapor.containsKey(each)) {
                 mapor.put(each, 0);
             }
         }
@@ -101,12 +102,12 @@ public class Plagarism {
         // for (String strco : copiedarr) {
         //     int freqco = 1;
         //     for (String strngco : copiedarr) {
-        //         if (strco.equals(strngco)) { 
+        //         if (strco.equals(strngco)) {
         //             mapco.put(strco,freqco++);
         //         } else {
         //             if (mapco.get(strngco) == null) {
         //                 mapco.put(strco, 1);
-        //            } 
+        //            }
         //         }
         //     }
         //     if (!mapor.containsKey(strco)){
@@ -114,7 +115,6 @@ public class Plagarism {
         //         }
         // }
 
-        
     }
     /**
      * Distance calucluation.
