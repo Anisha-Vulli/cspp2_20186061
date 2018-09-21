@@ -122,7 +122,8 @@ public class Plagarism {
      * @param      mapor  The mapor
      * @param      mapco  The mapco
      */
-    public static void lcscal(final Map<String, Integer> mapor, final Map<String, Integer> mapco) {
+    public static void lcscal(final Map<String, Integer> mapor,
+        final Map<String, Integer> mapco) {
         //int distance = 0;
         Double numval = 0.0;
         Double distance = 0.0;
