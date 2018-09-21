@@ -146,7 +146,7 @@ public class Plagarism {
         for (int k = 0; j < n; j++) {
             System.out.print("\t" + list.get(k));
         }
-        int k = 0;
+        int k = 1;
         for (int i = 0; i < values.size(); i++) {
             if (j == n) {
                 j = 0;
