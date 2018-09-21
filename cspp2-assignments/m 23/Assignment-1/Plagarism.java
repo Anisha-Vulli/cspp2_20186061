@@ -3,7 +3,7 @@ import java.util.ArrayList;
 import java.io.File;
 import java.lang.Math;
 import java.util.TreeMap;
-import java.util.*;
+import java.util.Map;
 public class Plagarism {
     private static Map<String, Integer> mapor;
     private static Map<String, Integer> mapco;
