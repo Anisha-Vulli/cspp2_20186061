@@ -156,7 +156,8 @@ public class Plagarism {
                 System.out.print(list.get(p));
                 p++;
             }
-            System.out.print("\t" + values.get(i) + "\t");
+            System.out.print("\t     ");
+            System.out.print(values.get(i));
             j++;
         }
     }
