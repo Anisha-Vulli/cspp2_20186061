@@ -52,7 +52,7 @@ public class Plagarism {
      * @param      first   The first
      * @param      second  The second
      */
-    public static void freqdict(String first, String second) {
+    public static void freqdict(final String first, final String second) {
         //System.out.println(first);
         mapor = new TreeMap<>();
         mapco = new TreeMap<>();
@@ -62,7 +62,7 @@ public class Plagarism {
                 mapor.put(each, mapor.get(each) + 1);
             } else {
                 mapor.put(each, 1);
-            } 
+            }
             if (!mapco.containsKey(each)) {
                 mapco.put(each, 0);
             }
@@ -71,12 +71,12 @@ public class Plagarism {
         //     for (String str : originalarr) {
         //         int freq = 1;
         //         for (String strng : originalarr) {
-        //             if (str.equals(strng)) { 
-        //                 mapor.put(str,freq++); 
+        //             if (str.equals(strng)) {
+        //                 mapor.put(str,freq++);
         //             } else {
         //                 if (mapor.get(strng) == null) {
         //                     mapor.put(str, 1);
-        //                } 
+        //                }
         //             }
         //         }
         //         if (!mapco.containsKey(str)){
@@ -91,7 +91,7 @@ public class Plagarism {
                 mapco.put(each, mapco.get(each) + 1);
             } else {
                 mapco.put(each, 1);
-            } 
+            }
             if (!mapor.containsKey(each)) {
                 mapor.put(each, 0);
             }
