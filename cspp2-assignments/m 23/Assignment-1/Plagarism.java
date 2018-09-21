@@ -143,7 +143,7 @@ public class Plagarism {
         //System.out.println(list);
         int n = list.size();
         int j = 0;
-        for (int k = 0; j < n; j++) {
+        for (int k = 0; k == 0; j++) {
             System.out.print("\t    ");
             System.out.print(list.get(k));
             k++;
@@ -173,7 +173,8 @@ public class Plagarism {
 
         for(File file: listFiles){
             if (file.isFile()) {
-                sa.add(("D:\\MSIT\\IT\\cspp2_20186061\\cspp2-assignments\\m 23\\Assignment-1\\" + t + "\\" +file.getName()));
+                sa.add(("D:\\MSIT\\IT\\cspp2_20186061\\cspp2-assignments\\"
+                    + "m 23\\Assignment-1\\" + t + "\\" + file.getName()));
                 fnames.add(file.getName());
             }
         }
