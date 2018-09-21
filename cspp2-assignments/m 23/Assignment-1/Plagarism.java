@@ -102,7 +102,7 @@ public class Plagarism {
         //     int freqco = 1;
         //     for (String strngco : copiedarr) {
         //         if (strco.equals(strngco)) { 
-        //             mapco.put(strco,freqco++); 
+        //             mapco.put(strco,freqco++);
         //         } else {
         //             if (mapco.get(strngco) == null) {
         //                 mapco.put(strco, 1);
@@ -130,15 +130,15 @@ public class Plagarism {
 
         //System.out.println(mapor.size());
         // System.out.println(mapco.size());
-        
+
         // for (Map.Entry<String, Integer> val : mapor.entrySet()) {
         //     for (Map.Entry<String, Integer> valco : mapco.entrySet()) {
         //         if (val.getKey().equals(valco.getKey())) {
         //             numval += val.getValue() * valco.getValue();           
         //         }
-        //     }   
+        //     }
         // }
-        
+
         // for (Map.Entry<String, Integer> val : mapor.entrySet()) {
         //     a1 += Math.pow(val.getValue(), 2);
         // }
@@ -146,9 +146,8 @@ public class Plagarism {
         Double a1 = 0.0;
         Double b1 = 0.0;
         // for (Map.Entry<String, Integer> valco : mapco.entrySet()) {
-        //     b1 += Math.pow(valco.getValue(), 2);   
+        //     b1 += Math.pow(valco.getValue(), 2);
         // }
-        
         for (String str : mapor.keySet()) {
             a1 += Math.pow(mapor.get(str), 2);
             b1 += Math.pow(mapco.get(str), 2);
