@@ -5,7 +5,7 @@ public class Plagarism {
     static Map<String, Integer> mapor;
     static Map<String, Integer> mapco;
     static ArrayList<String> inputlist = new ArrayList<>();
-    static ArrayList<Integer> values = new ArrayList<>();
+    static ArrayList<Long> values = new ArrayList<>();
     //static Map<String, ArrayList<Integer>> mapcom = new TreeMap<>();
     Plagarism() {
 
@@ -99,9 +99,9 @@ public class Plagarism {
     }
 
     public static void lcscal(Map<String, Integer> mapor, Map<String, Integer> mapco) {
-        int distance = 0;
-        int numval = 0;
-        //Double distance = 0.0;
+        //int distance = 0;
+        Double numval = 0.0;
+        Double distance = 0.0;
         //Double cosine = 0;
 
         //System.out.println(mapor.size());
@@ -119,8 +119,8 @@ public class Plagarism {
         //     a1 += Math.pow(val.getValue(), 2);
         // }
 
-        int a1 = 0;
-        int b1 = 0;
+        Double a1 = 0.0;
+        Double b1 = 0.0;
         // for (Map.Entry<String, Integer> valco : mapco.entrySet()) {
         //     b1 += Math.pow(valco.getValue(), 2);   
         // }
@@ -134,25 +134,23 @@ public class Plagarism {
         //System.out.println(a1);
         //System.out.println(b1);
         // distance = 100 * (numval / (Math.sqrt(a1) * Math.sqrt(b1)));
-        distance = (int)(numval / ((Math.sqrt(a1)) * (Math.sqrt(b1))));
-        values.add(distance);
+        distance = ((numval / (Math.sqrt(a1) * Math.sqrt(b1))) * 100);
+        values.add(Math.round(distance));
         //System.out.print(values);
         //cosine = Math.acos(distance);
     }
-    public static void print() {
-        System.out.println(values);
+    public static void print(ArrayList<String> list) {
+        //System.out.println(list);
+        int n = list.size();
         int j = 0;
         for (int i = 0; i < values.size(); i++) {
-            if (j == 5) {
+            if (j == n) {
                 j = 0;
                 System.out.println();
-            } else {
-                System.out.print(values.get(i) + " ");
-                j++;
-            }
-            //System.out.println();
+            } 
+            System.out.print(values.get(i) + " ");
+            j++;
         }
-        
     }
 
     public static void main(String[] args) {
@@ -168,6 +166,7 @@ public class Plagarism {
         for(File file: listFiles){
             if (file.isFile()) {
                 sa.add(("D:\\MSIT\\IT\\cspp2_20186061\\cspp2-assignments\\m 23\\Assignment-1\\" + t + "\\" +file.getName()));
+                fnames.add(file.getName());
             }
         }
 
@@ -199,7 +198,7 @@ public class Plagarism {
                 s1 = " ";
             }
             senddict();
-            print();
+            print(fnames);
         } catch(Exception e) {
             System.out.println(e);
         }
