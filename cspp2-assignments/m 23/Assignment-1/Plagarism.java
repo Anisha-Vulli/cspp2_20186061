@@ -1,48 +1,84 @@
 import java.util.*;
 import java.io.*;
+import java.lang.*;
 public class Plagarism {
-    static Map<String, Integer> mapor = new TreeMap<>();
-    static Map<String, Integer> mapco = new TreeMap<>();
+    static Map<String, Integer> mapor;
+    static Map<String, Integer> mapco;
+    static ArrayList<String> inputlist = new ArrayList<>();
+    static ArrayList<Integer> values = new ArrayList<>();
     //static Map<String, ArrayList<Integer>> mapcom = new TreeMap<>();
     Plagarism() {
+
     }
 
-    public static String format(String buffer) {
-        String[] inputarray = buffer.split("\n");
-        Integer[] indexarray = new Integer[10];
-        for (int i = 0; i < inputarray.length; i++) {
-            if (inputarray[i].length() > 5) {
-                indexarray[i] = i;
-            }
-        }
-
-        System.out.println(Arrays.toString(indexarray));
-        return null;
-        //String input1 = str.replaceAll("[^ A-Za-z0-9]","");
-        //String original = input1.toLowerCase();
-        // String input2 = scan.nextLine().replaceAll("[^ A-Za-z0-9]","");
-        // String copied = input2.toLowerCase();
-        //freqdict(original);
+    public static void format(String buffer) {
+        //input1 = input1.replaceAll("\\s","");
+        inputlist.add(buffer);
+        //System.out.println(inputlist);
+        // for (int k = 0; k < inputlist.size(); k++) {
+        //     lcscal();
+        // }
         //print();
-        //System.out.println(lcscal());
+
+        //return null;
+    }
+
+    public static void senddict() {
+        //System.out.println(inputlist.size());
+        for (int i = 0; i < inputlist.size(); i++) {
+            for (int j = 0; j < inputlist.size(); j++) {
+                freqdict(inputlist.get(i),inputlist.get(j));
+            }
+            //System.out.println(inputlist);
+        }
     }
     
-    public static void freqdict(String original1) {
-        String[] originalarr = original1.split(" ");
-        for (String str : originalarr) {
-            int freq = 1;
-            for (String strng : originalarr) {
-                if (str.equals(strng)) { 
-                    mapor.put(str,freq++); 
-                } else {
-                    if (mapor.get(strng) == null) {
-                        mapor.put(str, 1);
-                   } 
-                }
+    public static void freqdict(String first, String second) {
+        //System.out.println(first);
+        mapor = new TreeMap<>();
+        mapco = new TreeMap<>();
+        String[] originalarr = first.split("\\W");
+        for (String each : originalarr) {
+            if (mapor.containsKey(each)) {
+                mapor.put(each, mapor.get(each) + 1);
+            } else {
+                mapor.put(each, 1);
+            } 
+            if (!mapco.containsKey(each)) {
+                mapco.put(each, 0);
+            }
+        }
+        //System.out.println(mapor);
+        //     for (String str : originalarr) {
+        //         int freq = 1;
+        //         for (String strng : originalarr) {
+        //             if (str.equals(strng)) { 
+        //                 mapor.put(str,freq++); 
+        //             } else {
+        //                 if (mapor.get(strng) == null) {
+        //                     mapor.put(str, 1);
+        //                } 
+        //             }
+        //         }
+        //         if (!mapco.containsKey(str)){
+        //             mapco.put(str,0);
+        //         }
+        //     }
+
+        // //System.out.println(mapor);
+        String[] copiedarr = second.split("\\W");
+        for (String each : copiedarr) {
+            if (mapco.containsKey(each)) {
+                mapco.put(each, mapco.get(each) + 1);
+            } else {
+                mapco.put(each, 1);
+            } if (!mapor.containsKey(each)) {
+                mapor.put(each, 0);
             }
         }
 
-        // String[] copiedarr = copied1.split(" ");
+        lcscal(mapor, mapco);
+        //System.out.println(mapco);
         // for (String strco : copiedarr) {
         //     int freqco = 1;
         //     for (String strngco : copiedarr) {
@@ -54,41 +90,69 @@ public class Plagarism {
         //            } 
         //         }
         //     }
+        //     if (!mapor.containsKey(strco)){
+        //             mapor.put(strco,0);
+        //         }
         // }
+
+        
     }
 
-    public static Double lcscal() {
-        Double distance = 0.0;
-        Double numval = 0.0;
-        Double cosine = 0.0;
-        for (Map.Entry<String, Integer> val : mapor.entrySet()) {
-            for (Map.Entry<String, Integer> valco : mapco.entrySet()) {
-                if (val.getKey().equals(valco.getKey())) {
-                    numval += (val.getValue() * valco.getValue());           
-                }
-            }   
-        }
-        Double a1 = 0.0;
-        for (Map.Entry<String, Integer> val : mapor.entrySet()) {
-            a1 += Math.pow(val.getValue(), 2);
-        }
+    public static void lcscal(Map<String, Integer> mapor, Map<String, Integer> mapco) {
+        int distance = 0;
+        int numval = 0;
+        //Double distance = 0.0;
+        //Double cosine = 0;
 
-        Double b1 = 0.0;
-        for (Map.Entry<String, Integer> valco : mapco.entrySet()) {
-            b1 += Math.pow(valco.getValue(), 2);   
+        //System.out.println(mapor.size());
+        // System.out.println(mapco.size());
+        
+        // for (Map.Entry<String, Integer> val : mapor.entrySet()) {
+        //     for (Map.Entry<String, Integer> valco : mapco.entrySet()) {
+        //         if (val.getKey().equals(valco.getKey())) {
+        //             numval += val.getValue() * valco.getValue();           
+        //         }
+        //     }   
+        // }
+        
+        // for (Map.Entry<String, Integer> val : mapor.entrySet()) {
+        //     a1 += Math.pow(val.getValue(), 2);
+        // }
+
+        int a1 = 0;
+        int b1 = 0;
+        // for (Map.Entry<String, Integer> valco : mapco.entrySet()) {
+        //     b1 += Math.pow(valco.getValue(), 2);   
+        // }
+        
+        for (String str : mapor.keySet()) {
+            a1 += Math.pow(mapor.get(str), 2);
+            b1 += Math.pow(mapco.get(str), 2);
+            numval += mapor.get(str) * mapco.get(str);
         }
-        distance = (numval) / (Math.sqrt(a1) * Math.sqrt(b1));
-        cosine = Math.acos(distance);
-        return cosine;
+        //System.out.println(numval);
+        //System.out.println(a1);
+        //System.out.println(b1);
+        // distance = 100 * (numval / (Math.sqrt(a1) * Math.sqrt(b1)));
+        distance = (int)(numval / ((Math.sqrt(a1)) * (Math.sqrt(b1))));
+        values.add(distance);
+        //System.out.print(values);
+        //cosine = Math.acos(distance);
     }
     public static void print() {
-        for (Map.Entry<String, Integer> val : mapor.entrySet()) {
-            System.out.println(val.getKey() + " ---> " + val.getValue());
+        System.out.println(values);
+        int j = 0;
+        for (int i = 0; i < values.size(); i++) {
+            if (j == 5) {
+                j = 0;
+                System.out.println();
+            } else {
+                System.out.print(values.get(i) + " ");
+                j++;
+            }
+            //System.out.println();
         }
-        System.out.println("************************************");
-        for (Map.Entry<String, Integer> valco : mapco.entrySet()) {
-            System.out.println(valco.getKey() + " ---> " + valco.getValue());
-        }
+        
     }
 
     public static void main(String[] args) {
@@ -128,9 +192,14 @@ public class Plagarism {
                     s1 += input.nextLine();
                     s1 += " ";
                 }
-            } 
-            format(s1);
-            //System.out.println(s1);
+                //System.out.println(s1);
+                String input1 = s1.replaceAll("[^A-Za-z0-9 ]","");
+                String original = input1.toLowerCase();
+                format(original);
+                s1 = " ";
+            }
+            senddict();
+            print();
         } catch(Exception e) {
             System.out.println(e);
         }
