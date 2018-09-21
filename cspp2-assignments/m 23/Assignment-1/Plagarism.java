@@ -4,7 +4,7 @@ import java.io.File;
 import java.lang.Math;
 import java.util.TreeMap;
 import java.util.Map;
-public class Plagarism {
+class Plagarism {
     /**
      * Map declaration.
      */
