@@ -148,11 +148,10 @@ public class Plagarism {
         }
         
         for (int i = 0; i < values.size(); i++) {
-
             if (j == n) {
                 j = 0;
-                System.out.println();
-            } 
+                System.out.println("\t");
+            }
             System.out.print(values.get(i) + "\t\t");
             j++;
         }
