@@ -1,16 +1,28 @@
+import java.util.Scanner;
+import java.util.ArrayList;
+import java.io.File;
+import java.lang.Math;
+import java.util.TreeMap;
 import java.util.*;
-import java.io.*;
-import java.lang.*;
 public class Plagarism {
     private static Map<String, Integer> mapor;
     private static Map<String, Integer> mapco;
     private static ArrayList<String> inputlist = new ArrayList<>();
     private static ArrayList<Long> values = new ArrayList<>();
     //static Map<String, ArrayList<Integer>> mapcom = new TreeMap<>();
+    
+
+    /**
+     * Constructs the object.
+     */
     Plagarism() {
-
+        //Empty constructor.
     }
-
+    /**
+     * appending to list.
+     *
+     * @param      buffer  The buffer
+     */
     public static void format(String buffer) {
         //input1 = input1.replaceAll("\\s","");
         inputlist.add(buffer);
@@ -22,7 +34,9 @@ public class Plagarism {
 
         //return null;
     }
-
+    /**
+     * Sending to make dictionary.
+     */
     public static void senddict() {
         //System.out.println(inputlist.size());
         for (int i = 0; i < inputlist.size(); i++) {
@@ -32,7 +46,12 @@ public class Plagarism {
             //System.out.println(inputlist);
         }
     }
-    
+    /**
+     * Dictionary making.
+     *
+     * @param      first   The first
+     * @param      second  The second
+     */
     public static void freqdict(String first, String second) {
         //System.out.println(first);
         mapor = new TreeMap<>();
@@ -97,7 +116,12 @@ public class Plagarism {
 
         
     }
-
+    /**
+     * Distance calucluation.
+     *
+     * @param      mapor  The mapor
+     * @param      mapco  The mapco
+     */
     public static void lcscal(Map<String, Integer> mapor, Map<String, Integer> mapco) {
         //int distance = 0;
         Double numval = 0.0;
@@ -139,6 +163,11 @@ public class Plagarism {
         //System.out.print(values);
         cosine = Math.acos(distance);
     }
+    /**
+     * Printing.
+     *
+     * @param      list  The list
+     */
     public static void print(ArrayList<String> list) {
         //System.out.println(list);
         int n = list.size();
@@ -161,17 +190,22 @@ public class Plagarism {
         }
     }
 
-    public static void main(String[] args) {
+    /**
+     * Main function.
+     *
+     * @param      args  The arguments
+     */
+    public static void main(final String[] args) {
         Scanner in = new Scanner(System.in);
         ArrayList<String> sa = new ArrayList<>();
         String t = in.nextLine();
         File folder = new File(t);
         File[] listFiles = folder.listFiles();
-        ArrayList<String> fnames= new ArrayList<>();
-        int j =0;
+        ArrayList<String> fnames = new ArrayList<>();
+        int j = 0;
         String fname;
 
-        for(File file: listFiles){
+        for (File file : listFiles) {
             if (file.isFile()) {
                 sa.add(("D:\\MSIT\\IT\\cspp2_20186061\\cspp2-assignments\\"
                     + "m 23\\Assignment-1\\" + t + "\\" + file.getName()));
