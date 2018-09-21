@@ -5,12 +5,23 @@ import java.lang.Math;
 import java.util.TreeMap;
 import java.util.Map;
 public class Plagarism {
+    /**
+     * Map declaration.
+     */
     private static Map<String, Integer> mapor;
+    /**
+     * Map declaration.
+     */
     private static Map<String, Integer> mapco;
+    /**
+     * Input arraylist.
+     */
     private static ArrayList<String> inputlist = new ArrayList<>();
+    /**
+     * Values arraylist.
+     */
     private static ArrayList<Long> values = new ArrayList<>();
     //static Map<String, ArrayList<Integer>> mapcom = new TreeMap<>();
-    
 
     /**
      * Constructs the object.
