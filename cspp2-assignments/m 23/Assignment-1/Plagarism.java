@@ -207,7 +207,7 @@ public class Plagarism {
             }
             senddict();
             print(fnames);
-        } catch(Exception e) {
+        } catch (Exception e) {
             System.out.println(e);
         }
 
