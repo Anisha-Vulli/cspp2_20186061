@@ -5,7 +5,7 @@ import java.util.*;
 /**
  * Class for plagrism.
  */
-class Plagrism {
+class Plagrismnik {
 	/**
      * plagrism percentage calculation.
      *
