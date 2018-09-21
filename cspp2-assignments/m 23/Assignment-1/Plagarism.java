@@ -148,9 +148,6 @@ public class Plagarism {
         }
         
         for (int i = 0; i < values.size(); i++) {
-            for (int p = 0; p < n; p++) {
-            System.out.println(list.get(p));
-        }
 
             if (j == n) {
                 j = 0;
