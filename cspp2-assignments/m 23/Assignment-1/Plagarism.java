@@ -1,7 +1,6 @@
 import java.util.Scanner;
 import java.util.ArrayList;
 import java.io.File;
-import java.lang.Math;
 import java.util.TreeMap;
 import java.util.Map;
 /**
