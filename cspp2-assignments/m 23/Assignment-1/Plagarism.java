@@ -2,10 +2,10 @@ import java.util.*;
 import java.io.*;
 import java.lang.*;
 public class Plagarism {
-    static Map<String, Integer> mapor;
-    static Map<String, Integer> mapco;
-    static ArrayList<String> inputlist = new ArrayList<>();
-    static ArrayList<Long> values = new ArrayList<>();
+    private static Map<String, Integer> mapor;
+    private static Map<String, Integer> mapco;
+    private static ArrayList<String> inputlist = new ArrayList<>();
+    private static ArrayList<Long> values = new ArrayList<>();
     //static Map<String, ArrayList<Integer>> mapcom = new TreeMap<>();
     Plagarism() {
 
