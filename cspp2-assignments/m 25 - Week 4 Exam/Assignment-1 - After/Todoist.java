@@ -22,7 +22,7 @@ class Todoist {
 
     public int totalTime4Completion() {
         int total = 0;
-        for (int i = 0; i <= taskcount; i++) {
+        for (int i = 0; i < taskcount; i++) {
             if (tasks[i].status.equals("todo")) {
                 total += tasks[i].timeToComplete;
             }
