@@ -212,7 +212,7 @@ class Plagarism {
             }
         }
 
-        System.out.println(sa);
+        //System.out.println(sa);
 
         // for (File i : sa) {
         //     FileReader fr = new FileReader(i);
