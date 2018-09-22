@@ -123,6 +123,9 @@ class Todoist {
         }
     }
 
+    public int size() {
+        return taskcount;
+    }
     public void taskresize() {
         tasksarr = Arrays.copyOf(tasksarr, 2 * taskcount);
     }
@@ -138,8 +141,8 @@ class Todoist {
     public String toString() {
         //tasks.toString();
         //System.out.println(t.gettitle() + ", " + t.getname() + ", " + t.gettime() +", " + t.getimportant() + ", " + t.geturgent() +", " + t.getstatus());
-        for (Task str : tasksarr) {
-            System.out.println(str.gettitle() + ", " + str.getname() + ", " + str.gettime() +", " + str.getimportant() + ", " + str.geturgent() +", " + str.getstatus());
+        for (int i = 0; i < tasksarr.length; i++) {
+            System.out.println(tasksarr[i].gettitle() + ", " + tasksarr[i].getname() + ", " + tasksarr[i].gettime() +", " + tasksarr[i].getimportant() + ", " + tasksarr[i].geturgent() +", " + tasksarr[i].getstatus());
             //return str.gettitle() + ", " + str.getname() + ", " + str.gettime() +", " + str.getimportant() + ", " + str.geturgent() +", " + str.getstatus();
         }
         return "";
