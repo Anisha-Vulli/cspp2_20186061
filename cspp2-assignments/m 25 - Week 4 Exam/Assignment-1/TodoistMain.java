@@ -124,13 +124,14 @@ class Task {
  */
 class Todoist {
     //Task t = new Task();
-    public Task[] tasksarr = new Task[6];
+    public Task[] tasksarr;
     private int taskcount;
     /**
      * Constructs the object.
      */
     Todoist() {
         taskcount = 0;
+        tasksarr = new Task[6];
     }
 
     public void addTask(Task taskgiven) {
