@@ -12,6 +12,7 @@ class Task {
     private boolean important;
     private boolean urgent;
     private String status;
+    private boolean errorflag;
     Task(String task1, String name1, int time1, boolean impor, boolean urgent1, String status1) {
         this.title = task1;
         this.assignedTo = name1;
@@ -19,6 +20,7 @@ class Task {
         this.important = impor;
         this.urgent = urgent1;
         this.status = status1;
+        errorflag = false;
     }
 
     public String checkimportance(boolean impor) {
@@ -41,12 +43,17 @@ class Task {
         if (stat.equals("todo") || stat.equals("done")) {
             return stat;
         } else {
-            return "Invalid status " + stat;
+            System.out.println("Invalid status " + stat);
+            errorflag = true;
+            return null;
         }
     }
 
     public String toString() {
-        return title + ", " + assignedTo + ", " + timeTocomplete +", " + checkimportance(important) + ", " + checkurgency(urgent) +", " + checkstatus(status);
+        if (!errorflag) {
+            return title + ", " + assignedTo + ", " + timeTocomplete +", " + checkimportance(important) + ", " + checkurgency(urgent) +", " + checkstatus(status);   
+        } 
+        return null;
         //System.out.println();
     } 
 }
