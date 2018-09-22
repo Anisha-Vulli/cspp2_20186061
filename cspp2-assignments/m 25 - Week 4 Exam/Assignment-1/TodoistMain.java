@@ -14,7 +14,7 @@ class Task {
     private String status;
     private boolean errorflag = true;
     Task() {
-        
+
     }
     Task(String task1, String name1, int time1, boolean impor, boolean urgent1, String status1) {
         this.title = task1;
@@ -116,7 +116,8 @@ class Todoist {
 
     public void addTask(Task taskgiven) {
         try {
-            tasks[taskcount++] = taskgiven;
+            tasks[taskcount] = taskgiven;
+            taskcount++;
         } catch (Exception e) {
             taskresize();
         }
