@@ -51,14 +51,14 @@ class Task {
             return String.valueOf(time);
         } else {
             System.out.println("Invalid timeTocomplete " + time);
-            return null;
+            return "";
         }
     }
 
     public String checktitle(String titlegiv) {
         if (titlegiv.equals("")) {
             System.out.println("Title not given");
-            return null;
+            return "";
         } else {
             return title;
         }
@@ -89,7 +89,7 @@ class Task {
         } catch(Exception e) {
             errorflag = false;
             System.out.println("Invalid status " + stat);
-            return null;
+            return "";
         }
     }
 
@@ -98,7 +98,7 @@ class Task {
             String statuswork = checkstatus(status);
             return checktitle(title) + ", " + assignedTo + ", " + checktime(timeTocomplete) +", " + checkimportance(important) + ", " + checkurgency(urgent) +", " + statuswork;   
         } else {
-            return null;
+            return "";
         }
     } 
 }
@@ -135,7 +135,7 @@ class Todoist {
             System.out.println(str.gettitle() + ", " + str.getname() + ", " + str.gettime() +", " + str.getimportant() + ", " + str.geturgent() +", " + str.getstatus());
             //return str.gettitle() + ", " + str.getname() + ", " + str.gettime() +", " + str.getimportant() + ", " + str.geturgent() +", " + str.getstatus();
         }
-        return null;
+        return "";
     }
 }
 
@@ -200,9 +200,7 @@ public class TodoistMain {
      */
     public static void testTask(final String[] tokens) {
         try {
-            if (createTask(tokens) != null) {
-                System.out.println(createTask(tokens));   
-            }
+            System.out.println(createTask(tokens));
         } catch (Exception e) {
             System.out.println(e.getMessage());
         }
