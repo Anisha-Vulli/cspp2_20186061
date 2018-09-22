@@ -28,7 +28,7 @@ public class TodoistMain {
     /**
      * Constructs the object.
      */
-    public TodoistMain() {
+    private TodoistMain() {
         //Empty constructor.
     }
 
