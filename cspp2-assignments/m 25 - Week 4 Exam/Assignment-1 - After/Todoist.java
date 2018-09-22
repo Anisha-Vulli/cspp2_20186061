@@ -32,6 +32,17 @@ class Todoist {
         return total;
     }
 
+    public Task getNextTask(String namegiven) {
+        for (int i = 0; i < taskcount; i++) {
+            if (tasks[i].important && !tasks[i].urgent) {
+                if (tasks[i].status.equals("todo") && tasks[i].assignedTo.equals(namegiven)) {
+                    return tasks[i];
+                }
+            }
+        }
+        return null;
+    }
+
     public String toString() {
         String str = "";
         for (int i = 0; i < taskcount; i++) {
