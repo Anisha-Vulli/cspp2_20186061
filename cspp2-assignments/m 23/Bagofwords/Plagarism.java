@@ -247,7 +247,7 @@ class Plagarism {
             senddict();
             print(fnames);
         } catch (Exception e) {
-            System.out.println(e);
+            System.out.println("Empty directory");
         }
 
         // format(buffer);
