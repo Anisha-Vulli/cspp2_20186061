@@ -207,12 +207,12 @@ class Plagarism {
         for (File file : listFiles) {
             if (file.isFile()) {
                 sa.add(("D:\\MSIT\\IT\\cspp2_20186061\\cspp2-assignments"
-                    + "\\m 23\\Bagofwords"+ t + "\\" + file.getName()));
+                    + "\\m 23\\Bagofwords\\"+ t + "\\" + file.getName()));
                 fnames.add(file.getName());
             }
         }
 
-        //System.out.println(sa);
+        System.out.println(sa);
 
         // for (File i : sa) {
         //     FileReader fr = new FileReader(i);
