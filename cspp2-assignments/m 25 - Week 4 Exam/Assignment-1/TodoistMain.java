@@ -40,21 +40,20 @@ class Task {
     }
 
     public String checkstatus(String stat) {
-        if (stat.equals("todo") || stat.equals("done")) {
-            return stat;
-        } else {
+        try {
+            if (stat.equals("todo") || stat.equals("done")) {
+                return stat;
+            } else {
+                throw new Exception();
+            }
+        } catch(Exception e) {
             System.out.println("Invalid status " + stat);
-            errorflag = false;
             return null;
         }
     }
 
     public String toString() {
-        if (errorflag == true) {
-            return title + ", " + assignedTo + ", " + timeTocomplete +", " + checkimportance(important) + ", " + checkurgency(urgent) +", " + checkstatus(status);   
-        } else {
-            return null;
-        }
+        return title + ", " + assignedTo + ", " + timeTocomplete +", " + checkimportance(important) + ", " + checkurgency(urgent) +", " + checkstatus(status);   
         //System.out.println();
     } 
 }
