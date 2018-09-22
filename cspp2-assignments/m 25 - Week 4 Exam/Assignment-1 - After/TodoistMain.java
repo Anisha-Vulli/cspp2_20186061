@@ -9,6 +9,12 @@ import java.util.Arrays;
  * Class for todoist main.
  */
 public class TodoistMain {
+	/**
+	 * Constructs the object.
+	 */
+	TodoistMain() {
+		//Empty constructor.
+	}
 
     /**
      * Starts a test.
