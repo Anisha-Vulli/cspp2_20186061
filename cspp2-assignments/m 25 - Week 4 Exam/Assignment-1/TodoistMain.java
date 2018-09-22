@@ -6,74 +6,6 @@ import java.util.Arrays;
   */
 
 /**
- * Class for todoist.
- */
-class Todoist {
-    //Task t = new Task();
-    public Task[] tasksarr;
-    private int taskcount;
-    /**
-     * Constructs the object.
-     */
-    Todoist() {
-        taskcount = 0;
-        tasksarr = new Task[6];
-    }
-
-    public void addTask(Task taskgiven) {
-        // if (taskcount <= 10) {
-            
-        // } else {
-        //     taskresize();
-        // }
-        
-        try {
-        	tasksarr[taskcount] = taskgiven;
-            taskcount++;
-        } catch (Exception e) {
-        	taskresize();
-        }
-    }
-
-    // public int size() {
-    //     return taskcount;
-    // }
-    
-    /**
-     * { function_description }
-     */
-    public void taskresize() {
-        tasksarr = Arrays.copyOf(tasksarr, 2 * taskcount);
-    }
-    /**
-     * { function_description }
-     *
-     * @return     { description_of_the_return_value }
-     */
-    public int totalTime4Completion() {
-        int total = 0;
-        for (Task str : tasksarr) {
-            total += str.timeTocomplete;
-        }
-        return total;
-    }
-    /**
-     * Returns a string representation of the object.
-     *
-     * @return     String representation of the object.
-     */
-    public String toString() {
-        //tasks.toString();
-        //System.out.println(t.gettitle() + ", " + t.getname() + ", " + t.gettime() +", " + t.getimportant() + ", " + t.geturgent() +", " + t.getstatus());
-        for (int i = 0; i < tasksarr.length; i++) {
-            System.out.println(tasksarr[i].title + ", " + tasksarr[i].assignedTo + ", " + tasksarr[i].timeTocomplete +", " + tasksarr[i].important + ", " + tasksarr[i].urgent +", " + tasksarr[i].status);
-            //return str.gettitle() + ", " + str.getname() + ", " + str.gettime() +", " + str.getimportant() + ", " + str.geturgent() +", " + str.getstatus();
-        }
-        return "";
-    }
-}
-
-/**
  * Class for todoist main.
  */
 public class TodoistMain {
@@ -104,9 +36,9 @@ public class TodoistMain {
                 //     Task[] tasks = todo.getNextTask(tokens[1], n);
                 //     System.out.println(Arrays.deepToString(tasks));
                 // break;
-                case "total-time":
-                    System.out.println(todo.totalTime4Completion());
-                break;
+                // case "total-time":
+                //     System.out.println(todo.totalTime4Completion());
+                // break;
                 default:
                 break;
             }
