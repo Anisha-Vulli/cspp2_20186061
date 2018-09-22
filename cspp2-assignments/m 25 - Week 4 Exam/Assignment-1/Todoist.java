@@ -26,6 +26,17 @@ class Todoist {
         tasksarr = Arrays.copyOf(tasksarr, 2 * taskcount);
     }
 
+    public Task getNextTask(String namegiven) {
+        for (int i = 0; i < taskcount; i++) {
+            if (tasksarr[i].important && !tasksarr[i].urgent) {
+                if (tasksarr[i].assignedTo.equals(namegiven) && tasksarr[i].status.equals("todo")) {
+                    return tasksarr[i];
+                }
+            }
+        }
+        return null;
+    }
+
     public int totalTime4Completion() {
         int totaltime = 0;
         for (int i = 0; i < taskcount; i++) {
