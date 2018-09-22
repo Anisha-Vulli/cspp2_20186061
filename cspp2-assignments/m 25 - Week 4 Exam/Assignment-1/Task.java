@@ -14,10 +14,10 @@ class Task {
         this.urgent = urgent1;
         this.status = status1;
         if (title.equals("")) {
-            throw new Exception("Title not Provided");
+            throw new Exception("Title not provided");
         }
         if (timeTocomplete < 0) {
-            throw new Exception("Invalid timeTocomplete " + timeTocomplete);
+            throw new Exception("Invalid timeToComplete " + timeTocomplete);
         }
         if (!status.equals("todo") && !status.equals("done")) {
             throw new Exception("Invalid status " + status);
