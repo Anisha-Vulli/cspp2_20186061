@@ -115,11 +115,17 @@ class Todoist {
     }
 
     public void addTask(Task taskgiven) {
-        if (taskcount <= 10) {
-            tasksarr[taskcount] = taskgiven;
+        // if (taskcount <= 10) {
+            
+        // } else {
+        //     taskresize();
+        // }
+        
+        try {
+        	tasksarr[taskcount] = taskgiven;
             taskcount++;
-        } else {
-            taskresize();
+        } catch (Exception e) {
+        	taskresize();
         }
     }
 
