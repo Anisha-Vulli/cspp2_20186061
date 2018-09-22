@@ -107,8 +107,8 @@ class Task {
 }
 
 class Todoist {
-    Task t = new Task();
-    private Task[] tasks = new Task[10];
+    //Task t = new Task();
+    public Task[] tasksarr = new Task[10];
     private int taskcount;
     Todoist() {
         taskcount = 0;
@@ -116,7 +116,7 @@ class Todoist {
 
     public void addTask(Task taskgiven) {
         try {
-            tasks[taskcount] = taskgiven;
+            tasksarr[taskcount] = taskgiven;
             taskcount++;
         } catch (Exception e) {
             taskresize();
@@ -124,12 +124,12 @@ class Todoist {
     }
 
     public void taskresize() {
-        tasks = Arrays.copyOf(tasks, 2 * taskcount);
+        tasksarr = Arrays.copyOf(tasksarr, 2 * taskcount);
     }
 
     public int totalTime4Completion() {
         int total = 0;
-        for (Task str : tasks) {
+        for (Task str : tasksarr) {
             total += str.gettime();
         }
         return total;
@@ -137,8 +137,8 @@ class Todoist {
 
     public String toString() {
         //tasks.toString();
-        System.out.println(t.gettitle() + ", " + t.getname() + ", " + t.gettime() +", " + t.getimportant() + ", " + t.geturgent() +", " + t.getstatus());
-        for (Task str : tasks) {
+        //System.out.println(t.gettitle() + ", " + t.getname() + ", " + t.gettime() +", " + t.getimportant() + ", " + t.geturgent() +", " + t.getstatus());
+        for (Task str : tasksarr) {
             System.out.println(str.gettitle() + ", " + str.getname() + ", " + str.gettime() +", " + str.getimportant() + ", " + str.geturgent() +", " + str.getstatus());
             //return str.gettitle() + ", " + str.getname() + ", " + str.gettime() +", " + str.getimportant() + ", " + str.geturgent() +", " + str.getstatus();
         }
