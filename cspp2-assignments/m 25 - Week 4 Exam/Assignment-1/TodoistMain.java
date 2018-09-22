@@ -123,9 +123,9 @@ class Todoist {
         }
     }
 
-    public int size() {
-        return taskcount;
-    }
+    // public int size() {
+    //     return taskcount;
+    // }
     public void taskresize() {
         tasksarr = Arrays.copyOf(tasksarr, 2 * taskcount);
     }
@@ -133,7 +133,7 @@ class Todoist {
     public int totalTime4Completion() {
         int total = 0;
         for (Task str : tasksarr) {
-            total += str.gettime();
+            total += str.timeTocomplete;
         }
         return total;
     }
