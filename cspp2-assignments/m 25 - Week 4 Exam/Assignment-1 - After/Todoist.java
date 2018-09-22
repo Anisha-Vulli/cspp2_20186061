@@ -43,6 +43,23 @@ class Todoist {
         return null;
     }
 
+    public Task[] getNextTask(String namegiven, int count) {
+        Task[] tasksarr = new Task[count];
+        int num = 0;
+        for (int i = 0; i < taskcount; i++) {
+            if (tasks[i].important && !tasks[i].urgent) {
+                if (tasks[i].status.equals("todo") && tasks[i].assignedTo.equals(namegiven)) {
+                    tasksarr[i] = tasks[i];
+                    num++;
+                    if (num == count) {
+                       break;   
+                    }
+                }
+            }
+        }
+        return tasksarr;
+    }
+
     public String toString() {
         String str = "";
         for (int i = 0; i < taskcount; i++) {
