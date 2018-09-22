@@ -23,6 +23,14 @@ class Task {
         // }
     }
 
+    // public String checktitle(String title) {
+    //     if (title.equals(" ")) {
+    //      throw new Exception("Title not provided");
+    //     } else {
+    //         return title;
+    //     }
+    // }
+
     public String checkimportant(boolean imp) {
         if (important) {
             return "Important";
@@ -40,6 +48,7 @@ class Task {
     }
 
     public String toString() {
+        //return checktitle(title) + ", " + assignedTo + ", " + timeToComplete + ", " + checkimportant(important) + ", " + checkurgent(urgent) + ", " + status;
         return title + ", " + assignedTo + ", " + timeToComplete + ", " + checkimportant(important) + ", " + checkurgent(urgent) + ", " + status;
     }
 }
