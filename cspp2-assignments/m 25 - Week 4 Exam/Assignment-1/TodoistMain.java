@@ -23,6 +23,15 @@ class Task {
         //errorflag = true;
     }
 
+    public String checktime(int time) {
+        if (time > 0) {
+            return String.valueOf(time);
+        } else {
+            System.out.println("Invalid timeTocomplete " + time);
+            return null;
+        }
+    }
+
     public String checkimportance(boolean impor) {
         if (impor) {
             return "Important";
@@ -56,7 +65,7 @@ class Task {
     public String toString() {
         if (errorflag) {
             String statuswork = checkstatus(status);
-            return title + ", " + assignedTo + ", " + timeTocomplete +", " + checkimportance(important) + ", " + checkurgency(urgent) +", " + statuswork;   
+            return title + ", " + assignedTo + ", " + checktime(timeTocomplete) +", " + checkimportance(important) + ", " + checkurgency(urgent) +", " + statuswork;   
         } else {
             return null;
         }
