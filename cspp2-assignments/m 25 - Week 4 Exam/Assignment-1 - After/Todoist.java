@@ -36,7 +36,7 @@ class Todoist {
             } else {
                 urg = "Not Urgent";
             }
-            str += tasks[i].title + ", " + tasks[i].assignedTo + ", " + tasks[i].timeToComplete + ", " + imp + ", " + urg + tasks[i].status; 
+            str += tasks[i].title + ", " + tasks[i].assignedTo + ", " + tasks[i].timeToComplete + ", " + imp + ", " + urg + ", " + tasks[i].status; 
             str += "\n";
         }
         return str;
