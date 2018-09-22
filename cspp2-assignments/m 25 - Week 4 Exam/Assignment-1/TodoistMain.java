@@ -32,6 +32,14 @@ class Task {
         }
     }
 
+    public String checktitle(String titlegiv) {
+        if (titlegiv.equals("")) {
+            System.out.println("Title not given");
+            return null;
+        } else {
+            return title;
+        }
+    }
     public String checkimportance(boolean impor) {
         if (impor) {
             return "Important";
@@ -65,7 +73,7 @@ class Task {
     public String toString() {
         if (errorflag) {
             String statuswork = checkstatus(status);
-            return title + ", " + assignedTo + ", " + checktime(timeTocomplete) +", " + checkimportance(important) + ", " + checkurgency(urgent) +", " + statuswork;   
+            return checktitle(title) + ", " + assignedTo + ", " + checktime(timeTocomplete) +", " + checkimportance(important) + ", " + checkurgency(urgent) +", " + statuswork;   
         } else {
             return null;
         }
