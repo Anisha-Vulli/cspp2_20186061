@@ -2,9 +2,11 @@ import java.util.Scanner;
 import java.util.Arrays;
 
 /**
-  * write your code below this comment
+  * write your code below this comment.
   */
-
+/**
+ * Class for task.
+ */
 class Task {
     String title;
     String assignedTo;
@@ -24,30 +26,6 @@ class Task {
         this.urgent = urgent1;
         this.status = status1;
         //errorflag = true;
-    }
-
-    public String gettitle() {
-        return title;
-    }
-
-    public String getname() {
-        return assignedTo;
-    }
-
-    public int gettime() {
-        return timeTocomplete;
-    }
-
-    public String getimportant() {
-        return checkimportance(important);
-    }
-
-    public String geturgent() {
-        return checkurgency(urgent);
-    }
-
-    public String getstatus() {
-        return status;
     }
     public String checktime(int time) {
         if (time > 0) {
