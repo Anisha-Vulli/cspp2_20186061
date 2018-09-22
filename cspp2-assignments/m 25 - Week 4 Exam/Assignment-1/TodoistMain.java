@@ -23,6 +23,29 @@ class Task {
         //errorflag = true;
     }
 
+    public String gettitle() {
+        return title;
+    }
+
+    public String getname() {
+        return assignedTo;
+    }
+
+    public int gettime() {
+        return timeTocomplete;
+    }
+
+    public String getimportant() {
+        return checkimportance(important);
+    }
+
+    public String geturgent() {
+        return checkurgency(urgent);
+    }
+
+    public String getstatus() {
+        return status;
+    }
     public String checktime(int time) {
         if (time > 0) {
             return String.valueOf(time);
@@ -99,7 +122,12 @@ class Todoist {
         tasks = Arrays.copyOf(tasks, 2 * taskcount);
     }
 
-    //public void print-todoist()
+    public String toString() {
+        for (Task str : tasks) {
+             return str.gettitle() + ", " + str.getname() + ", " + str.gettime() +", " + str.getimportant() + ", " + str.geturgent() +", " + str.getstatus();      
+        }
+        return null;
+    }
 }
 
 /**
