@@ -11,8 +11,8 @@ class Todoist {
 
     public void addTask(Task taskgiven) {
         try {
-        	tasksarr[taskcount++] = taskgiven;
-            //taskcount++;
+        	tasksarr[taskcount] = taskgiven;
+            taskcount++;
         } catch (Exception e) {
         	taskresize();
             addTask(taskgiven);
