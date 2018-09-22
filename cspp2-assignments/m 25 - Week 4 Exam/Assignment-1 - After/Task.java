@@ -12,7 +12,7 @@ class Task {
         this.important = important1;
         this.urgent = urgent1;
         this.status = status1;
-        if (title.equals(" ")) {
+        if (title.equals("")) {
          throw new Exception("Title not provided");
         }
         if (timeToComplete < 0) {
