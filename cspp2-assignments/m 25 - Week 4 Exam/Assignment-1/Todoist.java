@@ -25,6 +25,16 @@ class Todoist {
     public void taskresize() {
         tasksarr = Arrays.copyOf(tasksarr, 2 * taskcount);
     }
+
+    public int totalTime4Completion() {
+        int totaltime = 0;
+        for (int i = 0; i < taskcount; i++) {
+            if (tasksarr[i].status.equals("todo")) {
+                totaltime += tasksarr[i].timeTocomplete;
+            }
+        }
+        return totaltime;
+    }
     
     /**
      * Returns a string representation of the object.
