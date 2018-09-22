@@ -13,6 +13,9 @@ class Task {
     private boolean urgent;
     private String status;
     private boolean errorflag = true;
+    Task() {
+        
+    }
     Task(String task1, String name1, int time1, boolean impor, boolean urgent1, String status1) {
         this.title = task1;
         this.assignedTo = name1;
@@ -104,7 +107,7 @@ class Task {
 }
 
 class Todoist {
-    //Task t = new Task;
+    Task t = new Task();
     public Task[] tasks = new Task[6];
     private int taskcount;
     Todoist() {
@@ -133,6 +136,7 @@ class Todoist {
 
     public String toString() {
         //tasks.toString();
+        System.out.println(t.gettitle() + ", " + t.getname() + ", " + t.gettime() +", " + t.getimportant() + ", " + t.geturgent() +", " + t.getstatus());
         for (Task str : tasks) {
             System.out.println(str.gettitle() + ", " + str.getname() + ", " + str.gettime() +", " + str.getimportant() + ", " + str.geturgent() +", " + str.getstatus());
             //return str.gettitle() + ", " + str.getname() + ", " + str.gettime() +", " + str.getimportant() + ", " + str.geturgent() +", " + str.getstatus();
