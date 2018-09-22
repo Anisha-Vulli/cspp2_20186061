@@ -122,6 +122,14 @@ class Todoist {
         tasks = Arrays.copyOf(tasks, 2 * taskcount);
     }
 
+    public int totalTime4Completion() {
+        int total = 0;
+        for (Task str : tasks) {
+            total += str.gettime();
+        }
+        return total;
+    }
+
     public String toString() {
         for (Task str : tasks) {
             System.out.println(str.gettitle() + ", " + str.getname() + ", " + str.gettime() +", " + str.getimportant() + ", " + str.geturgent() +", " + str.getstatus());
@@ -162,9 +170,9 @@ public class TodoistMain {
                 //     Task[] tasks = todo.getNextTask(tokens[1], n);
                 //     System.out.println(Arrays.deepToString(tasks));
                 // break;
-                // case "total-time":
-                //     System.out.println(todo.totalTime4Completion());
-                // break;
+                case "total-time":
+                    System.out.println(todo.totalTime4Completion());
+                break;
                 default:
                 break;
             }
