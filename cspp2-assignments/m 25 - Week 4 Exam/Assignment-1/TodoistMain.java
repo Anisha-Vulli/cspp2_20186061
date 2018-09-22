@@ -115,7 +115,7 @@ class Todoist {
     }
 
     public void addTask(Task taskgiven) {
-        if (taskcount < 10) {
+        if (taskcount <= 10) {
             tasksarr[taskcount] = taskgiven;
             taskcount++;
         } else {
