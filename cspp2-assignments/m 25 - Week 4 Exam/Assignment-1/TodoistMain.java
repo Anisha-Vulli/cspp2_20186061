@@ -50,7 +50,7 @@ class Task {
     }
 
     public String toString() {
-        if (errorflag) {
+        if (errorflag == true) {
             return title + ", " + assignedTo + ", " + timeTocomplete +", " + checkimportance(important) + ", " + checkurgency(urgent) +", " + checkstatus(status);   
         } else {
             return null;
