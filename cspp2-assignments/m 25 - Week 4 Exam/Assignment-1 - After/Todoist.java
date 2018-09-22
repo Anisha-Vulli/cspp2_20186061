@@ -49,7 +49,7 @@ class Todoist {
         for (int i = 0; i < taskcount; i++) {
             if (tasks[i].important && !tasks[i].urgent) {
                 if (tasks[i].status.equals("todo") && tasks[i].assignedTo.equals(namegiven)) {
-                    tasksarr[i] = tasks[i];
+                    tasksarr[num] = tasks[i];
                     num++;
                     if (num == count) {
                        break;   
