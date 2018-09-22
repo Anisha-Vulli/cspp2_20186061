@@ -6,13 +6,13 @@ import java.util.Arrays;
   */
 
 class Task {
-    private String title;
-    private String assignedTo;
-    private int timeTocomplete;
-    private boolean important;
-    private boolean urgent;
-    private String status;
-    private boolean errorflag = true;
+    String title;
+    String assignedTo;
+    int timeTocomplete;
+    boolean important;
+    boolean urgent;
+    String status;
+    boolean errorflag = true;
     Task() {
 
     }
@@ -108,7 +108,7 @@ class Task {
 
 class Todoist {
     //Task t = new Task();
-    public Task[] tasksarr;
+    public Task[] tasksarr = new Task[6];
     private int taskcount;
     Todoist() {
         taskcount = 0;
@@ -142,7 +142,7 @@ class Todoist {
         //tasks.toString();
         //System.out.println(t.gettitle() + ", " + t.getname() + ", " + t.gettime() +", " + t.getimportant() + ", " + t.geturgent() +", " + t.getstatus());
         for (int i = 0; i < tasksarr.length; i++) {
-            System.out.println(tasksarr[i].gettitle() + ", " + tasksarr[i].getname() + ", " + tasksarr[i].gettime() +", " + tasksarr[i].getimportant() + ", " + tasksarr[i].geturgent() +", " + tasksarr[i].getstatus());
+            System.out.println(tasksarr[i].title + ", " + tasksarr[i].assignedTo + ", " + tasksarr[i].timeTocomplete +", " + tasksarr[i].important + ", " + tasksarr[i].urgent +", " + tasksarr[i].status);
             //return str.gettitle() + ", " + str.getname() + ", " + str.gettime() +", " + str.getimportant() + ", " + str.geturgent() +", " + str.getstatus();
         }
         return "";
