@@ -212,6 +212,11 @@ class Plagarism {
             }
         }
 
+        if (fnames.size() == 0) {
+            System.out.println("Empty directory");
+            //break;
+        }
+
         //System.out.println(sa);
 
         // for (File i : sa) {
