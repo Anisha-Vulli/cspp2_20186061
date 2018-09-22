@@ -13,6 +13,7 @@ class Todoist {
             taskcount++;
         } catch (Exception e) {
             taskresize();
+            addTask(taskgiven);
         }
     }
 
@@ -24,7 +25,7 @@ class Todoist {
         int total = 0;
         for (int i = 0; i < taskcount; i++) {
             if (tasks[i].status.equals("todo")) {
-                System.out.println(tasks[i].timeToComplete);
+                //System.out.println(tasks[i].timeToComplete);
                 total += tasks[i].timeToComplete;
             }
         }
