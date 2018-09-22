@@ -39,7 +39,6 @@ class Todoist {
             str += tasks[i].title + ", " + tasks[i].assignedTo + ", " + tasks[i].timeToComplete + ", " + imp + ", " + urg + tasks[i].status; 
             str += "\n";
         }
-
         return str;
     }
 }
