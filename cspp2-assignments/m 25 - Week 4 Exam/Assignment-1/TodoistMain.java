@@ -12,7 +12,7 @@ class Task {
     private boolean important;
     private boolean urgent;
     private String status;
-    private boolean errorflag;
+    private boolean errorflag = true;
     Task(String task1, String name1, int time1, boolean impor, boolean urgent1, String status1) {
         this.title = task1;
         this.assignedTo = name1;
@@ -20,7 +20,7 @@ class Task {
         this.important = impor;
         this.urgent = urgent1;
         this.status = status1;
-        errorflag = true;
+        //errorflag = true;
     }
 
     public String checkimportance(boolean impor) {
@@ -33,7 +33,7 @@ class Task {
 
     public String checkurgency(boolean urgent) {
         if (urgent) {
-            return "Urgent"   ;
+            return "Urgent";
         } else {
             return "Not Urgent";
         }
