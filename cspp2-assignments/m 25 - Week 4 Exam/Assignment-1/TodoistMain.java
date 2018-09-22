@@ -111,7 +111,7 @@ class Todoist {
     public Task[] tasks = new Task[6];
     private int taskcount;
     Todoist() {
-        taskcount = 0;
+        taskcount = 1;
     }
 
     public void addTask(Task taskgiven) {
