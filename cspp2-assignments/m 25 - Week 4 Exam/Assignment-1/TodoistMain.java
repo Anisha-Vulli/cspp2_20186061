@@ -108,7 +108,7 @@ class Task {
 
 class Todoist {
     //Task t = new Task();
-    public Task[] tasksarr = new Task[0];
+    public Task[] tasksarr;
     private int taskcount;
     Todoist() {
         taskcount = 0;
