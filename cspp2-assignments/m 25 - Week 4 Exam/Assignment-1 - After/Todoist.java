@@ -20,6 +20,16 @@ class Todoist {
         tasks = Arrays.copyOf(tasks, 2 * taskcount);
     }
 
+    public int totalTime4Completion() {
+        int total = 0;
+        for (int i = 0; i < taskcount; i++) {
+            if (tasks[i].status.equals("todo")) {
+                total += tasks[i].timeToComplete;
+            }
+        }
+        return total;
+    }
+
     public String toString() {
         String str = "";
         for (int i = 0; i < taskcount; i++) {
