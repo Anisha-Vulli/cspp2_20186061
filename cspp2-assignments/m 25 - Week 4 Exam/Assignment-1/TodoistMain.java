@@ -8,30 +8,30 @@ import java.util.Arrays;
 /**
  * Class for todoist main.
  */
-public class TodoistMain {
-	/**
-	 * Three value;
-	 */
-	private static final int THREE = 3;
-	/**
-	 * Four value.
-	 */
-	private static final int FOUR = 4;
-	/**
-	 * Five value.
-	 */
-	private static final int FIVE = 5;
-	/**
-	 * Six value.
-	 */
-	private static final int SIX = 6;
+public final class TodoistMain {
+    /**
+     * Three value.
+     */
+    private static final int THREE = 3;
+    /**
+     * Four value.
+     */
+    private static final int FOUR = 4;
+    /**
+     * Five value.
+     */
+    private static final int FIVE = 5;
+    /**
+     * Six value.
+     */
+    private static final int SIX = 6;
 
-	/**
-	 * Constructs the object.
-	 */
-	private TodoistMain() {
+    /**
+     * Constructs the object.
+     */
+    private TodoistMain() {
 
-	}
+    }
 
     /**
      * Starts a test.
