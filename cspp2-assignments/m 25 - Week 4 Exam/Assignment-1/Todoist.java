@@ -46,6 +46,23 @@ class Todoist {
         }
         return totaltime;
     }
+
+    public Task[] getNextTask(String namegiven, int count) {
+        Task[] tasks = new Task[count];
+        int num = 0;
+        for (int i = 0; i < taskcount; i++) {
+            if (tasksarr[i].important && !tasksarr[i].urgent) {
+                if (tasksarr[i].assignedTo.equals(namegiven) && tasksarr[i].status.equals("todo")) {
+                    tasks[num] = tasksarr[i];
+                    num++;
+                    if (num == count) {
+                        break;   
+                    }
+                }
+            }
+        }
+        return tasks;
+    }
     
     /**
      * Returns a string representation of the object.
