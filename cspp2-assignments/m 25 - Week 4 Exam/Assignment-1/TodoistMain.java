@@ -20,7 +20,7 @@ class Task {
         this.important = impor;
         this.urgent = urgent1;
         this.status = status1;
-        errorflag = false;
+        errorflag = true;
     }
 
     public String checkimportance(boolean impor) {
@@ -44,13 +44,13 @@ class Task {
             return stat;
         } else {
             System.out.println("Invalid status " + stat);
-            errorflag = true;
+            errorflag = false;
             return null;
         }
     }
 
     public String toString() {
-        if (!errorflag) {
+        if (errorflag) {
             return title + ", " + assignedTo + ", " + timeTocomplete +", " + checkimportance(important) + ", " + checkurgency(urgent) +", " + checkstatus(status);   
         } 
         return null;
