@@ -52,8 +52,9 @@ class Task {
     public String toString() {
         if (errorflag) {
             return title + ", " + assignedTo + ", " + timeTocomplete +", " + checkimportance(important) + ", " + checkurgency(urgent) +", " + checkstatus(status);   
-        } 
-        return null;
+        } else {
+            return null;
+        }
         //System.out.println();
     } 
 }
