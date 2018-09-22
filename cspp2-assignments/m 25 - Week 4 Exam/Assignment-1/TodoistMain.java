@@ -4,11 +4,7 @@ import java.util.Arrays;
 /**
   * write your code below this comment
   */
-class Todoist {
-    Todoist() {
 
-    }
-}
 class Task {
     private String title;
     private String assignedTo;
@@ -41,10 +37,26 @@ class Task {
         }
     }
 
+    public String checkstatus(String stat) {
+        if (stat.equals("todo") || stat.equals("done")) {
+            return stat;
+        } else {
+            return "Invalid status " + stat;
+        }
+    }
+
     public String toString() {
-        return title + ", " + assignedTo + ", " + timeTocomplete +", " + checkimportance(important) + ", " + checkurgency(urgent) +", " + status;
+        return title + ", " + assignedTo + ", " + timeTocomplete +", " + checkimportance(important) + ", " + checkurgency(urgent) +", " + checkstatus(status);
         //System.out.println();
     } 
+}
+
+class Todoist {
+    public Task[] tasks = new Task[6];
+    private int taskcount;
+    Todoist() {
+        taskcount = 0;
+    }
 }
 
 /**
