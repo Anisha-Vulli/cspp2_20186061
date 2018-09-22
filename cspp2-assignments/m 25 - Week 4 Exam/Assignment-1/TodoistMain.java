@@ -93,17 +93,18 @@ class Task {
         }
     }
 
-    public String toString() {
-        if (errorflag) {
-            String statuswork = checkstatus(status);
-            return checktitle(title) + ", " + assignedTo + ", " + checktime(timeTocomplete) +", " + checkimportance(important) + ", " + checkurgency(urgent) +", " + statuswork;   
-        } else {
-            return "";
-        }
-    } 
+    // public String toString() {
+    //     if (errorflag) {
+    //         String statuswork = checkstatus(status);
+    //         return checktitle(title) + ", " + assignedTo + ", " + checktime(timeTocomplete) +", " + checkimportance(important) + ", " + checkurgency(urgent) +", " + statuswork;   
+    //     } else {
+    //         return "";
+    //     }
+    // } 
 }
 
 class Todoist {
+    //Task t = new Task;
     public Task[] tasks = new Task[6];
     private int taskcount;
     Todoist() {
@@ -131,10 +132,10 @@ class Todoist {
     }
 
     public String toString() {
+        //tasks.toString();
         for (Task str : tasks) {
-            //System.out.println(str.gettitle() + ", " + str.getname() + ", " + str.gettime() +", " + str.getimportant() + ", " + str.geturgent() +", " + str.getstatus());
+            System.out.println(str.gettitle() + ", " + str.getname() + ", " + str.gettime() +", " + str.getimportant() + ", " + str.geturgent() +", " + str.getstatus());
             //return str.gettitle() + ", " + str.getname() + ", " + str.gettime() +", " + str.getimportant() + ", " + str.geturgent() +", " + str.getstatus();
-            str.toString();
         }
         return "";
     }
