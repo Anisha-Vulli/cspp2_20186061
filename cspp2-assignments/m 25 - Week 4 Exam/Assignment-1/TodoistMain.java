@@ -27,6 +27,13 @@ class Task {
         this.status = status1;
         //errorflag = true;
     }
+    /**
+     * { function_description }
+     *
+     * @param      time  The time
+     *
+     * @return     { description_of_the_return_value }
+     */
     public String checktime(int time) {
         if (time > 0) {
             return String.valueOf(time);
@@ -35,7 +42,13 @@ class Task {
             return "";
         }
     }
-
+/**
+ * { function_description }
+ *
+ * @param      titlegiv  The titlegiv
+ *
+ * @return     { description_of_the_return_value }
+ */
     public String checktitle(String titlegiv) {
         if (titlegiv.equals("")) {
             System.out.println("Title not given");
@@ -44,6 +57,13 @@ class Task {
             return title;
         }
     }
+    /**
+     * { function_description }
+     *
+     * @param      impor  The impor
+     *
+     * @return     { description_of_the_return_value }
+     */
     public String checkimportance(boolean impor) {
         if (impor) {
             return "Important";
@@ -51,7 +71,13 @@ class Task {
             return "Not Important";
         }
     }
-
+    /**
+     * { function_description }
+     *
+     * @param      urgent  The urgent
+     *
+     * @return     { description_of_the_return_value }
+     */
     public String checkurgency(boolean urgent) {
         if (urgent) {
             return "Urgent";
@@ -59,7 +85,13 @@ class Task {
             return "Not Urgent";
         }
     }
-
+    /**
+     * { function_description }
+     *
+     * @param      stat  The stat
+     *
+     * @return     { description_of_the_return_value }
+     */
     public String checkstatus(String stat) {
         try {
             if (stat.equals("todo") || stat.equals("done")) {
@@ -73,7 +105,11 @@ class Task {
             return "";
         }
     }
-
+    /**
+     * Returns a string representation of the object.
+     *
+     * @return     String representation of the object.
+     */
     public String toString() {
         if (errorflag) {
             String statuswork = checkstatus(status);
@@ -83,11 +119,16 @@ class Task {
         }
     } 
 }
-
+/**
+ * Class for todoist.
+ */
 class Todoist {
     //Task t = new Task();
     public Task[] tasksarr = new Task[6];
     private int taskcount;
+    /**
+     * Constructs the object.
+     */
     Todoist() {
         taskcount = 0;
     }
@@ -110,10 +151,18 @@ class Todoist {
     // public int size() {
     //     return taskcount;
     // }
+    
+    /**
+     * { function_description }
+     */
     public void taskresize() {
         tasksarr = Arrays.copyOf(tasksarr, 2 * taskcount);
     }
-
+    /**
+     * { function_description }
+     *
+     * @return     { description_of_the_return_value }
+     */
     public int totalTime4Completion() {
         int total = 0;
         for (Task str : tasksarr) {
@@ -121,7 +170,11 @@ class Todoist {
         }
         return total;
     }
-
+    /**
+     * Returns a string representation of the object.
+     *
+     * @return     String representation of the object.
+     */
     public String toString() {
         //tasks.toString();
         //System.out.println(t.gettitle() + ", " + t.getname() + ", " + t.gettime() +", " + t.getimportant() + ", " + t.geturgent() +", " + t.getstatus());
