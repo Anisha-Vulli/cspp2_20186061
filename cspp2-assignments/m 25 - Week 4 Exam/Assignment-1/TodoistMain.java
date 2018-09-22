@@ -48,13 +48,15 @@ class Task {
             }
         } catch(Exception e) {
             errorflag = false;
-            return "Invalid status " + stat;
+            System.out.println("Invalid status " + stat);
+            return null;
         }
     }
 
     public String toString() {
         if (errorflag) {
-            return title + ", " + assignedTo + ", " + timeTocomplete +", " + checkimportance(important) + ", " + checkurgency(urgent) +", " + checkstatus(status);   
+            String statuswork = checkstatus(status);
+            return title + ", " + assignedTo + ", " + timeTocomplete +", " + checkimportance(important) + ", " + checkurgency(urgent) +", " + statuswork;   
         } else {
             return null;
         }
