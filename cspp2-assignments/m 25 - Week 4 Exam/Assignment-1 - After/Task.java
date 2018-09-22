@@ -35,7 +35,7 @@ class Task {
         if (important) {
             return "Important";
         } else {
-            return "Not important";
+            return "Not Important";
         }
     }
 
