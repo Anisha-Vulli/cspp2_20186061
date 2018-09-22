@@ -42,7 +42,7 @@ class Todoist {
             if (tasksarr[i].urgent) {
                 urg = "Urgent";
             }
-            str += tasksarr[i].title + ", " + tasksarr[i].assignedTo + ", " + tasksarr[i].timeTocomplete +", " + tasksarr[i].important + ", " + tasksarr[i].urgent +", " + tasksarr[i].status;
+            str += tasksarr[i].title + ", " + tasksarr[i].assignedTo + ", " + tasksarr[i].timeTocomplete +", " + imp + ", " + urg +", " + tasksarr[i].status;
             str += "\n";
         }
         return str;
