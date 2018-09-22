@@ -9,6 +9,29 @@ import java.util.Arrays;
  * Class for todoist main.
  */
 public class TodoistMain {
+	/**
+	 * Three value;
+	 */
+	private static final int THREE = 3;
+	/**
+	 * Four value.
+	 */
+	private static final int FOUR = 4;
+	/**
+	 * Five value.
+	 */
+	private static final int FIVE = 5;
+	/**
+	 * Six value.
+	 */
+	private static final int SIX = 6;
+
+	/**
+	 * Constructs the object.
+	 */
+	private TodoistMain() {
+
+	}
 
     /**
      * Starts a test.
@@ -84,10 +107,10 @@ public class TodoistMain {
     public static Task createTask(final String[] tokens) throws Exception {
         String title = tokens[1];
         String assignedTo = tokens[2];
-        int timeToComplete = Integer.parseInt(tokens[3]);
-        boolean important = tokens[4].equals("y");
-        boolean urgent = tokens[5].equals("y");
-        String status = tokens[6];
+        int timeToComplete = Integer.parseInt(tokens[THREE]);
+        boolean important = tokens[FOUR].equals("y");
+        boolean urgent = tokens[FIVE].equals("y");
+        String status = tokens[SIX];
         return new Task(
             title, assignedTo, timeToComplete, important, urgent, status);
     }
