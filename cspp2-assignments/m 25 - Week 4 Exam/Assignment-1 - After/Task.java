@@ -1,10 +1,10 @@
 class Task {
-    private String title;
-    private String assignedTo;
-    private int timeToComplete;
-    private boolean important;
-    private boolean urgent;
-    private String status;
+    String title;
+    String assignedTo;
+    int timeToComplete;
+    boolean important;
+    boolean urgent;
+    String status;
     Task(String title1, String assignedTo1, int timeToComplete1, boolean important1, boolean urgent1, String status1) throws Exception{
         this.title = title1;
         this.assignedTo = assignedTo1;
