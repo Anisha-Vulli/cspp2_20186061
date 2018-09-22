@@ -9,10 +9,10 @@ import java.util.Arrays;
  * Class for todoist main.
  */
 public class TodoistMain {
-    private static int three = 3;
-    private static int four = 4;
-    private static int five = 5;
-    private static int six = 6;
+    private static final int three = 3;
+    private static final int four = 4;
+    private static final int five = 5;
+    private static final int six = 6;
     /**
      * Constructs the object.
      */
