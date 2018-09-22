@@ -8,11 +8,29 @@ import java.util.Arrays;
  * Class for task.
  */
 class Task {
+	/**
+	 * { var_description }
+	 */
     String title;
+    /**
+     * { var_description }
+     */
     String assignedTo;
+    /**
+     * { var_description }
+     */
     int timeTocomplete;
+    /**
+     * { var_description }
+     */
     boolean important;
+    /**
+     * { var_description }
+     */
     boolean urgent;
+    /**
+     * { var_description }
+     */
     String status;
     boolean errorflag = true;
     Task() {
@@ -34,7 +52,7 @@ class Task {
      *
      * @return     { description_of_the_return_value }
      */
-    public String checktime(int time) {
+    public String checktime(final int time) {
         if (time > 0) {
             return String.valueOf(time);
         } else {
@@ -49,7 +67,7 @@ class Task {
  *
  * @return     { description_of_the_return_value }
  */
-    public String checktitle(String titlegiv) {
+    public String checktitle(final String titlegiv) {
         if (titlegiv.equals("")) {
             System.out.println("Title not given");
             return "";
@@ -64,7 +82,7 @@ class Task {
      *
      * @return     { description_of_the_return_value }
      */
-    public String checkimportance(boolean impor) {
+    public String checkimportance(final boolean impor) {
         if (impor) {
             return "Important";
         } else {
@@ -78,7 +96,7 @@ class Task {
      *
      * @return     { description_of_the_return_value }
      */
-    public String checkurgency(boolean urgent) {
+    public String checkurgency(final boolean urgent) {
         if (urgent) {
             return "Urgent";
         } else {
@@ -92,7 +110,7 @@ class Task {
      *
      * @return     { description_of_the_return_value }
      */
-    public String checkstatus(String stat) {
+    public String checkstatus(final String stat) {
         try {
             if (stat.equals("todo") || stat.equals("done")) {
                 return stat;
