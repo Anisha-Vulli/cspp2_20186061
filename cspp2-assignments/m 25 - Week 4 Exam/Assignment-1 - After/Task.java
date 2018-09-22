@@ -43,7 +43,7 @@ class Task {
         if (urgent) {
             return "Urgent";
         } else {
-            return "Not urgent";
+            return "Not Urgent";
         }
     }
 
