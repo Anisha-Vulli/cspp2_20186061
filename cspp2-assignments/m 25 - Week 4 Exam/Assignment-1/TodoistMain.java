@@ -39,22 +39,21 @@ class Task {
         }
     }
 
-    public String checkstatus(String stat) {
-        try {
-            if (stat.equals("todo") || stat.equals("done")) {
-                return stat;
-            } else {
-                throw new Exception();
-            }
-        } catch(Exception e) {
-            System.out.println("Invalid status " + stat);
-            return null;
+    public String checkstatus(String stat) throws Exception{
+        if (stat.equals("todo") || stat.equals("done")) {
+            return stat;
+        } else {
+            throw new Exception();
         }
+        
     }
 
     public String toString() {
-        return title + ", " + assignedTo + ", " + timeTocomplete +", " + checkimportance(important) + ", " + checkurgency(urgent) +", " + checkstatus(status);   
-        //System.out.println();
+        if (errorflag) {
+            return title + ", " + assignedTo + ", " + timeTocomplete +", " + checkimportance(important) + ", " + checkurgency(urgent) +", " + status;   
+        } else {
+            return null;
+        }
     } 
 }
 
@@ -127,7 +126,9 @@ public class TodoistMain {
      */
     public static void testTask(final String[] tokens) {
         try {
-            System.out.println(createTask(tokens));
+            if (createTask(tokens) != null) {
+                System.out.println();   
+            }
         } catch (Exception e) {
             System.out.println(e.getMessage());
         }
