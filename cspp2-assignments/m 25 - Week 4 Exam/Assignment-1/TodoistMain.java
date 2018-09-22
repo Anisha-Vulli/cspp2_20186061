@@ -96,22 +96,22 @@ class Task {
         }
     }
 
-    // public String toString() {
-    //     if (errorflag) {
-    //         String statuswork = checkstatus(status);
-    //         return checktitle(title) + ", " + assignedTo + ", " + checktime(timeTocomplete) +", " + checkimportance(important) + ", " + checkurgency(urgent) +", " + statuswork;   
-    //     } else {
-    //         return "";
-    //     }
-    // } 
+    public String toString() {
+        if (errorflag) {
+            String statuswork = checkstatus(status);
+            return checktitle(title) + ", " + assignedTo + ", " + checktime(timeTocomplete) +", " + checkimportance(important) + ", " + checkurgency(urgent) +", " + statuswork;   
+        } else {
+            return "";
+        }
+    } 
 }
 
 class Todoist {
     Task t = new Task();
-    public Task[] tasks = new Task[6];
+    public Task[] tasks = new Task[10];
     private int taskcount;
     Todoist() {
-        taskcount = 1;
+        taskcount = 0;
     }
 
     public void addTask(Task taskgiven) {
