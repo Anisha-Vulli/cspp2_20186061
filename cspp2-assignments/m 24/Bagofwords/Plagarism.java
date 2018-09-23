@@ -206,9 +206,10 @@ public final class Plagarism {
         // }
         //System.out.println(values);
         //
-        Long[] valuesnot = new Long[(n*n)];
+        int len = n*n;
+        Long[] valuesnot = new Long[len];
         
-        for (int a = 0; a < n*n ; a++) {
+        for (int a = 0; a < len ; a++) {
             if (values.get(a) != 100) {
                 valuesnot[a] = values.get(a);
             }
