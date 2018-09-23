@@ -103,7 +103,7 @@ public final class Plagarism {
             }
         }
 
-        lcscal(mapor, mapco);
+        wordcal(mapor, mapco);
         //System.out.println(mapco);
         // for (String strco : copiedarr) {
         //     int freqco = 1;
@@ -128,7 +128,7 @@ public final class Plagarism {
      * @param      mapor  The mapor
      * @param      mapco  The mapco
      */
-    public static void lcscal(final Map<String, Integer> mapor,
+    public static void wordcal(final Map<String, Integer> mapor,
         final Map<String, Integer> mapco) {
         //int distance = 0;
         Double numval = 0.0;
