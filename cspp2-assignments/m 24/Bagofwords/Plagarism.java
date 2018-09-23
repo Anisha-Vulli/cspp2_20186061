@@ -195,6 +195,27 @@ public final class Plagarism {
             System.out.print("\t" + values.get(i) + "\t");
             j++;
         }
+
+        Long[][] valuesdouble = new Long[n][n];
+        for (int a = 0; a < n; a++) {
+            for (int b = 0; b < n; b++) {
+                valuesdouble[a][b] = values.get(b);
+            }
+        }
+
+        float maxpercetmatch = 0;
+        String file1 = "", file2 = "";
+        for (int c = 0; c < list.size(); c++) {
+            for (int d = 0; d < list.size(); d++) {
+                if (c < d && maxpercetmatch < valuesdouble[c][d]) {
+                    file1 = list.get(c);
+                    file2 = list.get(d);
+                    maxpercetmatch = valuesdouble[c][d];
+                }
+            }
+        }
+        System.out.println("Maximum similarity is between "
+                           + file1 + " and " + file2);
     }
 
     /**
