@@ -1,5 +1,6 @@
 import java.util.Scanner;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.io.File;
 import java.util.TreeMap;
 import java.util.Map;
@@ -203,19 +204,21 @@ public final class Plagarism {
             }
         }
 
-        float maxpercetmatch = 0;
-        String file1 = "", file2 = "";
-        for (int c = 0; c < list.size(); c++) {
-            for (int d = 0; d < list.size(); d++) {
-                if (c < d && maxpercetmatch < valuesdouble[c][d]) {
-                    file1 = list.get(c);
-                    file2 = list.get(d);
-                    maxpercetmatch = valuesdouble[c][d];
-                }
-            }
-        }
-        System.out.println("\n" + "Maximum similarity is between "
-                           + file1 + " and " + file2);
+        System.out.println(Arrays.toString(valuesdouble));
+
+        // float maxpercetmatch = 0;
+        // String file1 = "", file2 = "";
+        // for (int c = 0; c < list.size(); c++) {
+        //     for (int d = 0; d < list.size(); d++) {
+        //         if (c < d && maxpercetmatch < valuesdouble[c][d]) {
+        //             file1 = list.get(c);
+        //             file2 = list.get(d);
+        //             maxpercetmatch = valuesdouble[c][d];
+        //         }
+        //     }
+        // }
+        // System.out.println("\n" + "Maximum similarity is between "
+        //                    + file1 + " and " + file2);
     }
 
     /**
