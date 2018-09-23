@@ -11,6 +11,7 @@ public final class Solution {
     }
 
     private static ArrayList<String> inputlist = new ArrayList<>();
+    private static final int THIRTEEN = 13;
 
     public static void addingtoarray(String filesent) {
         inputlist.add(filesent);
@@ -42,7 +43,7 @@ public final class Solution {
         return lcsmax + 1;
     }
 
-    public static void lcscalu(ArrayList<String> filenames) {
+    public static void lcscalu(ArrayList<String> filenames, final File[] filelist) {
         //System.out.println(inputlist);
         float[][] stringmatch = new float[filenames.size()][filenames.size()];
         for (int i = 0; i < filenames.size(); i++) {
@@ -64,10 +65,58 @@ public final class Solution {
                 }
             }
         }
+        
+        printResult(stringmatch, filelist);
+    }
 
-        for (int i = 0; i < stringmatch.length; i++) {
-            System.out.println(Arrays.toString(stringmatch[i]));
+    public static void printResult(final float[][] matchpercentmat,
+                                   final File[] filelist) {
+        String[] fileListAsString = new String[filelist.length];
+        for (int i = 0; i < filelist.length; i++) {
+            for (int j = 0; i < filelist[i].toString().length(); j++) {
+                if (filelist[i].toString().charAt(j) == '\\') {
+                    fileListAsString[i] = filelist[i].toString()
+                                          .substring(j + 1);
+                    break;
+                }
+            }
         }
+        String res = "         ";
+        for (String eachFile : fileListAsString) {
+            // res += eachFile + "\t";
+            int numberOfSpaces = THIRTEEN - eachFile.length();
+            for (int spindex = 0; spindex < numberOfSpaces; spindex++) {
+                res += " ";
+            }
+            res += eachFile;
+        } res += " \n";
+        for (int i = 0; i < fileListAsString.length; i++) {
+            res += fileListAsString[i];
+            for (int j = 0; j < fileListAsString.length; j++) {
+                // res += "\t" + matchpercentmat[i][j] + "\t";
+                int numberOfSpaces = THIRTEEN - (matchpercentmat[i][j] + "")
+                                     .length();
+                for (int spindex = 0; spindex < numberOfSpaces; spindex++) {
+                    res += " ";
+                }
+                res += matchpercentmat[i][j] + "";
+
+            } res += " \n";
+        }
+        System.out.print(res);
+        float maxpercetmatch = 0;
+        String file1 = "", file2 = "";
+        for (int i = 0; i < filelist.length; i++) {
+            for (int j = 0; j < filelist.length; j++) {
+                if (i < j && maxpercetmatch < matchpercentmat[i][j]) {
+                    file1 = fileListAsString[i];
+                    file2 = fileListAsString[j];
+                    maxpercetmatch = matchpercentmat[i][j];
+                }
+            }
+        }
+        System.out.println("Maximum similarity is between "
+                           + file1 + " and " + file2);
     }
 
     public static void main(String[] args) {
@@ -104,7 +153,7 @@ public final class Solution {
                     addingtoarray(original);
                     s1 = " ";
                 }
-                lcscalu(fnames);
+                lcscalu(fnames,listFiles);
             } catch (Exception e) {
                 System.out.println(e);
             }
