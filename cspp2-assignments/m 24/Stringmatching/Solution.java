@@ -1,22 +1,40 @@
-import java.util.Scanner;
-import java.util.ArrayList;
-import java.util.Arrays;
+/**
+ * String matching.
+ * @author Anisha Vulli.
+ */
 import java.io.File;
-import java.util.TreeMap;
-import java.util.Map;
-
+import java.io.FileNotFoundException;
+import java.util.Scanner;
+/**
+ * Class for solution.
+ */
 public final class Solution {
+    /**
+     * Constructs the object.
+     */
     private Solution() {
-
+        //not used.
     }
-
-    private static ArrayList<String> inputlist = new ArrayList<>();
+    /**
+     * variable declaration.
+     */
     private static final int THIRTEEN = 13;
-
-    public static void addingtoarray(String filesent) {
-        inputlist.add(filesent);
-    }
-
+    /**
+     * variable declaration.
+     */
+    private static final int HUNDRED = 100;
+    /**
+     * variable declaration.
+     */
+    private static final double TWOHUNDRED = 200.0;
+    /**
+     * to calculate lcs.
+     *
+     * @param      doc1  The document 1
+     * @param      doc2  The document 2
+     *
+     * @return     { description_of_the_return_value }
+     */
     public static int lcs(final String doc1, final String doc2) {
         int lcsmax = 0, lcs = 0, temp = 0;
         for (int indexi = 0; indexi < doc1.length() - 1; indexi++) {
@@ -42,33 +60,12 @@ public final class Solution {
         }
         return lcsmax + 1;
     }
-
-    public static void lcscalu(ArrayList<String> filenames, final File[] filelist) {
-        //System.out.println(inputlist);
-        float[][] stringmatch = new float[filenames.size()][filenames.size()];
-        for (int i = 0; i < filenames.size(); i++) {
-            for (int j = 0; j < filenames.size(); j++) {
-                if (i == j) {
-                    stringmatch[i][j] = 100;
-                } else {
-                    //System.out.println("BAWHHAAA");
-                    int lcsmax = 0;
-                    if (!(inputlist.get(i).equals("") || inputlist.get(j).equals(""))) {
-                        if (inputlist.get(i).length() > inputlist.get(j).length()) {
-                            lcsmax = lcs(inputlist.get(i), inputlist.get(j));
-                        } else {
-                            lcsmax = lcs(inputlist.get(i), inputlist.get(j));
-                        }
-                    }
-                    //System.out.println(inputlist.get(i).length());
-                    stringmatch[i][j] = Math.round((lcsmax * 200) / (inputlist.get(i).length() + inputlist.get(j).length()));
-                }
-            }
-        }
-        
-        printResult(stringmatch, filelist);
-    }
-
+    /**
+     * to print result in given format.
+     *
+     * @param      matchpercentmat  The matchpercentmat
+     * @param      filelist         The filelist
+     */
     public static void printResult(final float[][] matchpercentmat,
                                    final File[] filelist) {
         String[] fileListAsString = new String[filelist.length];
@@ -118,69 +115,79 @@ public final class Solution {
         System.out.println("Maximum similarity is between "
                            + file1 + " and " + file2);
     }
-
-    public static void main(String[] args) {
-        Scanner in = new Scanner(System.in);
+    /**
+     * main function.
+     *
+     * @param      args       The arguments
+     *
+     * @throws     Exception  { exception_description }
+     */
+    public static void main(final String[] args) throws Exception {
         try {
-            ArrayList<String> sa = new ArrayList<>();
-            String t = in.nextLine();
-            File folder = new File(t);
-            File[] listFiles = folder.listFiles();
-            ArrayList<String> fnames = new ArrayList<>();
-            int j = 0;
-            String fname;
-
-            for (File file : listFiles) {
-                if (file.isFile()) {
-                    sa.add(("D:\\MSIT\\IT\\cspp2_20186061\\cspp2-assignments"
-                        + "\\m 24\\Stringmatching\\" + t + "\\" + file.getName()));
-                    fnames.add(file.getName());
-                }
-            }
-
+            Scanner scan = new Scanner(System.in);
+            String foldername = scan.next();
+            File folder = new File(foldername);
+            File[] filelist = folder.listFiles();
+            String[] strlist = new String[filelist.length];
+            // System.out.println(Arrays.toString(filelist));
             try {
-                String s1 = "";
-                for (String i : sa) {
-                    File file = new File(i);
-                    Scanner input = new Scanner(file);
-                    while (input.hasNextLine()) {
-                        s1 += input.nextLine();
-                        s1 += " ";
+                int filecount = 0;
+                for (File file : filelist) {
+                    Scanner filescan = new Scanner(file);
+                    String str = "";
+                    while (filescan.hasNextLine()) {
+                        str += filescan.nextLine() + " ";
                     }
-                    //System.out.println(s1);
-                    String input1 = s1.replaceAll("[^A-Za-z0-9 ]", "");
-                    String original = input1.toLowerCase();
-                    addingtoarray(original);
-                    s1 = " ";
+                    // System.out.println(str);
+                    strlist[filecount++] = str.trim();
                 }
-                lcscalu(fnames,listFiles);
-            } catch (Exception e) {
-                System.out.println(e);
+                // System.out.println(Arrays.toString(strlist));
+            } catch (FileNotFoundException e) {
+                System.out.println("file not found");
             }
-            
-        //     try {
-        //     int filecount = 0;
-        //     for (File file : listFiles) {
-        //         Scanner filescan = new Scanner(file);
-        //         String str = "";
-        //         while(filescan.hasNextLine()) {
-        //             str += filescan.nextLine() + " ";
-        //         }
-        //         // System.out.println(str);
-        //         String input1 = s1.replaceAll("[^A-Za-z0-9 ]", "");
-        //         String original = input1.toLowerCase();
-        //         addingtoarray(original);
-        //     }
-        //     lcscalu(fnames);
-        //     // System.out.println(Arrays.toString(strlist));
-        // } catch (Exception e) {
-        //     System.out.println("file not found");
-        // }
 
+            float[][] matchpercentmat = new float[filelist.length]
+            [filelist.length];
+            for (int i = 0; i < filelist.length; i++) {
+                for (int j = 0; j < filelist.length; j++) {
+                    if (i == j) {
+                        matchpercentmat[i][j] = HUNDRED;
+                    } else {
+    // int lcs = 0 , lcstemp = 0;
+    // // System.out.println(strlist[i] + "\n" + strlist[j]);
+    // for (String eachwordi : strlist[i].replace(".", " ").split(" ")) {
+    //  for (String eachwordj : strlist[j].replace(".", " ").split(" ")) {
+    //      if (eachwordi.equals(eachwordj) && eachwordi.length() > lcs) {
+    //          lcs = eachwordi.length();
+    //      }
+    //  }
+    // }
+    // matchpercentmat[i][j] = (lcs * 200)
+    // / (strlist[i].length() + strlist[j].length());
+
+                        int lcsmax = 0;
+                        if (!(strlist[i].equals("") || strlist[j]
+                                .equals(""))) {
+                            if (strlist[i].length() > strlist[j]
+                                    .length()) {
+                                lcsmax = lcs(strlist[i], strlist[j]);
+                            } else {
+                                lcsmax = lcs(strlist[j], strlist[i]);
+                            }
+                        }
+                        matchpercentmat[i][j] = Math.round((lcsmax * TWOHUNDRED)
+                            / (strlist[i].length() + strlist[j].length()));
+                    }
+                }
+            }
+            // System.out.println(Arrays.toString(matchpercentmat));
+            // for (int i = 0; i < matchpercentmat.length; i++) {
+            //  System.out.println(Arrays.toString(matchpercentmat[i]));
+            // }
+            printResult(matchpercentmat, filelist);
         } catch (Exception e) {
             System.out.println("Empty Directory");
         }
-        //format(buffer);
     }
 }
 
