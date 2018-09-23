@@ -1,7 +1,7 @@
 import java.util.Scanner;
 import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collections;
+//import java.util.Arrays;
+//import java.util.Collections;
 import java.io.File;
 import java.util.TreeMap;
 import java.util.Map;
@@ -130,8 +130,8 @@ public final class Plagarism {
      * @param      mapor  The mapor
      * @param      mapco  The mapco
      */
-    public static void wordcal(final Map<String, Integer> mapor,
-        final Map<String, Integer> mapco) {
+    public static void wordcal(final Map<String, Integer> mapor1,
+        final Map<String, Integer> mapco1) {
         //int distance = 0;
         Double numval = 0.0;
         Double distance = 0.0;
@@ -208,7 +208,7 @@ public final class Plagarism {
         // //
         // int len = n*n;
         // Long[] valuesnot = new Long[len];
-        
+
         // for (int a = 0; a < len ; a++) {
         //     if (values.get(a) != 100) {
         //         valuesnot[a] = values.get(a);
