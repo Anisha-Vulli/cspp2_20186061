@@ -24,23 +24,24 @@ public final class Solution {
                 if (i == j) {
                     stringmatch[i][j] = 100;
                 } else {
-                    int lcs = 0; int lcstemp = 0;
-                    for (String wordi : inputlist.get(i).split(" ")) {
-                        for (String wordj : inputlist.get(j).split(" ")) {
-                            if (wordi.equals(wordj) && wordi.length() > lcs) {
-                                lcs = wordi.length();
-                            }
-                        }
-                    }
-                    System.out.println(inputlist.get(i).length());
+                    System.out.println("BAWHHAAA");
+                    // int lcs = 0; int lcstemp = 0;
+                    // for (String wordi : inputlist.get(i).split(" ")) {
+                    //     for (String wordj : inputlist.get(j).split(" ")) {
+                    //         if (wordi.equals(wordj) && wordi.length() > lcs) {
+                    //             lcs = wordi.length();
+                    //         }
+                    //     }
+                    // }
+                    //System.out.println(inputlist.get(i).length());
                     //stringmatch[i][j] = (lcs * 200) / (inputlist.get(i).length() + inputlist.get(j).length());
                 }
             }
         }
 
-        for (int i = 0; i < stringmatch.length; i++) {
-            System.out.println(Arrays.toString(stringmatch[i]));
-        }
+        // for (int i = 0; i < stringmatch.length; i++) {
+        //     System.out.println(Arrays.toString(stringmatch[i]));
+        // }
     }
 
     public static void main(String[] args) {
