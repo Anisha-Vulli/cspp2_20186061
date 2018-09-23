@@ -205,7 +205,16 @@ public final class Plagarism {
         //     }
         // }
         //System.out.println(values);
-        System.out.println("\n" + Collections.max(values));
+        //
+        Long[] valuesnot = new Long[(n*n)];
+        
+        for (int a = 0; a < n*n ; a++) {
+            if (values.get(a) != 100) {
+                valuesnot[a] = values.get(a);
+            }
+        }
+        Arrays.sort(valuesnot);
+        System.out.println("\n" +  valuesnot[0]);
 
         // float maxpercetmatch = 0;
         // String file1 = "", file2 = "";
