@@ -17,28 +17,29 @@ public final class Solution {
     }
 
     public static void lcscalu(ArrayList<String> filenames) {
-        float[][] stringmatch = new float[filenames.size()][filenames.size()];
-        for (int i = 0; i < filenames.size(); i++) {
-            for (int j = 0; j < filenames.size(); j++) {
-                if (i == j) {
-                    stringmatch[i][j] = 100;
-                } else {
-                    int lcs = 0; int lcstemp = 0;
-                    for (String wordi : inputlist.get(i).split(" ")) {
-                        for (String wordj : inputlist.get(j).split(" ")) {
-                            if (wordi.equals(wordj) && wordi.length() > lcs) {
-                                lcs = wordi.length();
-                            }
-                        }
-                    }
-                    stringmatch[i][j] = (lcs * 100) / (inputlist.get(i).length() + inputlist.get(j).length());
-                }
-            }
-        }
+        System.out.println(inputlist);
+        // float[][] stringmatch = new float[filenames.size()][filenames.size()];
+        // for (int i = 0; i < filenames.size(); i++) {
+        //     for (int j = 0; j < filenames.size(); j++) {
+        //         if (i == j) {
+        //             stringmatch[i][j] = 100;
+        //         } else {
+        //             int lcs = 0; int lcstemp = 0;
+        //             for (String wordi : inputlist.get(i).split(" ")) {
+        //                 for (String wordj : inputlist.get(j).split(" ")) {
+        //                     if (wordi.equals(wordj) && wordi.length() > lcs) {
+        //                         lcs = wordi.length();
+        //                     }
+        //                 }
+        //             }
+        //             stringmatch[i][j] = (lcs * 200) / (inputlist.get(i).length() + inputlist.get(j).length());
+        //         }
+        //     }
+        // }
 
-        for (int i = 0; i < stringmatch.length; i++) {
-            System.out.println(Arrays.toString(stringmatch[i]));
-        }
+        // for (int i = 0; i < stringmatch.length; i++) {
+        //     System.out.println(Arrays.toString(stringmatch[i]));
+        // }
     }
 
     public static void main(String[] args) {
