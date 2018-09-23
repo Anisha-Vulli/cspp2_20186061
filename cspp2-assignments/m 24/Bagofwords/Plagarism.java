@@ -208,7 +208,7 @@ class Plagarism {
             for (File file : listFiles) {
                 if (file.isFile()) {
                     sa.add(("D:\\MSIT\\IT\\cspp2_20186061\\cspp2-assignments"
-                        + "\\m 24\\Bagofwords\\"+ t + "\\" + file.getName()));
+                        + "\\m 24\\Bagofwords\\" + t + "\\" + file.getName()));
                     fnames.add(file.getName());
                 }
             }
