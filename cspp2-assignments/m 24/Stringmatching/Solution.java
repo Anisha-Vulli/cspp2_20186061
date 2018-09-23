@@ -91,6 +91,7 @@ public final class Solution {
 				String original = str.trim();
 				addingtoarray(original);
 			}
+			lcscalu(fnames);
 			// System.out.println(Arrays.toString(strlist));
 		} catch (Exception e) {
 			System.out.println("file not found");
