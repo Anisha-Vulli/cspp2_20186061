@@ -70,8 +70,7 @@ public final class Solution {
                         s1 += " ";
                     }
                     //System.out.println(s1);
-                    String input1 = s1.replaceAll("[^A-Za-z0-9 ]", "");
-                    String original = input1.toLowerCase();
+                    String original = s1.trim();
                     addingtoarray(original);
                     s1 = " ";
                 }
