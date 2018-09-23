@@ -16,6 +16,32 @@ public final class Solution {
         inputlist.add(filesent);
     }
 
+    public static int lcs(final String doc1, final String doc2) {
+        int lcsmax = 0, lcs = 0, temp = 0;
+        for (int indexi = 0; indexi < doc1.length() - 1; indexi++) {
+            int indexj = 0;
+            while (indexj < doc2.length() - 1) {
+                temp = indexi;
+                lcs = 0;
+                if (doc1.charAt(temp) == (doc2.charAt(indexj))
+                        && doc1.charAt(temp) != ' ') {
+                    while (doc1.charAt(temp) == (doc2.charAt(indexj)) && indexj
+                            < doc2.length() - 1 && temp < doc1.length() - 1) {
+                        lcs++;
+                        indexj++;
+                        temp++;
+                    }
+                    if (lcs > lcsmax) {
+                        lcsmax = lcs;
+                    }
+                } else {
+                    indexj++;
+                }
+            }
+        }
+        return lcsmax + 1;
+    }
+
     public static void lcscalu(ArrayList<String> filenames) {
         //System.out.println(inputlist);
         float[][] stringmatch = new float[filenames.size()][filenames.size()];
@@ -24,24 +50,24 @@ public final class Solution {
                 if (i == j) {
                     stringmatch[i][j] = 100;
                 } else {
-                    System.out.println("BAWHHAAA");
-                    // int lcs = 0; int lcstemp = 0;
-                    // for (String wordi : inputlist.get(i).split(" ")) {
-                    //     for (String wordj : inputlist.get(j).split(" ")) {
-                    //         if (wordi.equals(wordj) && wordi.length() > lcs) {
-                    //             lcs = wordi.length();
-                    //         }
-                    //     }
-                    // }
+                    //System.out.println("BAWHHAAA");
+                    int lcsmax = 0;
+                    if (!(inputlist.get(i).equals("") || inputlist.get(j).equals(""))) {
+                        if (inputlist.get(i).length() > inputlist.get(j).length()) {
+                            lcsmax = lcs(inputlist.get(i), inputlist.get(j));
+                        } else {
+                            lcsmax = lcs(inputlist.get(i), inputlist.get(j));
+                        }
+                    }
                     //System.out.println(inputlist.get(i).length());
-                    //stringmatch[i][j] = (lcs * 200) / (inputlist.get(i).length() + inputlist.get(j).length());
+                    stringmatch[i][j] = Math.round((lcsmax * 200) / (inputlist.get(i).length() + inputlist.get(j).length()));
                 }
             }
         }
 
-        // for (int i = 0; i < stringmatch.length; i++) {
-        //     System.out.println(Arrays.toString(stringmatch[i]));
-        // }
+        for (int i = 0; i < stringmatch.length; i++) {
+            System.out.println(Arrays.toString(stringmatch[i]));
+        }
     }
 
     public static void main(String[] args) {
