@@ -203,7 +203,7 @@ public final class Plagarism {
                 valuesdouble[a][b] = values.get(b);
             }
         }
-
+        System.out.println(values);
         System.out.println(Arrays.toString(valuesdouble));
 
         // float maxpercetmatch = 0;
