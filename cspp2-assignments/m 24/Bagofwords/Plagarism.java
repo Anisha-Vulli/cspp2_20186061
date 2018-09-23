@@ -171,7 +171,7 @@ class Plagarism {
         //System.out.println(list);
         int n = list.size();
         int j = 0;
-        System.out.print("\t       ");
+        System.out.print(" \t       ");
         for (int k = 0; j < n; j++) {
             System.out.print(list.get(k) + "\t");
             k++;
