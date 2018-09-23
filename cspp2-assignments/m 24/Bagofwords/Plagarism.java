@@ -127,8 +127,8 @@ public final class Plagarism {
     /**
      * Distance calucluation.
      *
-     * @param      mapor  The mapor
-     * @param      mapco  The mapco
+     * @param      mapor1  The mapor
+     * @param      mapco1  The mapco
      */
     public static void wordcal(final Map<String, Integer> mapor1,
         final Map<String, Integer> mapco1) {
