@@ -6,7 +6,7 @@ import java.util.Map;
 /**
  * Class for plagarism.
  */
-class Plagarism {
+public final class Plagarism {
     /**
      * Map declaration.
      */
