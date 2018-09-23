@@ -32,7 +32,8 @@ public final class Solution {
                             }
                         }
                     }
-                    stringmatch[i][j] = (lcs * 200) / (inputlist.get(i).length() + inputlist.get(j).length());
+                    System.out.println(inputlist.get(i).length());
+                    //stringmatch[i][j] = (lcs * 200) / (inputlist.get(i).length() + inputlist.get(j).length());
                 }
             }
         }
