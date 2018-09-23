@@ -24,6 +24,14 @@ class Plagarism {
      */
     private static ArrayList<Long> values = new ArrayList<>();
     //static Map<String, ArrayList<Integer>> mapcom = new TreeMap<>();
+
+    /**
+     * Constructs the object.
+     */
+    private Plagarism() {
+        //Empty constructor.
+    }
+
     /**
      * appending to list.
      *
