@@ -198,38 +198,38 @@ public final class Plagarism {
             j++;
         }
 
-        // Long[][] valuesdouble = new Long[n][n];
-        // for (int a = 0; a < n; a++) {
-        //     for (int b = 0; b < n; b++) {
-        //         valuesdouble[a][b] = values.get(b);
-        //     }
-        // }
-        //System.out.println(values);
-        //
-        int len = n*n;
-        Long[] valuesnot = new Long[len];
+        // // Long[][] valuesdouble = new Long[n][n];
+        // // for (int a = 0; a < n; a++) {
+        // //     for (int b = 0; b < n; b++) {
+        // //         valuesdouble[a][b] = values.get(b);
+        // //     }
+        // // }
+        // //System.out.println(values);
+        // //
+        // int len = n*n;
+        // Long[] valuesnot = new Long[len];
         
-        for (int a = 0; a < len ; a++) {
-            if (values.get(a) != 100) {
-                valuesnot[a] = values.get(a);
-            }
-        }
-        Arrays.sort(valuesnot);
-        System.out.println("\n" +  valuesnot[0]);
-
-        // float maxpercetmatch = 0;
-        // String file1 = "", file2 = "";
-        // for (int c = 0; c < list.size(); c++) {
-        //     for (int d = 0; d < list.size(); d++) {
-        //         if (c < d && maxpercetmatch < values.get(d)) {
-        //             file1 = list.get(c);
-        //             file2 = list.get(d);
-        //             maxpercetmatch = values.get(d);
-        //         }
+        // for (int a = 0; a < len ; a++) {
+        //     if (values.get(a) != 100) {
+        //         valuesnot[a] = values.get(a);
         //     }
         // }
-        // System.out.println("\n" + "Maximum similarity is between "
-        //                    + file1 + " and " + file2);
+        // Arrays.sort(valuesnot);
+        // System.out.println("\n" +  valuesnot[0]);
+
+        // // float maxpercetmatch = 0;
+        // // String file1 = "", file2 = "";
+        // // for (int c = 0; c < list.size(); c++) {
+        // //     for (int d = 0; d < list.size(); d++) {
+        // //         if (c < d && maxpercetmatch < values.get(d)) {
+        // //             file1 = list.get(c);
+        // //             file2 = list.get(d);
+        // //             maxpercetmatch = values.get(d);
+        // //         }
+        // //     }
+        // // }
+        // // System.out.println("\n" + "Maximum similarity is between "
+        // //                    + file1 + " and " + file2);
     }
 
     /**
