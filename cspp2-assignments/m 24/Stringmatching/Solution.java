@@ -61,47 +61,49 @@ public final class Solution {
                 }
             }
 
-            // try {
-            //     String s1 = "";
-            //     for (String i : sa) {
-            //         File file = new File(i);
-            //         Scanner input = new Scanner(file);
-            //         while (input.hasNextLine()) {
-            //             s1 += input.nextLine();
-            //             s1 += " ";
-            //         }
-            //         //System.out.println(s1);
-            //         String original = s1.trim();
-            //         addingtoarray(original);
-            //         s1 = " ";
-            //     }
-            //     lcscalu(fnames);
-            // } catch (Exception e) {
-            //     System.out.println(e);
-            // }
-            
             try {
-            int filecount = 0;
-            for (File file : listFiles) {
-                Scanner filescan = new Scanner(file);
-                String str = "";
-                while(filescan.hasNextLine()) {
-                    str += filescan.nextLine() + " ";
+                String s1 = "";
+                for (String i : sa) {
+                    File file = new File(i);
+                    Scanner input = new Scanner(file);
+                    while (input.hasNextLine()) {
+                        s1 += input.nextLine();
+                        s1 += " ";
+                    }
+                    //System.out.println(s1);
+                    String input1 = s1.replaceAll("[^A-Za-z0-9 ]", "");
+                    String original = input1.toLowerCase();
+                    addingtoarray(original);
+                    s1 = " ";
                 }
-                // System.out.println(str);
-                String original = str.trim();
-                addingtoarray(original);
+                lcscalu(fnames);
+            } catch (Exception e) {
+                System.out.println(e);
             }
-            lcscalu(fnames);
-            // System.out.println(Arrays.toString(strlist));
-        } catch (Exception e) {
-            System.out.println("file not found");
-        }
+            
+        //     try {
+        //     int filecount = 0;
+        //     for (File file : listFiles) {
+        //         Scanner filescan = new Scanner(file);
+        //         String str = "";
+        //         while(filescan.hasNextLine()) {
+        //             str += filescan.nextLine() + " ";
+        //         }
+        //         // System.out.println(str);
+        //         String input1 = s1.replaceAll("[^A-Za-z0-9 ]", "");
+        //         String original = input1.toLowerCase();
+        //         addingtoarray(original);
+        //     }
+        //     lcscalu(fnames);
+        //     // System.out.println(Arrays.toString(strlist));
+        // } catch (Exception e) {
+        //     System.out.println("file not found");
+        // }
 
         } catch (Exception e) {
             System.out.println("empty directory");
         }
-        // format(buffer);
+        //format(buffer);
     }
 }
 
