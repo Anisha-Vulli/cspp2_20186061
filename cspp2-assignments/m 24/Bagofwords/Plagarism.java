@@ -214,7 +214,7 @@ public final class Plagarism {
                 }
             }
         }
-        System.out.println("Maximum similarity is between "
+        System.out.println("\n" + "Maximum similarity is between "
                            + file1 + " and " + file2);
     }
 
